@@ -1,0 +1,38 @@
+SGML & XML
+
+
+SGML
+|
+|----------------XHTML(DTD 참조)----------HTML1~HTML4
+|                       |
+XML              HTML5(SGML을 참조 하지 않은 새로운 개념)
+
+
+
+
+XML :
+	Extensible Markup Language
+	w3c에서 개발된 다목적 마크업 언어이다.
+	SGML의 단순화된 부분집합, 다른 많은 종류의 데이터를 기술하는 데 사용할 수 있다.
+	주로 다른 종류의 시스템, 특히 인터넷에 연결된 시스템끼리 데이터를 쉽게 주고 받을 수 있게 하여 HTML의 한계를 극복할 목적으로 만들어졌다.
+	HTML에서 XHTML로 이끌었다.
+	모듈식이다.
+	RDF와 sementic web의 토대이다.
+	license 제약이 없으며, flatform이 독립적이고 많은 지원이 있다.
+	
+	-xml 기반언어 :
+		RDF, RSS, Atom, MathML, XHTML, SVG
+		위에 언어들은 단일하게 규정된 방식으로 정의되었기 때문에, 사전 정보가 없어도 이들 언어로 작성된 문서에 대해 수정이나 유효성 검사를 하는 프로그램도 제작할 수 있다.
+
+	-	
+
+
+
+
+
+
+
+
+SGML :
+	Standard Generalized Markup Language
+	전자문서가 어떠한 시스템 환경에서도 정보의 손실 없이 전송, 저장, 자동처리가 가능하도록 국제표준화기구(ISO)에서 정한 문서처리 표준이다.			

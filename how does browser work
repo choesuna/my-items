@@ -1,0 +1,122 @@
+HOW DOES BROWSER WORK ?
+
+
+	browser main function
+		사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것.
+		resource(자원)은 html문서, PDF나 이미지 또는 다른형태일 수 이다.
+		자원의 주소 : URI (Uniform Resource Identifier, 인터넷 식별자) 에 의해 정해진다.
+		browser는 HTML과 CSS명세에 따라 HTML파일을 해석해서 표시한다.
+
+
+	browser user interface
+		URI를 입력할 수 있는 주소 표시 줄
+		이전 버튼과 다음 버튼
+		bookmakers
+		새로 고침 버튼과 현재 문서의 로드를 중단할 수 있는 정지 버튼
+		홈 버튼
+		요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분.
+
+
+	browser engine 
+		control action between user interface and rendering engine
+
+
+	통신
+		http요청과 같은 network 호출에서 사용됨.
+		이것은 platform. 독립적인 interface이고 각 플랫폼 하부에서 실행 됨.
+
+
+	UI backend
+		combo box와 창 같은 기본적인 장치를 그림.
+		platform 명시하지 않은 일반적인 interface로서, OS user interface 체계를 사용.
+
+
+	javascript parser
+
+
+	자료 저장소
+		자료를 저장하는 계층.
+		cookie를 저장하는 것과 같이 모든 종류의 자원을 하드 디스크에 저장할 필요가 있다.
+		HTML5명세에는 browser가 지원하는 web database가  정의 되어 있다. 
+
+
+	rendering engine
+		요청받은 내용을 브라우저 화면에 표시하는 일
+		파이어폭스는 모질라에서 직접만든 Gecko engine, 사파리와 크롭은 Webkit
+		- 기본적인 동작 과정 
+			DOM Tree 구축 위한 html parsing -> render tree 구축 -> render tree layout -> drawing render tree 
+
+
+	document parsig :
+		browser 가 code를 이해하고 사용할 수 있는 구조로 변환하는 것을 의미.
+		parsing결과는 보통 문서 구조를 나타내는 node tree인 데 parse tree 또는 syntax tree라고 부른다.
+
+
+	parsing :
+		-어휘분석
+			자료를 토큰으로 분해하는 과정
+
+		-구문분석
+			언어의 구문 규칙을 적용하는 과정
+
+
+	토큰 변환기 : 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	There Are 7 Key Components of Any Web Browser
+
+								User Interface
+									|
+									|
+						Browser engine          --->   		Data Persistence
+									|
+									|
+						Rendering Engine
+
+
+	Newtorking		 JavaScript Interpreter 	 UI Backend
+
+
+
+	1. Layout Engine
+		this takes input from the browser(URL bar, search box, mouse clicks and key presses) and passes them to the rendering engine
+
+	2. Rendering Engine
+		this takes HTML code and interprets it into what you see visually.
+		For instance, a tag would be interpreted by the rendering engine as a set of instructions to make the text inside of the element bold
+
+	3. User Interface
+		This is the visual presentation of controls in the browser,
+		for instance the back and forward buttons, bookmakers, and all chrome that appears around the main browser widnow where web pages display
+
+	4. JavaScript Engine
+		This engine takes JavaScript code, parses it, executes it, and returns the results.
+
+	5. Network Layer
+		This is a function of the browser that happens behind the scenes and handles network function such as encryption, http and ftp requests, and all network settings such as timeouts and handling of HTTP status codes
+
+	6. Storage
+		Brpwser's must store some data which can include cashed files, cookies, and recently browsers have updated to be able to store data and objects created with JavaScript
+
+	7. Operating System Interface
+		The browser must interact with the operation system to draw out several elements of the page like drop down boxes and the chrome of a window(close, maximize, and minimize buttons)
+
+
+-----------------------------------------------------------------  ** REFERENCE **  --------------------------------------------------------------
+
+	- combo box 
+		window에서 사용되는 것으로, 사용자가 직접 정보를 입력하거나 나열된 항복들 중에서 하나의 항목을 선택하여 정보를 입력할 수있는 컨트롤
+
+	- URI 의 하위 집합 : URL, URN, URC
+
+	- layout = 배치 = reflow
+
+	- render tree = frame tree 
+	
+	- attachment = content sink
+	
+	- SGML : 문서용 markup langage 정의를 위한  meta languate 에 관한 것.
+		OGC 에서 개발한 

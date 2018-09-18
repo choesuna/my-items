@@ -1,0 +1,86 @@
+CODING CONVENTION ?
+
+	css incoding
+		HTML 문서가 브라우저에서 바르게 해석될 수 있도록 CSS의 incoding은 HTML의 incoding과 동일하게 선언 한다.
+
+
+	class naming
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	html default layout 
+		#wrap > (header#header > nav.gnb) + (#container > .content) + footer#footer
+
+
+	id 
+		레이아웃을 제외한 id는 스타일을 지정하지 않는다.
+
+
+	HTML5 isn't based SGML	
+		html5는 SGML에 기본으로 하지 않기 때문에, DTD의 참조를 요하지 않는다. <!DOCTYPE> 은 웹 브라우저가 HTML이 무슨 버전인지 알 수 있게 해준다.
+
+
+	Quirks Mode
+		오래된 web browser를 위하여 디자인된 웹페이지의 하위 호환성을 유지하기 위해 W3C 나 IETF  의 표준을 엄격히 준수하는 표준 모드 Standards Mode를 대신하여 쓰이는 웹브라우저 기술
+		IE 의 경우, Doctype 선언 윗쪽에 주석이나 다른 문자가 들어갔을 때에 문서를 Quirks mode로 해석한다.
+
+
+	XHTML
+		Extensible Hypertext Markup Language
+
+
+	HTML5
+		W3C는 2014년 10월 28일 HTML5 표준안을 확정
+
+
+	what is difference with HTML4 and HTML5 
+		요소추가
+			구조적인 요소 : 구역을 나누는 블록 요소인 div 요소를 대신한다.
+				header, nav, article, section, aside, footer
+			멀티미디어 요소 : 플러그인 없이 멀티미디어를 재생할 수 있게 한다.
+				audio, video, canvas
+			command
+			detailist
+			details
+			embed
+			figure
+			figcaption
+
+		요소 의미 변경
+			em
+			hr
+
+		문서 선언  
+			<!DOCTYPE html> 간소화, 대소문자 구별 안함
+
+		요소 제거
+			비슷한 기능의 다른 태그로 대체 가능한 태그들 : acronym, applet, dir, isindex
+			디자인적인 기능 이상의 의미가 없어 삭제(css로 대체 가능한 태그들) : basefont, big, center, font, strike, tt
+			웹접근성 향상을 위해 사용을 지양하는 태그들 : frame, frameset, noframes
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	image naming :
+		형태-의미-상태
+		숫자로 시작하지 않는다.
+
+
+-----------------------------------------------------------------  ** REFERENCE **  --------------------------------------------------------------
+
+
+	- IETF = Internet Engineering Task Force
+	
+	- ActiveX : 
+		마이크로소프트사가 개발한 재사용 가능한 객체지향적인 소프트에어 구성요소 개발에 사용되는 기술이다. 
+		ActiveX는 컴포넌트 오브젝트 모델과 객체 연결 삽입을 적용해  www으로부터 다운로드 받은 컨텐츠들을 이용하는 데 이용된다. 
+		ActiveX는 전반적인 기술 혹은 기술을 구현하는데 필요한 구성요소를 가리키며, ActiveX를 이용해 만든 작은 프로그램을 말한다. 
+		대부분 ActiveX는 IE의 plugin을 만드는 데 사용된다.
+
+	- web service : 
+		네트워크상에서 서로 다른 종류의 컴퓨터들 간에 상호 작용을 하기 위한 소프트웨어시스템. 
+		서비스 지향적 분산 컴퓨팅 기술의 일종. 
+

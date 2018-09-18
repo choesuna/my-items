@@ -1,0 +1,55 @@
+WHAT IS RENDERING ?
+	Loading	 	Parsing 	Rendering Tree 		CSS 결정 	render tree layout 		drawing render tree
+
+
+	1.  Loading
+		Loader가 server로부터 전달 받은 resource stream을 읽는 과정.
+		읽으면서 어떤 파일인지, 데이터인지, 파일을 다운로드 할 것인지 등을 결정한다.
+
+
+	2. Parsing
+		Web Engine이 가지고 있는 HTML/XML parser가 문서를 parsing 해서 DOM Tree를 만든다.
+
+
+	3. Rendering Tree 
+		그리기 위한 트리
+		위치나 크기  X.
+		그릴 때 필요 없는 head, title, body  tag  없음.
+		display:none처럼 DOM에는 있지만 화면에는 안나오는 것들을 걸러냄
+
+
+		- DOM Tree : 내용을 저장하는 트리
+					자바스크립트에서 접근하는 DOM object를 쓸 때 이용하는 것
+
+
+	4. CSS 결정
+		css는 선택자에 따라서 적용되는 태그가 다르기 때문에 모든 CSS스타일을 분석해 태그에 스타일 규칙이 적용되게 결정한다.
+
+
+	5. render tree layout
+		rendering tree +  위치, 크기 
+
+
+	6. drawing render tree
+		rendering tree를 탐색하면서 그리기.
+		Rendering Engine은 가능하면 HTML문서가 parsing될때까지 기다리지 않고, 배치와 그리기 과정을 시작한다.
+
+
+
+	-----------------------------------------------------------------  ** REFERENCE **  --------------------------------------------------------------
+
+	- Web Engine : 컴퓨터 분야에서 핵심적이고 본질적인 기능을 수행하는 프로그램을 지칭하는 용어.
+
+	- $(document).ready() : DOM Tree 생성 후 실행됨. without external resource, images.
+
+	- $(window).load() : 화면에 필요한 모든 요소들이 메모리에 모두 올려진 다음에 실행됨.(=화면이 모두 그려진 다음)
+
+		- 주의사항 : 
+			body 의 onload이벤트를 적용할 시 $(window).load()가 실행되지 않을 수 있음.
+			external link, file include시 안에 $(window).load()가 있으면 둘 중 하나만 실행됨.
+			Web Page에 많은 image가 존재해서 이미지 로딩되는데 오래걸리면 그것들이 로딩될때까지 $(window).load()는 딜레이됨.
+
+
+	- reference site : 
+		- https://www.quora.com/How-does-HTML-render-a-web-page
+		- https://www.pathinteractive.com/blog/design-development/rendering-a-webpage-with-google-webmaster-tools/

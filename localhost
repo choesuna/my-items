@@ -1,0 +1,141 @@
+ABOUT HOST 
+
+
+localhost
+	컴퓨터 네트워크에서 사용하는 loopback 호스트명으로, 자신의 컴퓨터를 의미한다. 
+	IPv4에서의 IP 주소는 127.0.0.1
+	로컬 컴퓨터를 원격 컴퓨터인것 처럼 통신할 수 있어 테스트 목적으로 주로 사용된다.
+	호스트 명 : localhost
+	IPv4 : 127.0.0.1
+	IPv6 : ::1
+
+내 IP address 접근하기 :
+	- 제어판\모든 제어판 항목\Windows 방화벽\허용되는 프로그램 
+		world wide web 서비스 (http) : 모두 체크
+		보안 world wide web 서비스 (https) : 모두 체크
+
+		http://150.24.229.219/mpoc/html/util/member_policy/mUT2.1.2.1T.1.1P.html
+		ip address = localhost
+
+
+
+
+hosts
+	hosts 파일은 운영 체제가 호스트 이름을 IP 주소에 매핑할때 사용하는 컴퓨터 파일이다.
+	이 hosts 파일은 플레인 텍스트 파일이며 전통적으로 hosts라는 이름을 사용한다.
+	위치 : C:\Windows\System32\drivers\etc
+
+	표시 형식 : 
+		왼쪽 			오른쪽
+		ip  주소 		해당 ip 주소로 표시하고 싶은 주소명 
+
+loopback
+	가상 네트워크 인터페이스
+	스스로 네트워크 기능을 점검하기 위한 것
+	loopback IP주소는 127.0.0.1
+	loopback 호스트명은 localhost
+
+
+
+IP
+	Internet Protocol
+	패킷 교환 네트워크에서 호스트 사이의 정보교환 프로토콜
+
+IP address
+	TCP/IP 통신에서 송신자와 수신자를 구별하기 위한 주소
+	네트워크에 연결된 특정 장치의 인터페이스에 대한 식별자
+	각 IP 주소는 네트워크 ID 와 호스트 ID를 포함함
+	서로 다른 네트워크에서는 호스트 ID 부분이 같아도 되지만 같은 네트워크에서는 달라야함.
+
+IPv4
+	Internet Protocol version 4
+	32비트 주소 체계
+	전세계적으로 사용된 첫 번째 인터넷 프로토콜
+	packet switching network에서 데이터를 교환하기 위한 프로토콜	
+
+
+IPv6
+	Internet Protocol version 6
+	128비트 주소 체계
+	인터넷 프로토콜 스택 중 네트워크 계층의 프로토콜
+	전세꼐적으로 사용된 첫 번째 인터넷 프로토콜
+
+
+
+
+packet switching
+	패킷 교환, 패킷교환방식
+		작은 블록의 패킷으로 데이터를 전송
+		패킷의 목적지 주소를 보고 전달하는 전통방식
+		데이터를 전송하는 동안만 네트워크 자원을 사용하도록 하는 방식
+
+
+
+port
+	인터넷 프로토콜 스위트의 전송 계층 프로토콜 중 하나
+	TCP 또는 UDP 프로토콜이 사용하는 가상의 논리적 통신 연결단
+	데이터를 주고 받는 통로
+
+	-포트 번호 대역
+		0~1023: 잘 알려진 포트(well-known port)
+		1024~49151: 등록된 포트(regiested port)
+		49152~65535: 동적 포트(dynamic port)
+
+MAC
+	media access control
+	매체 접근 제어 
+	OSI model의 데이터 링크 계층의 일부
+	
+MAC address
+	media access control address
+	MAC address
+	burned-in address
+	BIA
+	Ethernet hardware address EHA
+	hardware address
+	physical address
+	물리적 네트워크 주소
+	NIC에 부여된 고유식별자(조작이 가능하므로 완벽한 고유식별자는 아님)
+	IP address와 더불어 IP address를 MAC로 전환하는 절차필요(ARP)
+	네트워크에 연결되는 모든 장비들을 48비트의 이 주소값을 가짐
+		ex :
+			00-70-69-47-2F-30
+			00:70:69:47:2F:30
+			0070.6947.2F30
+
+OSI 
+	Open Systems Interconnection model
+	개방 시스템 상호연결 모형
+		1. 물리계층 physical layer	bit								a (not necessarily reliable) direct point-to-point data connection
+		2. data link layer			bit								a reliable direct point-to-point data connection 	ex) MAC, 이더넷
+		3. network layer			network packet/ data gram		Addressing, routing and (not necessarily reliable) delivery of datagrams between points on a network 	ex) 라우터, IP, 
+		4. transkport layer			data sagment					Reliable delivery of packets between points on a network 	ex)TCP, UDP
+		5. session layer			Data 							Interhost communication, managing sessions between applications
+		6. presentation layer		data							Data representation, encryption and decryption, convert machine dependent data to machine independent data
+		7. application layer		data							network process to application 	ex)gateway, http, dns, ftp, smpp
+
+
+sugnet mask
+	라우터가 참조할 비트가 어느 것인지에 대한 필터
+	네트워크 부분과 호스트 부분을 나타내는 역할
+
+
+
+network packet; packet
+	네트워크에서 전달되는 데이터의 형식화된 블록
+
+
+
+
+
+
+		--------------------------------------------
+IIS 
+	인터넷 정보 서비스
+
+	- 포트 추가 
+		- 사이트 바인딩 > 추가 
+			종류, IP 주소, 포트, 호스트 이름 설정
+
+
+
