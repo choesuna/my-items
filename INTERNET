@@ -1,0 +1,25 @@
+INTERNET
+
+	protocol 
+		컴퓨터끼리 정보를 주고 받기 위한 일종의 규칙이나 약속
+
+		- for Internet
+			- TCP(Transmission Control Protocol) 
+			- IP(Internet Protocol)
+		
+		- for Web
+			- HTTP(HyperText Transfer Protocol)
+
+		- for exchange file
+			- FTP(File Transfer Protocol)
+
+	IP Address 
+		Internet Protocol address
+
+		- 정확히 말해 인터넷 주소는 IP address만을 의미하며, Domain Name은 DNS(Domain Name System)서버에서 IP address로 자동 변환된다.
+
+	Domain Name
+		network 상에서 각각의 컴퓨터를 실벽할 수 있게 해주는 호스트 명이 된다.
+
+
+		

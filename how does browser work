@@ -105,6 +105,29 @@ HOW DOES BROWSER WORK ?
 		The browser must interact with the operation system to draw out several elements of the page like drop down boxes and the chrome of a window(close, maximize, and minimize buttons)
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+	- how to work web
+		1. 사용자가 web browser에 URL 입력
+		2. domain name을 DNS 서버에서 검색
+		3. DNS 서버에서 해당 domain name에 해당하는 IP address를 찾아 사용자가 입력한 URL정보와 함께 전달.
+		4. 웹 페이지 URL정보와 전달받은 IP주소는 HTTP프로토콜을 사용하여 HTTP 요청 메시지를 생성함. 
+			이렇게 생성된HTTP요청 메시지는 TCP protocol을 사용하여 인터넷을 거쳐 해당 IP address의 컴퓨터로 전송됨.
+		5. 이케 도착한 HTTP 요청 메시지는HTTP protocol을 사용하여 웹페이지 URL정보로 변환됨.
+		6. web server는 도착한 web page URL 정보에 해당하는 데이터를 검색함.
+		7. 검색된 웹 페이지 데이터는 또 다시 HTTP 프로토콜을 사용하여 HTTP 응답 메시지를 생성함.
+		8. 이렇게 생성된 HTTP 응답 메시지는 TCP 프로토콜을 사용하여 인터넷을 거쳐 원래 컴퓨터로 전송됨.
+		9. 도착한 HTTP 응답 메시지는 HTTP 프로토콜을 사용하여 웹 페이지 데이터로 변환됨.
+		10. 변환된 웹 페이지 데이터는 웹 브라우저에 의해 출력되어 사용자가 볼 수 있게 됨.
+
+
+	- Search Engine
+		- 동작 원리 
+			정보 수집 -> 색인화 -> 검색
+
+		- 현재 대부분의 검색 엔진에서는 웹상의 방대한 정보들을 검색하고 색인화 하는 과정을 Crawler라고 부르는 정보 수집 프로그램을 사용
+
+
 -----------------------------------------------------------------  ** REFERENCE **  --------------------------------------------------------------
 
 	- combo box 
