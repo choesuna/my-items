@@ -1,0 +1,152 @@
+html
+
+	br			break line
+	pre			preformatted text
+	hr			horizontal rule
+	b 			bold text :   화면의 텍스트를 굵게
+	strong		텍스트 굵게 + 중요 의미
+	i			italic text : italic
+	em			emphasized text : 이탤릭 + 중요 
+	mark		highlighting : ie9
+	ins			insert : underline 
+	q			quotation : short quotation, automatically add apostrophe 
+	blockquote	block quotation 
+	abbr		abbreviation : mouse over 했을 때 title 속성에 명시한 용어의 원형이 보여짐.
+
+	entity
+		HTML reserved characters,예약어를 HTML 코드에서 사용하면, 웹 브라우저는 그것을 평소와는 다른 의미로 해석한다. 
+		기존의 의미 그대로 사용하기 위해 별도로 만든 문자셋을 entity라고 한다.
+		&엔터티이름;
+		&#엔터티숫자; 
+
+		- reference 
+			&nbsp;	&lt;	&gt;	&amp;	&quot;	&apos;
+
+
+	diacritical marks, 발음 구별 부호
+		 ̀	a	a&#768;	à
+		  ́	a	a&#769;	á
+		̂	a	a&#770;	â
+		 ̃	a	a&#771;	ã
+		 ̀	O	O&#768;	Ò
+		 ́	O	O&#769;	Ó
+		̂	O	O&#770;	Ô
+		 ̃	O	O&#771;	Õ
+
+	
+	Symbol 특수문자
+		¢	&cent;		&#162;	센트
+		£	&pound;		&#163;	파운드화
+		¥	&yen;		&#165;	엔화
+		€	&euro;		&#8364;	유로화
+		©	&copy;		&#169;	저작권
+		®	&reg;		&#174;	등록상표
+		×	&times;		&#215;	곱셈
+		÷	&divide;	&#247;	나눗셈
+
+
+	Character set tyle
+		- ASCII : 가장 처음 만들어진 문자셋, 인터넷에서 사용할 수 있는 127개의 영문자와 숫자로 이루어져 있다.
+		- ANSI : 윈도우즈에서 만든 문자셋으로, 총 256개의 문자 코드를 지원
+		- ISO-8859-1 : 256개의 문자코드를 지원하는 HTML4의 기본 문자셋
+		- UTF-8 : 세상에 있는 거의 모든 문자를 표현할 수 있는 유니코드 문자를 지원하는 HTML5의 기본 문자셋
+
+
+	css style
+		-; 으로 분리
+
+
+	color
+		- 색상 이름
+		- RGB 색상값
+		- 16진수 색상값
+
+
+	link state
+		- link : 한 번도 방문한 적 없는 상태(default)		underline, blue
+		- visited : 한 번이라도 방문한 적이 있는			underline, purple
+		- hover : 마우스 올려 놓은 상태
+		- active : 마우스로 누르고 있는 상태				underline, red
+
+
+	a 
+		- name 속성 : 간단한 책갈피 
+		- id
+
+
+	list
+		- unordered list
+			- css
+				- list-style-type
+					disc, circle, square
+
+
+		- ordered list
+			- css
+				- list-style-type
+					decimal:default, upper-alpha, lower-alpha, upper-roman, lower-roman
+
+		- definitionlist
+
+
+	table
+		- border-collapse: collapse; 테이블 테두리 1줄로 표현
+		- colspan : column 열 합치기
+		- rowspan : row 행 합치기
+
+
+	inline frame, iframe
+		- <iframe src="삽입할페이지주소"></iframe>
+		- default : border
+		- iframe 요소의 페이지 변경하기
+			<a>태그를 이용하면 iframe 요소의 최초 페이지를 중간에 변경할 수 있습니다.
+			<a>태그의 target 속성과 iframe 요소의 name 속성을 연결하면, <a>태그를 통해 iframe 요소의 페이지를 변경할 수 있게 됩니다.
+
+
+	frameset, frame, noframes 요소는 더는 HTML5 표준 권고안에서 지원하지 않습니다.
+	따라서 하나의 브라우저 창에 여러 페이지를 표현하고 싶을 때는 iframe 요소를 사용하거나 CSS를 이용하여 표현해야 합니다.
+
+
+	layout 
+		특정 공간에 여러 구성 요소를 보기 좋게효과적으로 배치하는 작업
+
+
+		- HTML5 layout	
+			- semantic tag 
+				header, nav, main, article, section, aside, figcaption, figure, footer ...
+
+
+	Form tag
+		<form action="처리할페이지주소(서버 상의 스크립트 파일의 주소, form-handler)" method="get | post"></form>
+
+		- method attribute
+			- GET 
+				주소에 data를 추가하여 전달하는 방식
+				주소 입력창에  data가 그대로나타나며, data의 크기 제한적
+				검색 엔진의 query 같이 크기가 작고 중요도가 낮은 정보를 다룸
+
+			- POST
+				data를 별도로 첨부하여 전달
+				외부노출 없이 전송, 데이터의 크기 제한 없음.
+				보안성, 활용성이 GET 방식 보다 좋다.	
+
+		- input type
+			- text
+				한줄의 텍스트를 입력 받을 수 있다.
+
+			- password
+				비밀번호 입력 받을 수 있다. 화면에는 * 로 표시
+
+			- radio
+				
+			- checkbox
+			- file
+			- select
+			- textarea
+			- button
+			- submit
+			- fieldset
+
+
+
+
