@@ -177,8 +177,17 @@ html
 					- over ie10
 
 
-				- <keygen>		form 요소 안에 두 개의 키(key)를 만들어주는 생성기를 명시함.
-				- <output>		스크립트 등으로 실행된 계산의 결과를 바로 나타냄.
+				- <keygen>		
+					- form 요소 안에 두 개의 키(key)를 만들어주는 생성기를 명시함.
+					- keygen 목적 : 사용자가 인증할 수 있는 안전한 방법을 제공하는 것.
+					- 사용자가 입력한 데이터를 암호화하여 서버로 전송합니다. 이때 생성된 key를 가지고 서버는 해당 사용자의 인증을 수행합니다.
+					- ie 에서 안됨
+
+
+				- <output>		
+					- 스크립트 등으로 실행된 계산의 결과를 바로 나타냄.
+					- ie 에서 안됨
+
 
 		- input attribute
 			- value
@@ -201,22 +210,98 @@ html
 				novalidate
 
 			- HTML5에서 추가된 input 요소의 속성
-				autocomplete
-				autofocus
-				form
-				formaction
-				formenctype
-				formmethod
-				formnovalidate
-				formtarget
-				height and width
-				list
-				min and max
-				multiple
-				pattern(regexp 정규식) : https://www.w3schools.com/Tags/att_input_pattern.asp
-				placeholder
-				required
-				step	
+				- autocomplete
+					form 요소나 input 요소에 입력된 정보를 저장할지 안할지를 명시
+					attribute value가 on으로 설정되면, 브라우저는 사용자가 입력하는 정보를 자동으로 저장한다.
+					그리고나서 이 후에 입력되는 입력값을 저장된 정보를 바탕으로 자동 완성해 준다.
+						ex: autocomplete="on", autocomplete="off"
+
+					input타입에서만 사용할 수 있다.
+						: text, password, range, color, date, datetime-local, month, week, email, url, tel, search 타입 
+
+
+				- autofocus
+					웹 페이지가 load 될 때 속성이 적용된 input 요소에 자동으로 포커스가 가도록 해준다.
+					- 익스플로러 9 안됨
+
+
+				- form
+					input 요소의 위치에 상관없이 포함될 form 요소를 명시.
+					포함할 form요소의 id 속성값을 공백으로 연결하여, 둘 이상의 form 요소에 포함할 수도 있다.
+					- 익스플로러 안됨
+
+
+				- formaction
+					입력한 정보(data)를 전송할 때 정보가 전달될 서버 측 파일을 명시
+					form 요소의 action 속성을 덮어쓰게 됩니다.
+					submit 타입과 image 타입에서만 사용할 수 있습니다
+					- 익스플로러 9 안됨
+
+				- formenctype
+					입력한 정보(data)를 전송할 때 암호화하는 방법을 명시
+					form 요소의 enctype 속성을 덮어쓰게 됩니다.
+					form 요소의 method 속성이 post일 때만 적용됩니다
+					submit 타입과 image 타입에서만 사용할 수 있습니다
+					- 익스플로러 9 안됨
+
+				- formmethod
+					입력한 정보(data)를 전송할 때 사용하는 http 메소드(method)를 명시
+					form 요소의 method 속성을 덮어쓰게 됩니
+					submit 타입과 image 타입에서만 사용할 수 있습니다
+					- 익스플로러 9 안됨
+
+
+				- form novalidate
+					form 요소의 속성
+					입력한 정보를 전송할 때 그 정보가 유효한지 아닌지를 검사하지 않았다는 것을 명시
+					so, 반드시 서버 측에서 따로 유효성 검사를 해야한다.
+					- 사파리, 익스플로러 9 안됨
+
+
+				- formtarget
+					입력한 정보(data)를 전송한 후, 그 결과로 받은 응답 페이지를 어디에 출력할지를 명시
+					form 요소의 target 속성을 덮어쓰게 됩니
+					submit 타입과 image 타입에서만 사용할 수 있습니다
+					- 익스플로러 9 안됨
+
+				- height and width
+					<input>태그의 type 속성이 "image"일 경우에는 height 속성과 width 속성을 사용하여 이미지의 높이와 너비를 명시할 수 있습니다.
+					따라서 이 속성은 오직 image 타입에서만 사용할 수 있습니다.
+					또한, 이미지를 클릭하면 클릭한 곳의 x좌표와 y좌표가 x와 y라는 이름으로 같이 전송됩니다.
+				
+				- list
+					input 요소에 대한 미리 정의된 옵션 리스트를 설정하는 datalist 요소와 관련
+					input 요소의 list 속성값이 datalist 요소의 id 속성값과 일치해야만 연결이 됩니다.
+					- 사파리, 익스플로러 9 안됨
+
+
+				- min and max
+					- number, range, date, time, datetime-local, month, week 타입에서만 사용 가능
+					- 파이어폭스, 익스플로러 9 안됨
+
+				- multiple
+					- email 타입과 file 타입에서만 사용
+					- 익스플로러 9 안됨
+
+				- pattern(regexp 정규식)
+					- https://www.w3schools.com/Tags/att_input_pattern.asp
+					- text, password, email, tel, url 타입에서만 사용
+					- 사파리, 익스플로러 9 안됨
+
+				- placeholder
+					input 요소에 입력되어야 할 값에 대한 힌트를 제공(예시, 설명)
+					입력 필드에 포커스가 오게 되면 더 이상 표시되지 않습니다.
+					- text, password, email, tel, url, search 타입에서만 사용
+					- 익스플로러 9 안됨
+
+				- required
+					이 속성이 설정된 모든 input 요소에 입력값이 존재해야만 서버로 전송(submit)할 수 있습니다.
+					- 사파리, 익스플로러 9 안됨
+
+				- step	
+					input 요소에 입력할 수 있도록 허용된 숫자 간격을 명시
+					- number, range, date, time, datetime-local, month, week 타입에서만 사용
+					- 익스플로러 9 안됨
 
 	css
 		Cascading Style Sheets	
@@ -316,7 +401,49 @@ html
 			- 그래픽 요소 : 
 				- <canvas>	: 자바 스크립트를 이용한 그래픽 작업을 정의함. 
 				- <svg>		: SVG를 이용한 그래픽 작업을 정의함.
-			- input 요소의 타입 : number, date, time, calendar, range, color, datetime-local, month, week, email, tel, url, search
+			- input 요소의 타입 
+				- number
+					숫자의 크기를 조절할 수있는 상하 버튼이 생긴다.
+					- min, max 속성 : over ie10
+
+				- date
+					파이어폭스, 익스플로러 11 안됨
+				
+				- time
+					파이어폭스, 익스플로러 12 안됨
+					
+				- calendar
+				- range 
+					입력 범위 지정
+					- min, max 속성 : over ie10
+
+
+				- color
+					#을 제외한 6자리의 16진수 색상값으로 전송된다.
+					- 사파리 9.1과 그 이전 버전, 익스플로러 11 안됨.
+
+
+				- datetime-local
+					날짜와 시간 입력
+					파이어폭스, 익스플로러 11 안됨
+
+				- month : 연도와 월 입력
+				- week
+					연도와 주기 입력
+					파이어폭스, 익스플로러 11 안됨
+
+				- email
+					사파리, 익스플로러 9 안됨
+
+				- tel
+					사파리 8에서만 됨.
+
+				- url
+					사파리, 익스플로러 9 안됨
+
+				- search
+					일반 text 타입과 다른 점은 입력 필드에 검색어를 입력하면, 엑스 표시가 생긴다는 점
+
 
 		- HTML5 에서 추가된 자바스크립트 API
 			- Geolocation
