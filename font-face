@@ -1,0 +1,57 @@
+font-face
+
+	- support
+		- http://webfonts.info/wiki/index.php?title=%40font-face_browser_support 
+		- http://marketshare.hitslink.com/browser-market-share.aspx?qprid=2
+
+	- file type
+		- Internet Explorer (all versions): EOT
+		- Safari (3.2+): TTF / OTF
+		- iPhone (3.1) SVG
+		- Chrome (all versions): SVG (TTF/OTF added 25th Jan 2010)
+		- Firefox (3.5+): TTF/OTF (.WOFF added 3.6)
+		- Opera (10+) TTF/OTF 	
+
+		So, .eot + .ttf /.otf + svg + woff = best support possible.
+
+	- ex)
+	@font-face {
+	  font-family: 'MyWebFont';
+	  src: url('webfont.eot'); /* IE9 Compat Modes */
+	  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+	       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+	       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+	}
+
+	- type
+		- EOT 
+			: Embeded Open Type
+			fonts are a compact form of OpenType fonts designed by Microsoft for use as embedded fonts on web pages.
+		
+		- OTF : OpenType font
+		- TTF : TrueType font
+		- SVG/SVGZ : Scalable VEctor Graphics Font
+
+
+		
+
+-----------------------------------------------------------------  ** REFERENCE **  --------------------------------------------------------------
+- https://www.miltonbayer.com/font-face
+- https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/
+
+
+
+
+- vector
+	힘, 속도와 같이 크기, 방향에 의하여 정해지는 양. 보통 이것을 나타내는 선을 긋고 그 방향에 화살표를 붙인다. 
+	벡터에 대하여 면적이나 열량(熱量)과 같이 단지 크기만 가지는 것을 스칼라(scalar)라고 한다.
+
+- endorse
+	: If you endorse someone or something, you say publicly that you support or approve of them
+
+- normative
+	: Normative means creating or stating particular rules of behaviour.
+
+
