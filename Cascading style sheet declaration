@@ -1,0 +1,63 @@
+css 선언 순서
+
+// by me
+1. display
+2. visibility
+3. float / clear / position
+4. width / height
+5. padding / margin
+6. boder / box-sizing / box-shadow 
+7. font(font-family / font-style / font-weight / font-size / line-height / etc) / color
+8. text-align / vertical-align 
+9. white-space / text-decoration / other text 
+10. content / opacity
+11. list-style
+12. etc (white-space)
+13. background
+
+// NHN
+1. display : 표시 
+2. float : 흐름 
+3. position : 위치 
+4. width & height : 크기 
+5. margin & padding : 간격 
+6. border : 보더 
+7. font : 폰트 
+8. background : 배경 
+9. etc : 기타
+
+
+// 출처 모름 
+display
+position
+float
+overflow
+width
+height
+margin
+padding
+border
+background
+border-radius
+box-shadow
+font
+opacity
+cursor
+box-sizing
+
+
+// mozila
+1. display
+2. list-style
+3. position
+4. float
+5. clear
+6. width / height
+7. padding / margin
+8. boder / background
+9. color / font
+10. text-decoration
+11. text-align / vertical-align
+12. white-space
+13. other text
+14. content

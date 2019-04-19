@@ -1,0 +1,5 @@
+fork
+
+What does it mean to fork on GitHub?
+	Fork means to make a copy of the repository (the one being forked) into my own github account. 
+	If I want to fork the official jQuery repository, then I would go to https://github.com/jquery/jquery and hit the "Fork" button and GitHub will copy the repository (jquery) to my account.

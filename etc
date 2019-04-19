@@ -1,0 +1,13 @@
+etc
+
+- 정적컨텐츠 : 
+	
+- :// :
+
+- was :
+ 	ex: was 컨텐츠
+
+- <%@ include file="/poc/common/search_api.jsp" %> :
+
+- MIME : Multipurpose Internet Mail Extensions
+

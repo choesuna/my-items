@@ -1,0 +1,59 @@
+[ Atlassian ]
+
+# ALM, Application Lifecycle Management   어플리케이션 생명주기 관리
+
+# SOLUTION for Agile ALM       
+	- Confluence, JIRA, Bitbucket, Git, Bamboo, SonarQube, Artifactory
+
+	- Atlassian Confluence
+		어플리케이션 관리에 필요한 다양한 문서를 협업하여 작성하고 코멘트를 통한 대화, 인라인 코멘트를 통한 리뷰 등을 지원한다.
+		프로젝트의 제품 요구사항, 디자인 문서, 회의록, 회고록, 파일 등을 작성 및 공유하고 웹 기반으로 토론을 지원하는 Wiki 스타일의 웹 중앙저장소이다. 
+		Agile ALM에서 Confluence는 요구사항 관리, 아키텍쳐와 디자인, 프로젝트 문서 관리 등의 영역에서 사용된다.
+
+		|Confluence 																	|			| JIRA Software	
+		요구사항 관리 -> 요구사항 작성 with template  ->  요구사항 리뷰 with inline comment   -> 생성 -> 요구사항 이슈
+
+		요구사항 추적성
+
+
+
+	- Atlassian JIRA
+		Confluence로부터 요구사항을 추출하여 이슈로 생성할 수 있으며, 디자인, 리스크 등 다양한 업무를 개발과 추적 및 관리 기능을 제공
+
+	- Atlassian Bitbucket + Git
+		Git 기반의 저장소 관리를 지원하며 코드 관리를 위한 다양한 브랜치 전략과 소스 코드의 품질을 보장하기 위한 핵심 역할을 수행한다.
+
+	- Atlassian Bamboo
+		지속적인 통합, 지속적인 배포, 지속적인 인스펙션을 위한 빌드 및 배포 관리를 수행하며 조직의 개발 생산성 향상을 도 와준다.
+
+	- SonarQube
+		코드 품질을 위한 품질 요구사항 설정과 소스 코드 품질 룰 셋을 설정하여 고객 및 조직이 요구하는 목표 코드 품질 달성을 도와준다.
+
+
+
+	- 품질 게이트 키퍼를 위한 솔루션
+		1. push changes to dev branch
+			개발자는 사용자 스토리 혹은 버그 업무를 처리하기 위해 Git 저장소 관리 도구인 Bitbucket 에서 개발 브랜치를 할당 받는다.
+			요구사항에 따라 소스코드를 추가 혹은 수정하고 해당 코드를 개발 브랜치로 Commit & Push 를 수행한다.
+
+		2. Trigger Build -Bamboo
+			build server Banboo : Bitbucket의 저장소를 Trigger 하여 Push가 일어나면 빌드를 수행한다. 		
+
+		3. Build verification & Unit Test
+			Bamboo는 빌드 검증을 위한 절차에 따라 빌드 검증 및 단위 테스트를 수행하고 해당 경과를 Bitbucket에 알려준다.
+
+		4. STatic analysis result
+			Bamboo는 빌드와 함께 정적 분석 결과를 SonarQube 에 알려준다.
+
+		5. Pull Request
+			개발자는 개발 브랜치에 개발된 자신의 코드를 중앙 저장소에 Merge하기 위해 코드리뷰를 제공하는 Pull Request를 요청한다.
+
+		6. Code Inspection
+			Bitbucket에 Pull Request가 생성되면, SonarQube는 품질 게이트 통과 여부와 코드 리뷰의 디퍼 창에 Code Inspection결과를 알려준다
+
+		7. Code Review & Code Merge
+			리뷰어는 Pull Request의 요청에 따라 코드 리뷰를 수행하고 SonarQube의 품질 게이트 정보와 Code Inspection 정보를 확인하여 최종적으로 문제가 없다고 판단되면 소스코드를 중앙 저장소로 반영한다.
+
+								
+
+

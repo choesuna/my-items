@@ -1,0 +1,1467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+    var q_browserNavi = " ( 고객센터 | 고객상담 | 상담신청 | 채팅상담 )";
+    </script>
+    <title>채팅상담 ( 고객센터 | 고객상담 | 상담신청 | 채팅상담 )</title>
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="https://oimg1.kbstar.com/img/omweb/favi_iphone.png" />
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution:163dpi)" href="https://oimg1.kbstar.com/img/omweb/favi_ipad.png" />
+    <link rel="apple-touch-icon-precomposed" media="screen and (resolution:326dpi)" href="https://oimg1.kbstar.com/img/omweb/favi_iphone4.png" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/base.css?201308022" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/layout/L000143.css?20151203" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/common.css?20181226" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/design_pattern.css?20180420" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/osite/osupp_nav_2015.css?20160203" />
+    <link type="text/css" href="https://oimg1.kbstar.com/css/ocommon/jquery-ui-1.8.16.css?201111202030" rel="stylesheet" />
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/jquery-1.6.4.min.js?201111202030" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/jquery-ui-1.8.16.min.js?201111202030" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/jquery_bgiframe_min.js?201111281730" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/jquery.validity.js?201111202030" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/common.js?201806150000" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/op_common.js?201808080000" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/ahnlab/astx2.min.js?201704030000" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/ahnlab/astx2_ml.min.js?201604150000" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/ahnlab/astx2_custom.js?201604150000" charset="utf-8"></script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/ahnlab/op_astx2.js?201811130000" charset="utf-8"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+    function fncCheckKBLayerPopup() {
+        var rtnVal = false;
+        try {
+
+            $(parent.document).find('div').each(function() {
+                if (typeof($(this).attr('role')) != 'undefined' && $(this).attr('role') == 'dialog') {
+                    rtnVal = true;
+                    return false;
+                }
+            });
+
+        } catch (e) {
+
+        }
+        return rtnVal;
+    }
+
+    function layerPopupAhnlab() {
+        var url = "/quics?page=C040621";
+        var sName = cookie.getCookie('AhnLab');
+
+        if (sName != "notOpen_AhnLab") {
+            if (!fncCheckKBLayerPopup()) {
+                caq.popup.iFrameShow('AhnLabInstall', caq.util.encodeURI(url), "", 550);
+                caq.popupIframeAutoResize('AhnLabInstall', 550, 260);
+            }
+        }
+    }
+
+    function installgogo(val) {
+        var sLangType = "";
+        try { sLangType = caq.getLangType(); } catch (e) {}
+        var sMessage = "";
+        var sInstallPageCd = "C040531"; //TO-BE
+        //var sInstallPageCd = "C023664"; //AS-IS
+
+        if (sLangType == "ENG") {
+            sInstallPageCd = "C040532"; //TO-BE
+            //sInstallPageCd = "C025001"; //AS-IS
+            alert("Security program needs to be installed for a secure internet banking. Click [Confirm]to transfer to the install page.");
+
+        } else if (sLangType == "CHN") {
+            sInstallPageCd = "C040534"; //TO-BE
+            //sInstallPageCd = "C024999" //AS-IS;
+            alert("安装安全程序后方可使用的服务。\n点击[确认]，则将进入安装页面。");
+
+        } else if (sLangType == "JPN") {
+            sInstallPageCd = "C040538"; //TO-BE
+            //sInstallPageCd = "C025000"; //AS-IS
+            alert("安全なインタ?ネットバンキングのために、セキュリティプログラムの設置が必要です。 \n[確認]をクリックすると、設置ペ?ジへ移動します。");
+
+        } else { //KOR
+            alert("안전한 인터넷뱅킹을 위하여 통합보안프로그램 설치가 필요합니다. \n[확인]을 클릭하시면 설치페이지로 이동합니다" + val);
+        }
+        document.location.href = "/quics?page=" + sInstallPageCd;
+    }
+
+    $(function() {
+        //ASTX2 초기화 함수 실행
+        $ASTX2_KB.init('0');
+    });
+
+
+
+
+    //]]>
+    </script>
+    <script type="text/javascript">
+    //<![CDATA[
+    function OP_INTRO() {
+        var _Q_M_LOGIN_ = false;
+        var _Q_M_URL_ = "https://www.kbstar.com/";
+        try {
+            if (_Q_M_LOGIN_) {
+                location.href = "/quics?page=C058242&amp;QSL=F";
+            } else {
+                location.href = _Q_M_URL_;
+            }
+        } catch (E) {
+            location.href = _Q_M_URL_;
+        }
+    }
+    //]]>
+    </script>
+    <script type="text/javascript">
+    //<![CDATA[
+    caq.setLangType("KOR");
+    caq.setDomainName("bank");
+    caq.setSiteName("osupp");
+    $(function() {
+        caq.error.setErrorDiv();
+        caq.util.setUserAgent();
+        caq.util.setFormParameter('LOGIN_PAGE_FORM', '_REFERER_SITE_NAME=osupp');
+    });
+    //]]>
+    </script>
+    <script type="text/javascript">
+    //<![CDATA[
+    var _SITE_SystemLang = "KOR"; //"KOR", "ENG", "CHN", "JPN"
+    //]]>
+    </script>
+    <script type="text/javascript" src="https://oimg1.kbstar.com/js/common/nprotect/op_netizen.js?201411072359"></script>
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/jquery.mCustomScrollbar.css?20151203" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/common_2015.css?20181129" />
+    <script type="text/javascript" src="/common/jquery.mousewheel.min.js?20151203"></script>
+    <script type="text/javascript" src="/common/jquery.mCustomScrollbar.min.js?20151203"></script>
+    <script type="text/javascript" src="/common/js/common_2015.js?20171219"></script>
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/ocommon/board.css?20120917" />
+    <link rel="stylesheet" type="text/css" href="https://oimg1.kbstar.com/css/osite/customer.css?20180209" />
+    <script type="text/javaScript" src="/ocom/js/cbh/common.js"></script>
+</head>
+
+<body>
+    <div class="wrapAll" id="RENO_2015">
+        <div class="headerWrap">
+            <div id="HEADER">
+                <div id="b037403">
+                    <script type="text/javascript">
+                    // <![CDATA[
+                    var TopMenu_AddFavorateType = "1";
+                    //티커 'N' 표시
+                    function tikerCertConfigCheck() {
+                        var _KB_MENU_TIKER = cookie.getCookie("_KB_N_TIKER");
+
+                        if (_KB_MENU_TIKER == null) {
+                            _KB_MENU_TIKER = '';
+                            cookie.setCookie("_KB_N_TIKER", _KB_MENU_TIKER, cookie.getExpDate(1, 0, 0), '/', "kbstar.com");
+                        }
+                        if (_KB_MENU_TIKER == "Y") {
+                            $("#NimgView").show();
+                        } else {
+                            $("#NimgView").hide();
+                        }
+                    }
+                    //개인화확인되면 'N'로 세팅처리
+                    function tikerCertConfigOn() {
+                        cookie.setCookie("_KB_N_TIKER", 'N', cookie.getExpDate(1, 0, 0), '/', "kbstar.com");
+                        $("#NimgView").hide();
+                        //document.cookie="_KB_N_TIKER=N"
+                    }
+                    // 즐겨찾기 항목조회
+                    function fnMymenuSeacrh() {
+                        var frm = document.addFavoriteForm;
+
+                        if ($('#addLauncher').attr('class') != 'on') {
+                            frm.action = '/quics?page=C043954&QAction=556956&RType=json&USER_TYPE=02';
+                            doAjaxAction(frm, 'fnMymenuSeacrhBack');
+                        } else {
+                            $('#afMng').hide();
+                            $("#addLauncher").removeClass('on');
+                            $('#setFavorate').hide();
+                        }
+
+                    }
+                    //즐겨찾기 항목조회 콜백
+                    function fnMymenuSeacrhBack(data) {
+                        var repaymentCnt = data.msg.servicedata.OPEN_MYMENU.length;
+                        var prePARENT_PAGE_ID = "";
+                        $("#tMenubody").remove();
+                        $('<ul id="tMenubody"></ul>').appendTo("#favorList");
+                        $(".setLocaOption").remove();
+
+                        for (i = 0; i < repaymentCnt; i++) {
+                            var obj = data.msg.servicedata.OPEN_MYMENU[i];
+
+                            var innerHtmlString = '';
+                            innerHtmlString += '<li class="' + obj.PAGE_ID + '" id=' + i + '>';
+
+                            if (obj.IS_DIR == "F") {
+                                innerHtmlString += '<a href=/quics?page=' + obj.PAGE_ID + '>' + obj.DIR_NM + '</a>';
+                            } else {
+                                innerHtmlString += '<button type="button" onclick="toggleFavorGroup(this)">' + obj.DIR_NM + '</button>';
+                            }
+                            innerHtmlString += '</li>';
+
+                            if (obj.PARENT_PAGE_ID != "") {
+                                if (obj.PARENT_PAGE_ID == "root") {
+
+                                    $(innerHtmlString).appendTo("#tMenubody");
+                                } else {
+
+                                    var aClass = "." + obj.PARENT_PAGE_ID;
+
+                                    aClass = $("li." + aClass);
+                                    var SubStr = '';
+                                    if (prePARENT_PAGE_ID != obj.PARENT_PAGE_ID) {
+                                        SubStr += '<ul class="' + obj.PARENT_PAGE_ID + '">';
+                                        SubStr += innerHtmlString;
+                                        SubStr += '</ul>';
+
+                                        $(SubStr).appendTo(aClass);
+                                    } else {
+
+                                        var bClass = "." + obj.PARENT_PAGE_ID;
+
+                                        bClass = $("ul." + bClass);
+                                        SubStr += innerHtmlString;
+                                        $(SubStr).appendTo(bClass);
+
+                                    }
+                                    prePARENT_PAGE_ID = obj.PARENT_PAGE_ID;
+                                }
+                            }
+                            // 폴더일때만  select box  append		
+                            if (obj.IS_DIR == "T") {
+                                var strPageID = obj.PAGE_ID;
+                                var strDirNm = obj.DIR_NM;
+                                if (strDirNm == "") {
+                                    strDirNm = "홈";
+                                }
+
+                                $("#setLoca").append('<option class="setLocaOption" value=' + strPageID + '>' + strDirNm + '</option>');
+                            }
+                        }
+
+                        if (TopMenu_AddFavorateType == "1") {
+                            addFavorate($("#addLauncher"));
+                            $('#setFavorate').hide();
+                        }
+                        TopMenu_AddFavorateType = "1";
+                        //초기화
+                        $("#SEARCH_PAGE").val("");
+                        $("#inputFavorName").val("");
+                        $("#inputFolderName").val("");
+
+                    }
+
+                    //즐겨찾기페이지 값세팅
+                    function fnmenuSetPage(search_page, inputFavorName) {
+                        $("#SEARCH_PAGE").val(search_page);
+                        $("#inputFavorName").val(inputFavorName);
+
+                        TopMenu_AddFavorateType = "99";
+                        fnmenuAdd();
+                        //TopMenu_AddFavorateType="99";
+                    }
+                    //즐겨찾기 추가 
+                    function fnmenuAdd() {
+
+                        var frm = document.addFavoriteForm;
+                        $("#PARENT_PAGE_ID").val($('#setLoca option:selected').val());
+                        if (!formAddFavoriteValidation()) return;
+                        TopMenu_AddFavorateType = "2";
+                        frm.action = '/quics?page=C043954&QAction=556954&RType=json&USER_TYPE=02';
+                        doAjaxAction(frm, 'fnmenuAddBack');
+                    }
+
+                    function fnmenuAddBack(data) {
+
+                        if (data.msg.servicedata.RESULT == "false") {
+                            alert('즐겨찾기등록에 실패하였습니다.');
+                            return;
+                        }
+                        if (data.msg.servicedata.ERROR_CODE != "") {
+                            if (data.msg.servicedata.ERROR_CODE == "-5001") {
+                                alert("디렉토리 등록 개수가 초과 초과하였습니다. 50개까지 등록가능합니다.");
+                            } else if (data.msg.servicedata.ERROR_CODE == "-5002") {
+                                alert("페이지 등록 개수가 초과하였습니다. 50개까지 등록가능합니다.");
+                            } else if (data.msg.servicedata.ERROR_CODE == "-5003") {
+                                alert("현재페이지는 등록된 페이지입니다.");
+                            } else {
+                                alert('즐겨찾기등록에 실패하였습니다.');
+                            }
+                            return;
+                        }
+
+                        fnMymenuSeacrhBack(data);
+                    }
+
+                    function formAddFavoriteValidation() {
+                        if ($("#inputFavorName").val() == "" && $("#inputFolderName").val() == "") {
+                            alert("이름을 입력하세요.");
+                            return false;
+                        }
+                        return true;
+                    }
+
+                    function FolderControl() {
+                        $("#newFolder").toggle();
+                        if ($("#newFolder").css("display") == 'none') {
+                            $("#inputFavorName").val("");
+                            $("#inputFavorName").attr("disabled", false);
+                            $('#inputFavorName').focus();
+                            $('#IfsetAddInput').attr('height', '203');
+                        } else {
+                            $("#inputFavorName").val("");
+                            $("#inputFavorName").attr("disabled", true);
+                            $('#inputFolderName').focus();
+                            $('#IfsetAddInput').attr('height', '235');
+                        }
+                    }
+
+                    //즐겨찿기관리
+                    function goFavorite() {
+                        var frm = document.TopMenuNullForm;
+                        var customType = '';
+                        //개인
+                        if (customType == "01") {
+                            frm.action = "/quics?page=C022018";
+                            //법인
+                        } else {
+                            frm.action = "/quics?page=C025192";
+                        }
+                        frm.submit();
+                    }
+                    //개인화바로가기
+                    function goPersonal() {
+                        var frm = document.TopMenuNullForm;
+
+
+                        var customType = '';
+                        //개인
+                        if (customType == "01") {
+                            frm.action = "/quics?page=C030242";
+                            //법인
+                        } else {
+                            frm.action = "/quics?page=C021598";
+                        }
+                        tikerCertConfigOn();
+                        frm.submit();
+                    }
+
+                    function setFavorate() {
+
+                        $('#setFavorate').show();
+                        $("#inputFavorName").attr("disabled", false);
+                        $('#inputFavorName').focus();
+                        $("#inputFavorName").val("");
+                        $("#inputFolderName").val("");
+                        $("#newFolder").hide();
+
+                    }
+
+                    function closeSetFavorate() {
+                        $('#setFavorate').hide();
+                        $('#setFavorLauncher').focus();
+                    }
+
+                    function toggleFavorGroup(obj) {
+                        $(obj).toggleClass('on').next().toggle();
+                        if ($('#favorList button.on').length > 0) {
+                            $('#favorList>ul').addClass('on');
+                            $('#IfafMng').attr('height', '290');
+                        } else {
+                            $('#favorList>ul').removeClass('on');
+                            $('#IfafMng').attr('height', '194');
+                        }
+                    }
+                    /*
+                    if(''!='N'){	
+                    	tikerCertConfigCheck();
+                    }
+                    */
+                    // ]]>
+                    </script>
+                    <form name="TopMenuNullForm" method="post" action="">
+                    </form>
+                    <form name="LOGIN_PAGE_FORM" id="LOGIN_PAGE_FORM" method="post" style="line-height:0px;" action="/quics?page=C018897"></form>
+                    <div id="header_content">
+                        <div id="skipNav">
+                            <a href="#CP">본문 바로가기</a>
+                        </div>
+                        <div class="titPers">
+                            <div id="svcTitle">
+                                <h1 class="logo"><a href="javascript:OP_INTRO();"><img src="https://oimg1.kbstar.com/img/ocommon/2015/kb_logo.png" alt="KB국민은행" class="png24" /></a></h1>
+                            </div>
+                            <div id="personal">
+                                <h1 class="svc"><a href="/quics?page=osupp"><img src="https://oimg1.kbstar.com/img/ocommon/2015/tit_osupp.png" alt="고객센터" class="png24" /></a></h1>
+                                <ul class="certMenu">
+                                    <li><a href="javascript:document.LOGIN_PAGE_FORM.submit();"><img src="https://oimg1.kbstar.com/img/ocommon/2015/btn_login.gif" alt="로그인" /></a></li>
+                                    <li><a href="/quics?page=C018872"><img src="https://oimg1.kbstar.com/img/ocommon/2015/btn_cert.gif" alt="공인인증센터" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    </script>
+                </div>
+                <div id="b037404">
+                    <div class="gnbWrap_2015">
+                        <h2 class="vn">전체메뉴</h2>
+                        <ul id="gnb_2015" class="gnb_2015">
+                            <li><h3><a href="/quics?page=obank"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_bank.png" alt="개인" class="png24" /></a></h3>
+                            </li>
+                            <li><h3><a href="/quics?page=obiz"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_biz.png" alt="기업" class="png24" /></a></h3>
+                            </li>
+                            <li><h3><a href="/quics?page=onmoney"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_money.png" alt="자산관리" class="png24" /></a></h3>
+                            </li>
+                            <li><h3><a href="/quics?page=okbland"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_land.png" alt="부동산" class="png24" /></a></h3>
+                            </li><!-- 2017-05-17 추가 -->
+                            <li><h3><a href="/quics?page=ofex"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_ofex.png" alt="외환" class="png24" /></a></h3>
+                            </li><!-- 2018-11-12 추가 -->
+                            <li><h3><a href="/quics?page=opensn"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_opensn.png" alt="퇴직연금" class="png24" /></a></h3>
+                            </li><!-- 2018-11-12 추가 -->
+                            <li><h3>	<a href="https://card.kbcard.com" target="_blank"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_card.png" alt="카드" class="png24" /></a></h3>
+                            </li>
+                            <li><h3><a href="#"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_service.png" alt="전체서비스" class="png24" /></a></h3>
+                                <div class="gnbAll dep2">
+                                    <span class="arrow"></span>
+                                    <ul>
+                                        <li class="cate w1">
+                                            <span class="tit">금융서비스</span>
+                                            <ul>
+                                                <li><a href="/quics?page=ofex">외환</a></li>
+                                                <li><a href="/quics?page=opensn">퇴직연금</a></li>
+                                                <li><a href="/quics?page=oescrow">에스크로이체</a></li>
+                                                <li><a href="/quics?page=osenior">골든라이프뱅킹</a></li>
+                                                <!-- <li><a href="/quics?page=otalk">KB드림톡적금</a></li> 2017-05-29 -->
+                                                <!--<li><a href="/quics?page=oshift">자동이체통합관리</a></li>  2018-11-12 -->
+                                                <li><a href="/quics?page=osecure">보안센터</a></li>
+                                                <li><a href="/quics?page=C018872">공인인증센터</a></li>
+                                                <li><a href="/quics?page=C043279">KB마이머니</a></li>
+                                                <li><a href="https://cms.kbstar.com/quics?page=ocms">Star CMS</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="cate w2">
+                                            <span class="tit">특화서비스</span>
+                                            <ul>
+                                                <!-- <li><a href="/quics?page=rstar">KB부동산</a></li> -->
+                                                <li><a href="/quics?page=ohsubs">주택청약</a></li>
+                                                <li><a href="/quics?page=onhbond">국민주택채권</a></li>
+                                                <li><a href="/quics?page=onhouse">주택도시기금</a></li>
+                                                <li><a href="/quics?page=omobile">스마트금융서비스</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="cate w3">
+                                            <span class="tit">멤버십서비스</span>
+                                            <ul>
+                                                <li><a href="/quics?page=omember">KB고객우대제도</a></li>
+                                                <!--<li class="line2"><a href="/quics?page=omate">KB금융그룹통합멤버십<br />(Liiv Mate)</a></li>-->
+                                                <!--li><a href="http://www.kbrockstar.com" target="_blank" title="새창"><span class="link_blank">樂스타블로그</span></a></li-->
+                                                <li><a href="/quics?page=ognw">GOLD&amp;WISE</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="cate w4">
+                                            <span class="tit">KB와 함께</span>
+                                            <ul>
+                                                <li><a href="/quics?page=oabout">은행소개</a></li>
+                                                <li><a href="/quics?page=C016505">지점안내</a></li>
+                                                <li><a href="/quics?page=osupp">고객센터</a></li>
+                                                <li><a href="/quics?page=oblog">KB정보광장</a></li>
+                                                <li><a href="/quics?page=oevent">이벤트</a></li>
+                                                <li><a href="/quics?page=ohope">희망금융클리닉</a></li>
+                                                <li><a href="/quics?page=olovekr">나라사랑서비스</a></li>
+                                                <li><a href="http://www.kbgoodjob.com" target="_blank" title="새창"><span class="link_blank">KB굿잡</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><h3><a href="#"><img src="https://oimg1.kbstar.com/img/ocommon/2015/gnb_global.png" alt="Global" class="png24" /></a></h3>
+                                <div class="gnbGlobal dep2">
+                                    <span class="arrow"></span>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <h4>LANGUAGE</h4>
+                                                <ul>
+                                                    <li><a href="/quics?page=oeng">English</a></li>
+                                                    <li><a href="/quics?page=ochn">Chinese</a></li>
+                                                    <li><a href="/quics?page=ojpn">Japanese</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h4><a href="https://global.kbstar.com/quics?page=ogcom" target="_blank" title="새창">KB GLOBAL BANKING</a></h4>
+                                                <ul>
+                                                    <li><a href="https://global.kbstar.com/quics?page=ogtk" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_japan.png" alt="Japan" /><span class="link_blank">Japan</span></a></li>
+                                                    <li><a href="https://global.kbstar.com/quics?page=ogauc" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_newzealand.png" alt="New Zealand" /><span class="link_blank">New Zealand</span></a></li>
+                                                    <li><a href="http://www.kbstarchina.com/" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_china.png" alt="China" /><span class="link_blank">China</span></a></li>
+                                                    <li><a href="https://global.kbstar.com/quics?page=oghk" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_hongkong.png" alt="Hong Kong" /><span class="link_blank">Hong Kong</span></a></li>
+                                                    <li class="lan_uk"><a href="https://global.kbstar.com/quics?page=ogld" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_uk.png" alt="UK" /><span class="link_blank">UK</span></a></li>
+                                                    <li class="lan_com"><a href="https://global.kbstar.com/quics?page=ogcbd" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_cambodia.png" alt="Cambodia" /><span class="link_blank">Cambodia</span></a></li>
+                                                    <li class="lan_viet"><a href="https://global.kbstar.com/quics?page=oghcm" target="_blank" title="새창"><img src="https://oimg1.kbstar.com/img/ocommon/2015/icon_vietnam.png" alt="Vietnam" /><span class="link_blank">Vietnam</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="search">
+                                <h3><a href="#search_container_2015" id="search_icon" style="{cursor:pointer;}" onclick="javascript:openSearch();" class="btn_gnb_search"><img src="https://oimg1.kbstar.com/img/ocommon/2015/btn_search.png" alt="검색(통합검색)" class="png24" /></a></h3>
+                                <div id="search_container_2015">
+                                    <div class="marginSpace">
+                                        <div class="search_con_box">
+                                            <div class="search_form">
+                                                <ul class="onClickJS">
+                                                    <li class="tabList on"><a href="#" class="tab_search tabLink"><span class="blind">키워드검색</span></a>
+                                                        <div class="tabCont">
+                                                            <form name="TopTotalSearchForm" id="TopTotalSearchForm" method="get" action="/quics" onsubmit="return false;">
+                                                                <input type="hidden" name="page" value="C020697" />
+                                                                <input type="hidden" name="검색설정명" id="검색설정명" value="total" />
+                                                                <input type="hidden" name="검색출력량" id="검색출력량" value="3" />
+                                                                <input type="hidden" name="검색페이지번호" id="검색페이지번호" value="1" />
+                                                                <div class="search_inp_box">
+                                                                    <input type="text" name="검색어" id="검색어" title="검색어를 입력하세요." class="search_inp" onkeypress="if (event.keyCode==13) { TopTotalSearchFormSearch(); event.returnValue=false; }" value="검색어를 입력하세요" />
+                                                                    <a href="#" class="btn_inp_search" onclick="TopTotalSearchFormSearch(); return false;"><img src="https://oimg1.kbstar.com/img/ocommon/2015/btn_inp_search.png" alt="검색" /></a>
+                                                                </div>
+                                                            </form>
+                                                            <div class="favor_word">
+                                                                <p class="head">인기검색어</p>
+                                                                <ul class="w_list_box">
+                                                                    <li>.</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tabList"><a href="#" class="tab_info tabLink"><span class="blind">지점안내</span></a>
+                                                        <form id="gnbBranchSearchForm" name="gnbBranchSearchForm" method="post" action="">
+                                                            <input type="hidden" id="gnbSearchData1" name="gnbSearchData1" value="" />
+                                                            <input type="hidden" id="gnbSearchData2" name="gnbSearchData2" value="" />
+                                                            <input type="hidden" id="선택검색번호" name="선택검색번호" value="3" />
+                                                            <div class="tabCont">
+                                                                <ul class="search_radio_box_2015">
+                                                                    <li class="branch on">
+                                                                        <div class="search_radio">
+                                                                            <span class="radio_list on">
+															<label for="radio_s1">지점검색</label>
+															<input type="radio" id="radio_s1" name="inp_radio" checked="checked" />
+														</span>
+                                                                        </div>
+                                                                        <div class="select_info">
+                                                                            <select name="searchSel2" id="searchSel2" class="selectBox_2015" title="지점검색 선택">
+                                                                                <option value="0">지역명(도로명)</option>
+                                                                                <option value="1">지역명(지번)</option>
+                                                                                <option value="2">가까운주소/지하철명</option>
+                                                                                <option value="3">지점명(점번코드)</option>
+                                                                            </select>
+                                                                            <label for="searName2" class="blind">지점검색입력</label>
+                                                                            <input type="text" name="searName2" id="searName2" onkeypress="if (event.keyCode==13) { goBranchInq('C016505',$('#searName2'),$('#searchSel2')); event.returnValue=false; }" value="" />
+                                                                            <button type="button" class="btn_search" onclick="goBranchInq('C016505',$('#searName2'),$('#searchSel2'));">검색</button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="auto_corner">
+                                                                        <div class="search_radio">
+                                                                            <span class="radio_list">
+															<label for="radio_s2">자동화코너검색</label>
+															<input type="radio" id="radio_s2" name="inp_radio" />
+														</span>
+                                                                        </div>
+                                                                        <div class="select_info">
+                                                                            <select name="searchSel3" id="searchSel3" class="selectBox_2015" title="자동화코너 선택">
+                                                                                <option value="0">지역명(도로명)</option>
+                                                                                <option value="1">지역명(지번)</option>
+                                                                                <option value="2">가까운주소/지하철명</option>
+                                                                                <option value="3">자동화코너명</option>
+                                                                            </select>
+                                                                            <label for="searName3" class="blind">지점검색입력</label>
+                                                                            <input type="text" name="searName3" id="searName3" onkeypress="if (event.keyCode==13) { goBranchInq('C016506',$('#searName3'),$('#searchSel3')); event.returnValue=false; }" value="" />
+                                                                            <button type="button" class="btn_search" onclick="goBranchInq('C016506',$('#searName3'),$('#searchSel3'));">검색</button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <a style="left:1131px" href="javascript:close_search();" class="btn_close">검색 닫기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end search_container_2015 -->
+                            </li>
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                    <!--
+
+
+                    //ajax 통신.
+                    function openSearch() {
+
+                        // var pars ={};
+
+                        $.ajax({
+                            url: "/quics?asfilecode=728600",
+                            type: "post",
+
+
+                            success: function(returnData) {
+
+                                openSearch2(returnData);
+
+                            },
+                            error: function(e) {
+
+                            }
+                        });
+                    }
+
+
+
+                    function openSearch2(data) {
+
+                        $(".w_list_box").empty();
+
+                        var data_arr = data.split(":");
+
+
+                        for (var i = 0; i < data_arr.length - 1; i++) {
+
+                            var tag = "<li><a href='javascript:search(" + '"' + data_arr[i] + '"' + ")';>" + data_arr[i] + "</a><span class='bar'></span></li>";
+
+                            $(".w_list_box").append(tag);
+                        }
+
+                        // sliding
+                        var target = $("#search_container_2015");
+                        var eff = 'easeInExpo';
+                        target.find(".tab_search").focus();
+                        $("#gnb_2015").css("z-index", "9999");
+
+                        /*2017.08.24 open하자마자 포커스이동*/
+                        $("#검색어").focus();
+                        $("#검색어").click();
+
+                        setTimeout("hideHeader()", 700);
+
+
+                        target.slideDown(700, eff);
+                    }
+
+                    function hideHeader() {
+
+                        var liNode = document.getElementById("gnb_2015").childNodes;
+
+                        for (var i = 0; i < liNode.length; i++) {
+
+                            if (liNode[i].className == "search") {
+                                break;
+                            } else {
+                                var liNode_ = liNode[i];
+                                $(liNode_).css("display", "none");
+                            }
+                        }
+                    }
+
+
+
+
+                    function close_search() {
+                        var target = $("#search_container_2015");
+                        var eff = 'easeInExpo';
+                        target.slideUp(700, eff);
+                        $("#gnb_2015").css("z-index", "0");
+                        $("#gnb_2015").focus();
+                        // 닫기버튼 위치, style="left: 1011px;"
+
+                        var liNode = document.getElementById("gnb_2015").childNodes;
+
+                        for (var i = 0; i < liNode.length; i++) {
+
+                            if (liNode[i].className == "search") {
+                                break;
+                            } else {
+                                var liNode_ = liNode[i];
+                                $(liNode_).css("display", "block");
+                            }
+                        }
+
+
+                        $("#search_icon").focus();
+
+                    }
+
+
+                    function TopTotalSearchFormSearch() {
+                        var form = document.TopTotalSearchForm;
+                        form.검색어.value = removeSChar(form.검색어.value);
+                        form.submit();
+                    }
+
+                    function removeSChar(str) {
+                        var s = ["[", "'", "\\", '"', "#", "(", ")", "@", ";", "=", "*", "+", "]", "<", ">"];
+                        for (var i = 0; i < s.length; i++) {
+                            str = str.split(s[i]).join(" ")
+                        }
+                        return str;
+                    }
+
+                    function cardSSOAlert() {
+                        alert("2014년 8월 5일(화)부터 은행/카드 홈페이지間 자동 로그인 중단으로 카드서비스는 KB국민카드 홈페이지에서 별도 로그인 후 이용하실 수 있습니다.");
+                        //		location.href='/quics?page=C025720&amp;QLS=F&amp;connectSite=Card&amp;connectUrl=CXPPPZZC0000.cms';
+                    }
+
+                    $(function() {
+                        $('#TopTotalSearchForm > input[name=검색어]').bind('keyup', function(e) {
+                            if (e.keyCode == 13) {
+                                TopTotalSearchFormSearch();
+                            }
+                        })
+                    });
+
+
+
+
+                    function goBranchInq(valUrl, valueId, selectId) {
+                        var form = document.gnbBranchSearchForm;
+                        if (valCheck(valueId)) {
+                            if ("C016505" == valUrl) {
+                                form.gnbSearchData1.value = $(valueId).val();
+                            } else if ("C016506" == valUrl) {
+                                form.gnbSearchData2.value = $(valueId).val();
+                            }
+                            form.선택검색번호.value = $(selectId).val();
+                            form.action = "/quics?page=" + valUrl;
+                            form.submit();
+                        } else {
+                            return;
+                        }
+                    }
+
+                    function valCheck(valueId) {
+
+                        var isNotEmpty = false;
+                        var chkValue = $(valueId).val();
+
+                        if ($.trim(chkValue) == "") {
+                            alert("검색할 단어를 입력하여 주십시오.");
+                            $(valueId).focus();
+                        } else {
+                            isNotEmpty = true;
+                        }
+
+                        return isNotEmpty;
+                    }
+
+                    $("#검색어").click(function() {
+                        var text = $(this).val();
+                        if (text = "검색어를 입력하세요") {
+                            $(this).val("");
+                        }
+                    });
+
+                    // **************************************************************************
+                    // 인기어 클릭 시 
+                    //***************************************************************************
+                    function search(pword) {
+                        var form = document.TopTotalSearchForm;
+                        form.검색어.value = removeSChar(pword);
+                        TopTotalSearchFormSearch();
+                    }
+
+
+
+
+
+                    -->
+                    </script>
+                </div>
+                <div id="b037405">
+                    <!-- SNB 시작 -->
+                    <h2 class="vn">고객센터 서비스 메뉴</h2>
+                    <ul id="snb_2015" class="snb_2015">
+                        <li class="cate m1">
+                            <a href='/quics?page=C019755' class="activated">고객상담</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C019763'>자주찾는 질문</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019769'>은행업무</a></li>
+                                            <li><a href='/quics?page=C019770'>전자금융업무</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C029656'>상담신청</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C043954'>채팅상담</a></li>
+                                            <li><a href='/quics?page=C043974'>이메일상담</a></li>
+                                            <li><a href='/quics?page=C043977'>상담처리현황</a></li>
+                                            <li><a href='/quics?page=C047864'>영업점 방문 예약 서비스</a></li>
+                                            <li><a href='/quics?page=C043354&amp;_src=C056980'>찾아가는 기업금융 상담예약</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019765'>고객의 소리</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019834'>금융부조리 신고</a></li>
+                                            <li><a href='/quics?page=C019837'>금융사고 제보</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m2">
+                            <a href='/quics?page=C019756'>고객정보관리</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C019866'>고객정보조회/수정</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019867'>고객정보조회(개인정보열람)</a></li>
+                                            <li><a href='/quics?page=C019868'>고객정보수정</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C040297'>금융주소 한번에 서비스</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C040298'>서비스 안내</a></li>
+                                            <li><a href='/quics?page=C040299'>일괄변경가능 금융회사</a></li>
+                                            <li><a href='/quics?page=C040301'>서비스 신청</a></li>
+                                            <li><a href='/quics?page=C040302'>서비스신청내역조회</a></li>
+                                            <li><a href='/quics?page=C040300'>자주 하시는 질문</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C055674'>ID조회/사용자암호 재설정</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019874'>온라인고객관리</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019875'>온라인고객 신규가입</a></li>
+                                            <li><a href='/quics?page=C019876'>조회계좌 등록/삭제</a></li>
+                                            <li><a href='/quics?page=C019877'>온라인고객 탈퇴</a></li>
+                                            <li><a href='/quics?page=C039435'>나라사랑카드고객 신규가입/계좌등록</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C040491'>본인정보 이용·제공 조회</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C027794'>(마케팅목적)개인신용정보 이용·제공 현황 및 수정</a></li>
+                                            <li><a href='/quics?page=C040543'>개인신용정보 이용·제공 사실 조회</a></li>
+                                            <li><a href='/quics?page=C040544'>개인신용정보 이용·제공 사실 통지 신청</a></li>
+                                            <li><a href='/quics?page=C041641'>개인(신용)정보수집이용동의서(비여신)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C034401'>해외 납세의무자<br /> 본인확인서 등록</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C029250'>고객확인제도(CDD/EDD)</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C040593'>그룹 내 고객정보 제공 안내</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m3">
+                            <a href='/quics?page=C019758'>사고신고</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C019931'>분실신고</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019935'>통장/인감</a></li>
+                                            <li><a href='/quics?page=C019936'>현금/직불카드</a></li>
+                                            <li><a href='/quics?page=C019937'>보안카드/OTP</a></li>
+                                            <li><a href='/quics?page=C019938'>자기앞수표</a></li>
+                                            <li><a href='/quics?page=C019939'>모바일금융칩</a></li>
+                                            <li><a href='/quics?page=C019940'>외화통장인감</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019932'>사고신고내역조회</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019941'>통장/인감/현금/직불</a></li>
+                                            <li><a href='/quics?page=C019942'>인터넷/폰/모바일</a></li>
+                                            <li><a href='/quics?page=C019943'>자기앞수표</a></li>
+                                            <li><a href='/quics?page=C019944'>외화예금</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C055269'>OTP분실등록 해제</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C039757'>직불카드 해외이용</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019933'>ARS사고신고 안내</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m4">
+                            <a href='/quics?page=C036336'>소비자정보포털</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C036338'>소비자보호체계</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C029345'>KB소비자보호헌장</a></li>
+                                            <li><a href='/quics?page=C054683'>KB 소비자보호 경영방침</a></li>
+                                            <li><a href='/quics?page=C036339'>소비자보호 조직도</a></li>
+                                            <li><a href='/quics?page=C036340'>상품개발 프로세스</a></li>
+                                            <li><a href='/quics?page=C036341'>상품판매 준칙</a></li>
+                                            <li><a href='/quics?page=C023963'>민원처리 프로세스</a></li>
+                                            <li><a href='/quics?page=C054684'>소비자보호 필수 안내사항</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C036342'>소비자보호우수사례</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C036343'>소비자보호 우수사례</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C036345'>민원창구</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C036347'>자주하시는 질문(FAQ)</a></li>
+                                            <li><a href='/quics?page=C044212'>고객의견 (칭찬/불만)</a></li>
+                                            <li><a href='/quics?page=C054685'>고객 아이디어</a></li>
+                                            <li><a href='/quics?page=C033780'>은행명칭 불법도용 제보</a></li>
+                                            <li><a href='/quics?page=C044215'>전자민원접수</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C044578'>금융소비자보호 공시</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019840'>민원사무편람</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C019841'>민원이란?</a></li>
+                                            <li><a href='/quics?page=C019842'>민원신청절차</a></li>
+                                            <li><a href='/quics?page=C036447'>민원의 처리</a></li>
+                                            <li><a href='/quics?page=C019848'>은행거래시 유의사항</a></li>
+                                            <li><a href='/quics?page=C019855'>민원관련서식</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C036349'>금융정보광장</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C036350'>금융생활가이드</a></li>
+                                            <li><a href='/quics?page=C036445' onclick="window.location.href='/quics?page=C019762'; return false;">서식/약관/설명서</a></li>
+                                            <li><a href='/quics?page=C047554'>상품공시실</a></li>
+                                            <li><a href='/quics?page=C036352'>금융감독원 금융정보</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C054678'>경제ㆍ금융교육</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C054679'>경제ㆍ금융교육</a></li>
+                                            <li><a href='/quics?page=C054680' onclick="window.open('https://withkb.kbstar.com/suggestion/list','_blank'); return false;">경제ㆍ금융교육 신청<span class="blind tblank">새창열림</span> </a></li>
+                                            <li><a href='/quics?page=C054681' onclick="window.open('http://www.fss.or.kr/edu/main.jsp','_blank'); return false;">금융감독원 금융교육센터<span class="blind tblank">새창열림</span></a></li>
+                                            <li><a href='/quics?page=C054682' onclick="window.open('http://fine.fss.or.kr/main/cons_safe/credit_edu/credit_mentoring.jsp','_blank'); return false;">전국민 신용교육<span class="blind tblank">새창열림</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m5">
+                            <a href='/quics?page=C019759'>금융서비스</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C019949'>전자금융서비스</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C020096'>뱅킹 서비스</a></li>
+                                            <li><a href='/quics?page=C023177'>myQ카드</a></li>
+                                            <li><a href='/quics?page=C023165'>전자통장</a></li>
+                                            <li><a href='/quics?page=C020100'>자동화기기</a></li>
+                                            <li><a href='/quics?page=C058771'>STM<br />(Smart Teller Machine)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C028101'>다기능 신분증 카드</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C028102'>다기능 신분증카드 안내</a></li>
+                                            <li><a href='/quics?page=C028107'>다기능 신분증카드 신청</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019950'>기타금융서비스</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C020101'>금고 서비스</a></li>
+                                            <li><a href='/quics?page=C023188'>신용회복지원제도 안내</a></li>
+                                            <li><a href='/quics?page=C023189'>사전채무조정제도 안내</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019951'>보관어음관리 서비스</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C020102'>계좌상세조회</a></li>
+                                            <li><a href='/quics?page=C020103'>계좌내역조회</a></li>
+                                            <li><a href='/quics?page=C020104'>계좌미결제명세조회</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019953'>증권계좌실명확인<br />업무대행</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C020107'>증권/선물계좌개설</a></li>
+                                            <li><a href='/quics?page=C020108'>제휴사현황</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m6">
+                            <a href='/quics?page=C019762'>서식/약관/설명서</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C020003'>전자금융</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C058250'>퇴직연금</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019999'>대출</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C020000'>외환</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019997'>예금/채권</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019995'>국내/해외투자펀드</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019996'>역외펀드</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C019998'>신탁</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C020004'>B2B전자결제</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C020005'>장외 파생상품</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C020001'>KB카드</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C040226'>기타</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m7">
+                            <a href='/quics?page=C026948'>고객자문단</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C027002'>고객자문단 안내</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C026950'>공지사항</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C026951'>설문조사</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C027197'>IDEA</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="cate m8">
+                            <a href='/quics?page=C022179'>상품공시실</a>
+                            <div class="cate_sub">
+                                <ul>
+                                    <li><a class="sub_tit" href='/quics?page=C022180'>은행상품공시 이용메뉴얼</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022181'>적립식예금</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022182'>목돈모으기상품</a></li>
+                                            <li><a href='/quics?page=C062182'>법인용예금</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022184'>거치식예금</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022185'>목돈굴리기상품</a></li>
+                                            <li><a href='/quics?page=C022187'>시장성예금</a></li>
+                                            <li><a href='/quics?page=C022188'>외화정기예금</a></li>
+                                            <li><a href='/quics?page=C056666'>퇴직연금정기예금</a></li>
+                                            <li><a href='/quics?page=C062180'>법인용예금</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022189'>입출금이 자유로운 예금</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022190'>입출금이 자유로운 예금</a></li>
+                                            <li><a href='/quics?page=C022191'>외화예금</a></li>
+                                            <li><a href='/quics?page=C062181'>법인용예금</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022192'>주택청약관련예금</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022193'>예금금리</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022194'>예금금리</a></li>
+                                            <li><a href='/quics?page=C022195'>외화예금금리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022196'>담보대출</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022197'>주택자금대출</a></li>
+                                            <li><a href='/quics?page=C022198'>부동산담보대출</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022199'>신용대출</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022200'>신용대출</a></li>
+                                            <li><a href='/quics?page=C022201'>당행거래/예수금보유고객</a></li>
+                                            <li><a href='/quics?page=C022202'>특정직업/자격별 대출</a></li>
+                                            <li><a href='/quics?page=C022203'>서민지원대출</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C062596'>자동차대출</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C043830'>기업대출</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C041529'>주택도시기금대출</a>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022204'>복합금융상품</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C040746'>판매중</a></li>
+                                            <li><a href='/quics?page=C040747'>판매중지</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C022205'>서비스 이용수수료</a>
+                                        <ul class="sub_tit_list">
+                                            <li><a href='/quics?page=C022206'>예금관련수수료</a></li>
+                                            <li><a href='/quics?page=C022207'>대출수수료</a></li>
+                                            <li><a href='/quics?page=C022208'>외환관련수수료</a></li>
+                                            <li><a href='/quics?page=C022209'>전자금융수수료</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="sub_tit" href='/quics?page=C040740'>개인종합자산관리(ISA)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- SNB 끝 -->
+                    <div id="menu_all_2015"><a href="#" class="btn_menu"><span class="blind">KB국민은행 전체메뉴 보기</span></a></div>
+                    <!-- 전체 메뉴 시작 -->
+                    <div id="menu_all_con_2015">
+                        <div class="menuAllArea_2015">
+                            <div class="menuAllWrapper_2015">
+                                <h1 class="logo"><a href="#"><img src="https://oimg1.kbstar.com/img/ocommon/2015/all_menu_kb_logo.png" alt="KB국민은행" /></a></h1>
+                                <iframe id="ifr_menuAll" scrolling="no" src="" title="KB국민은행 전체메뉴" frameborder="0"></iframe>
+                                <button class="all_menu_close_btn">KB국민은행 전체메뉴 닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //전체 메뉴 끝 -->
+                </div>
+            </div>
+        </div>
+        <div class="contentWrap">
+            <div id="LP">
+                <div class="lnbWrap">
+                    <div id="b029906">
+                        <!--EndBusinessLogicRegion-->
+                        <!-- lnb 시작 -->
+                        <h2 class="lnbTitle">고객상담</h2>
+                        <ul id="lnb" class="lnb">
+                            <li><a href='/quics?page=C019763'>자주찾는 질문</a>
+                                <ul>
+                                    <li><a href='/quics?page=C019769'>은행업무</a></li>
+                                    <li><a href='/quics?page=C019770'>전자금융업무</a></li>
+                                </ul>
+                            </li>
+                            <li class="on"><a href='/quics?page=C029656'>상담신청</a>
+                                <ul>
+                                    <li class="on"><a href='/quics?page=C043954'>채팅상담</a></li>
+                                    <li><a href='/quics?page=C043974'>이메일상담</a></li>
+                                    <li><a href='/quics?page=C043977'>상담처리현황</a></li>
+                                    <li><a href='/quics?page=C047864'>영업점 방문 예약 서비스</a></li>
+                                    <li><a href='/quics?page=C043354&amp;_src=C056980'>찾아가는 기업금융 상담예약</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='/quics?page=C019765'>고객의 소리</a>
+                                <ul>
+                                    <li><a href='/quics?page=C019834'>금융부조리 신고</a></li>
+                                    <li><a href='/quics?page=C019837'>금융사고 제보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- lnb 끝 -->
+                    </div>
+                    <div id="b037510">
+                        <p><a href="/quics?page=C018872">공인인증센터</a></p>
+                    </div>
+                </div>
+            </div>
+            <div id="CP">
+                <div id="b030375">
+                    <script type="text/javascript">
+                    function HelpOpenPopWin(f, actionUrl, Option) {
+                        window.open("", f.target, Option);
+                        f.action = actionUrl;
+                        f.submit();
+                    }
+                    </script>
+                    <form name="HelpPopupForm" id="HelpPopupForm" method="post" target="HelpPop" action="">
+                        <input type="hidden" name="QSL" value="F" />
+                    </form>
+                    <!-- Navigation 시작 -->
+                    <h4 class="blind">페이지 위치</h4>
+                    <div class="linemap">
+                        <a href='/quics?page=osupp'>고객센터</a> <a href='/quics?page=C019755'>고객상담</a> <a href='/quics?page=C029656'>상담신청</a> <em>채팅상담</em>
+                    </div>
+                    <!-- Navigation 끝 -->
+                </div>
+                <div id="b031064">
+                    <!-- Title 시작 -->
+                    <div class="toparea">
+                        <h1 class="h1_title">채팅상담</h1>
+                    </div>
+                    <h2 class="blind"></h2>
+                    <!-- Title 끝 -->
+                </div>
+                <div id="b056059">
+                    <!--
+최종수정일 : 2016-10-18 
+최종수정내용 : 채팅상담신청 메인화면
+-->
+                    <!-- 2018.09.27  인터넷뱅킹 개편 문구수정 -->
+                    <div id="browerChkDiv" class="notiArea error" style="display:none;">
+                        <strong>죄송합니다!</strong>
+                        <p class="comment">
+                            해당 서비스는 아래의 지원 브라우저에서만 제공되는 서비스입니다.<br />
+                            (지원 브라우저 : IE, Firefox, Chrome, Safari)
+                        </p>
+                    </div>
+                    <div id="serviceDiv" style="display:none;">
+                        <h2 class="blind">채팅상담</h2>
+                        <div class="box_type1 cusboxbg">
+                            <ul class="list_type1">
+                                <!--             <li style="background-position:0px 10px"><strong>이용시간 <span class="point_blue">24시간</span></strong> -->
+                                <!--                 <ul class="list_dep3"> -->
+                                <!--                     <li><span class="point_blue">KB국민카드업무 이메일상담은 <strong>KB국민카드 홈페이지>고객센터</strong>를 이용해 주시기 바랍니다. <a href="https://customer.kbcard.com/CXCRSZZC0001.cms" target="_blank" title="국민카트 상담페이지로 이동" class="link_blank"> -->
+                                <!--                         <strong>KB국민카드 고객센터 바로가기</strong></a></span> -->
+                                <!--                     </li> -->
+                                <!--                     <li>채팅상담시 전화상담은 제공해드리지 않습니다.<br/> -->
+                                <!--                         은행업무 전화상담은 <span class="point_blue">1588-9999, 1599-9999</span>를 이용하여 주시기 바랍니다.</li> -->
+                                <!--                     <li>채팅상담시 고객님의 신용정보 보호 및 사고예방을 위하여 일부 상담이 제한될 수 있음을<br/> 알려드립니다.</li> -->
+                                <!--                     <li>채팅상담은 개인뱅킹고객이 대상이며, 법인고객인 경우 상담이 제한될 수 있습니다.</li> -->
+                                <!--                 </ul>      -->
+                                <!--             </li> -->
+                                <li style="background-position:0px 10px"><strong>이용시간 <span class="point_blue">24시간</span></strong></li>
+                                <li><span class="point_blue">KB국민카드 관련 채팅상담은 <strong>KB국민카드 홈페이지 > 고객센터</strong>를 이용해 주세요. <a href="https://customer.kbcard.com/CXCRSZZC0001.cms" target="_blank" title="국민카트 상담페이지로 이동" class="link_blank">
+                <strong>KB국민카드 고객센터 바로가기</strong></a></span>
+                                </li>
+                                <li>채팅상담은 개인뱅킹 고객이 대상이며, 법인고객은 상담이 제한될 수 있습니다.</li>
+                                <li>채팅상담 시, 전화상담은 제공하지 않습니다.<br />
+                                    은행업무 전화상담은 <span class="point_blue">스마트고객상담부(1588-9999, 1599-9999)</span>를 이용하시기 바랍니다.</li>
+                                <li>채팅상담 시, 고객님의 신용정보보호 및 사고예방을 위하여 일부 상담이 제한될 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="btnArea">
+                            <!--         <span class="btn large action"><a class="link" href="/quics?page=C043982&QSL=F" >채팅상담 바로가기</a></span> -->
+                            <span class="btn large action"><a class="link" href="/quics?page=C043982" >채팅상담 바로가기</a></span>
+                        </div>
+                    </div>
+                    <!-- 2018.09.27  인터넷뱅킹 개편 문구수정 -->
+                    <form id="moveForm" name="moveForm" action=""></form>
+                    <script language="JavaScript" type="text/JavaScript">
+                        //<![CDATA[
+/*
+ * IE, FF, Chrome, Safari 만 지원
+ * 스마트 기기는 지원안함
+ */
+function isSupportedBrowser() 
+{
+    if (BrowserDetect.OS == 'iPhone/iPod' || navigator.platform.indexOf('Linux arm') > -1)
+        return false;
+    if (BrowserDetect.browser == 'Explorer' || BrowserDetect.browser  == 'Firefox' || BrowserDetect.browser  == 'Chrome' || BrowserDetect.browser  == 'Safari')
+        return true;
+    var browser =
+    {
+        version : parseInt(navigator.appVersion, 10),
+        isNC : navigator.appName.indexOf("Netscape") != -1,
+        isFF : navigator.userAgent.indexOf("Firefox") != -1,
+        /*isIE :  ((navigator.appName.indexOf("Microsoft") != -1) || 
+                ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[.0-9]{0,})").exec(navigator.userAgent) != null))),*/
+        isIE : ((navigator.appName === 'Microsoft Internet Explorer') || (navigator.userAgent.indexOf('Trident') > -1) || (navigator.userAgent.indexOf('Edge') > -1)),
+        isIE6 : navigator.appVersion.indexOf("MSIE 6") != -1,
+        isIE7 : navigator.appVersion.indexOf("MSIE 7") != -1,
+        isIE8 : navigator.appVersion.indexOf("MSIE 8") != -1,
+        isIE9 : navigator.appVersion.indexOf("MSIE 9") != -1,
+        isIE10 : navigator.appVersion.indexOf("MSIE 10") != -1,
+        isIE11 : !!navigator.userAgent.match(/Trident\/7\./),
+        isEdge : navigator.appVersion.indexOf("Edge") != -1
+    };
+    browser.isChrome = (navigator.appVersion.indexOf("Chrome") != -1 && !browser.isIE);
+
+    //i11, 엣지체크 추가
+    if( browser.isIE11 == true || browser.isIEdge == true ) return true;
+        
+    return false;
+}
+
+window.onload = function() {
+    //  지원되는 브라우저인지 확인
+    if(isSupportedBrowser())
+    {
+        document.getElementById("browerChkDiv").style.display = "none";
+        document.getElementById("serviceDiv").style.display = "block";
+    }
+    else 
+    {
+        document.getElementById("browerChkDiv").style.display = "block";
+    }
+};
+//]]>
+</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footWrap -->
+    <div class="footWrap_2015">
+        <!-- FOOTER -->
+        <div id="FOOTER_2015">
+            <div id="b034108">
+                <script type="text/javascript">
+                <!--BrowserDetect는 common.js에 정의되어 있음. -->
+                $(function() {
+                    $('#thisBrowser').html(BrowserDetect.browser + ' ' + BrowserDetect.version);
+                    $('#thisOS').html(BrowserDetect.OS);
+                })
+                </script>
+                <script type="text/javascript" language="javascript">
+                //<![CDATA[
+                function improvementOpinion() {
+
+                    //팝업위치 조정
+                    var windowsWidth = document.documentElement.clientWidth;
+                    //var windowsHeight = document.documentElement.clientHeight;
+                    var left = document.documentElement.clientWidth / 2 - 285;
+                    //var height = document.documentElement.clientHeight/2 - 430;
+
+                    var frm = document.FeedBack;
+                    window.open('', 'Feedback', 'top=80,left=' + left + ',height=860,width=570,status=yes,toolbar=no,menubar=no,scrollbars=yes');
+                    frm.target = "Feedback";
+                    frm.action = "/quics?page=C030231&QSL=F";
+                    frm.submit();
+                }
+
+                function improvementOpinion2() {
+                    alert("로그인 사용자만 이용가능합니다. ");
+                    return false;
+
+                }
+
+                //]]>
+                </script>
+                <form name="FeedBack" method="post" action="">
+                    <input type="hidden" name="페이지코드" id="pageCode" value="C043954" />
+                    <input type="hidden" name="컴포넌트코드" id="ComponentCode" value="" />
+                    <input type="hidden" name="로그인여부" id="strLoginYn" value="N" />
+                </form>
+                <div class="foot_area_2015">
+                    <ul class="foot_info">
+                        <li><a href="/quics?page=C019763">이용상담</a></li>
+                        <li><a href="/quics?page=C040531">보안프로그램</a></li>
+                        <li><a href="/quics?page=C019935">사고신고</a></li>
+                        <li><a href="/quics?page=C023000">보호금융상품등록부</a></li>
+                        <li><a href="/quics?page=C036346"><strong>전자민원접수</strong></a></li>
+                        <li><a href="/quics?page=C061976"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="/quics?page=C017681"><strong>경영공시</strong></a></li>
+                        <li><a href="/quics?page=C040593">그룹 내 고객정보 제공안내</a></li>
+                        <li><a href="/quics?page=C057315">스튜어드십 코드</a></li><!-- 2018-03-09 -->
+                    </ul>
+                    <div class="combo_box_wrap">
+                        <div class="foot_combo_box">
+                            <div class="select_combo_2015">
+                                <div class="select_combo_open"><a href="#selectComboCompany"><span>KB금융그룹네트워크</span><span class="readonly"> 목록 열기</span></a></div>
+                                <div id="selectComboCompany" class="select_combo_box up" style="display:none;top:-417px;">
+                                    <ul class="select_style">
+                                        <li><a href="https://www.kbfg.com" target="_blank" title="새창열림">KB금융그룹</a></li>
+                                        <li><a href="http://www.kbsec.co.kr" target="_blank" title="새창열림">KB증권</a></li>
+                                        <li><a href="http://www.kbinsure.co.kr" target="_blank" title="새창열림">KB손해보험</a></li>
+                                        <li><a href="https://www.kbcard.com" target="_blank" title="새창열림">KB국민카드</a></li>
+                                        <li><a href="https://www.kbli.co.kr" target="_blank" title="새창열림">KB생명보험</a></li>
+                                        <li><a href="http://www.kbam.co.kr" target="_blank" title="새창열림">KB자산운용</a></li>
+                                        <li><a href="http://www.kbcapital.co.kr" target="_blank" title="새창열림">KB캐피탈</a></li>
+                                        <li><a href="https://www.kbsavings.com" target="_blank" title="새창열림">KB저축은행</a></li>
+                                        <li><a href="http://www.kbret.co.kr" target="_blank" title="새창열림">KB부동산신탁</a></li>
+                                        <li><a href="http://www.kbic.co.kr" target="_blank" title="새창열림">KB인베스트먼트</a></li>
+                                        <li><a href="http://www.kbci.co.kr" target="_blank" title="새창열림">KB신용정보</a></li>
+                                        <li><a href="http://www.kds.co.kr" target="_blank" title="새창열림">KB데이타시스템</a></li>
+                                        <li><a href="https://www.kbfg.com/kbresearch/main.do" target="_blank" title="새창열림">KB경영연구소</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot_combo_box phone">
+                            <div class="select_combo_2015">
+                                <div class="select_combo_open"><a href="#selectComboPhone"><span>대표전화 1588-9999</span><span class="readonly">목록 열기</span></a></div>
+                                <div id="selectComboPhone" class="select_combo_box up" style="display:none;top: -463px;">
+                                    <table class="phone_table">
+                                        <caption>대표전화 외 전용전화번호 목록</caption>
+                                        <colgroup>
+                                            <col style="width:106px;" />
+                                            <col style="width:278px;" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">대표전화</th>
+                                                <td>
+                                                    <p>1588-9999, 1599-9999, 1644-9999</p>
+                                                    <p><span>해외에서 국내로 걸 때</span><br />+82-2-6300-9999</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">상담전용</th>
+                                                <td>
+                                                    <p>1800-9999</p>
+                                                    <p><span>(분실 및 사고신고 제외)</span></p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">기업전용</th>
+                                                <td>1599-9499</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">기업(B2B)</th>
+                                                <td>1566-9944</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">외국인전용</th>
+                                                <td>1599-4477</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">어르신전용</th>
+                                                <td>1644-3308</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">ACS센터</th>
+                                                <td>
+                                                    <p>1588-9008</p>
+                                                    <p><span>해외에서 국내로 걸 때</span><br />+82-42-603-0711</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot_combo_box email">
+                            <a href="/quics?page=C043974"><span>이메일상담</span></a>
+                        </div>
+                        <div class="foot_combo_box chat">
+                            <a href="/quics?page=C043954"><span>채팅상담(24시간 365일)</span></a>
+                        </div>
+                        <div class="foot_combo_box service" style="width:166px">
+                            <!-- 2018-12-27 수정 -->
+                            <div class="select_combo_2015">
+                                <div class="select_combo_open"><a href="#selectComboService"><span>비교조회서비스</span><span class="readonly"> 열기</span></a></div>
+                                <div id="selectComboService" class="select_combo_box up" style="display:none;top:-97px;">
+                                    <ul class="select_style">
+                                        <li><a href="http://www.kfb.or.kr/info/interest_product.html?S=FA" target="_blank" title="새창열림">은행금리비교</a></li>
+                                        <li><a href="http://finlife.fss.or.kr/main/main.do" target="_blank" title="새창열림">금융상품 한눈에</a></li>
+                                        <li><a href="http://fine.fss.or.kr/main/index.jsp" target="_blank" title="새창열림">금융소비자정보포털 &#39;파인&#39;</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot_gra">
+                        <ul>
+                            <li class="facebook"><a href="https://www.facebook.com/kbkookminbank" target="_blank" title="새창열림">페이스북</a></li>
+                            <!-- <li class="kakaostory"><a href="https://story.kakao.com/ch/kbkookminbank" target="_blank">카카오스토리</a></li> -->
+                            <li class="instagram"><a href="https://instagram.com/kbkookminbank" target="_blank" title="새창열림">인스타그램</a></li>
+                            <li class="youtube"><a href="https://www.youtube.com/user/openkbstar" target="_blank" title="새창열림">YouTube</a></li><!-- 2018-05-14 -->
+                            <li class="blog"><a href="https://blog.naver.com/youngkbblog" target="_blank" title="새창열림">blog</a></li><!-- 2018-12-27 추가 -->
+                        </ul>
+                    </div>
+                    <p class="copy" style="display:inline-block;" onmouseover="$(this).next().show();" onmouseout="$(this).next().hide();">Copyright KB Kookmin Bank. All Rights Reserved.</p>
+                    <ul id="userStats" style="display:none;top:125px">
+                        <li id="thisBrowser"></li>
+                        <li id="thisOS"></li>
+                        <li>C043954 : 1201</li>
+                    </ul>
+                </div>
+                <!-- 팝업공통 -->
+            </div>
+        </div>
+        <!-- //FOOTER -->
+    </div>
+    <!-- //footWrap -->
+</body>
+
+</html>

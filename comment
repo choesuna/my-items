@@ -1,0 +1,43 @@
+comment
+
+<!-- <p>1줄</p> // --><!-- 190314 삭제_01 -->
+
+
+<!-- comment 수정_01 -->
+<!--
+<p>여러줄</p>
+<p>여러줄</p>
+// -->
+<p>여러줄</p>
+<p>여러줄</p>
+<!-- //comment 수정_01 -->
+
+
+<!-- loop -->
+<p>loop content</p>
+<p>loop content</p>
+<!-- //loop -->
+
+
+<!-- description -->
+
+
+comment is piece of code which is ignored by any web browser.
+
+comments do not nest which means a comment cannot be put inside another comment.
+the double-dash sequence "--" may not appear inside a comment except as part of closing --> tag.
+
+
+multiline comments
+
+conditional comments
+conditional comments only work in Internet Explorer (IE) on windows but they are ignored by other browsers.
+they are supported from Explorer 5 onwards, and you can use them to give conditional instruction to different versions of IE.
+<!-- [if IE 6]>
+	special instructions fo rIE 6 here
+<![endif]-->
+
+
+
+//ref
+https://www.tutorialspoint.com/html/html_comments.htm

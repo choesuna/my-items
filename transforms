@@ -1,0 +1,118 @@
+transforms
+
+css transforms allow you to translate, rotate, scale, and skew elements.
+
+	syntax
+		<transform-function> [<transform-function>]* | none
+		transform: none
+
+
+	Browser support for 2D Transforms
+		transform 	36.0 / 4.0 -webkit-		10.0 / 9.0 -ms-		16.0 / 3.5 -moz-
+
+
+	2D Transforms : translate(), rotate(), scale(), skewX(), skewY(), matrix()
+
+		translate()
+			translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+			
+			-ms-transform:translate(50px, 100px); /* IE 9 */
+			-webkit-transform:translate(50px, 100px);
+			transform:translate(50px, 100px);
+
+			translate(), translateX(), translateY()
+
+
+		rotate()
+			rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+			
+			-ms-transform:rotate(20deg); /* IE 9 */
+			-webkit-transform:rotate(20deg);
+			transform:rotate(20deg);
+
+
+
+		scale()
+			scale() method increases or decreases the size of an element (according to the parameters given for the width and height).
+			
+			-ms-transform: scale(0.5, 0.5); /* IE 9 */
+			-webkit-transform: scale(0.5, 0.5); /* Safari */
+			transform: scale(0.5, 0.5);
+			scale(), scaleX(), scaleY()
+
+
+
+		skew()
+			skew() method skews an element along the X and Y-axis by the given angles.	
+			
+			-ms-transform:skew(20deg, 20deg); /* IE 9 */
+			-webkit-transform:skew(20deg, 20deg);
+			transform:skew(20deg, 20deg);	
+		
+			if 	the second parameter is not specified, it has a zero value. 
+
+			skewX() method skews an element along the X-axis by the given angle.
+			skewY() method skews an element along the Y-axis by the given angle.
+
+
+
+		matrix()
+			matrix() method combines all the 2D transform methods into one.
+			matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, translate, and skew elements.
+			the parameters are as follow : matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())   -- 6 values
+
+
+
+	3D transforms : rotateZ()
+		rotateZ() method rotates an element around its z-axis at a given degree
+	
+
+
+trnsform-origin :
+	transform-origin property allows you to change the poisition of transformed elements.
+
+
+
+
+
+transform-style :
+	let the transformed child elements preserve the 3D transformations.
+	transform-style property specifies how nested elements are rendered in 3D space.
+	This property must be used together with the transform property.
+
+	syntax
+		transform-style: flat | preserve-3d | initial | inherit;
+
+		flat : specifies that child elements will not preserve its 3D position. This is default.
+		preserve-3d :  specifies that child elements will preserve its 3D position
+		initial : sets this property to its default value.
+		inherit
+
+	browser support
+		Chrome 36.0/ 12.0 -webkit- 		
+		IE11
+
+
+perspective :
+	browser support
+		Chrome 36.0/ 12.0 -webkit- 		
+		IE10
+
+
+perspective-origin : 
+	browser support
+		Chrome 36.0/ 12.0 -webkit- 		
+		IE10
+
+
+backface-visibility :
+	browser support
+		Chrome 36.0/ 12.0 -webkit- 		
+		IE10
+
+
+
+
+//ref
+https://developer.mozilla.org/ko/docs/Web/CSS/transform
+https://www.w3schools.com/cssref/css3_pr_transform-origin.asp

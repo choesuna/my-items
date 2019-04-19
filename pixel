@@ -1,0 +1,18 @@
+pixel
+
+Why are pixels dead ?
+	They are static(But technically so are most of the others)
+	they do not respect the root-font size after changes (They are not truly relative to the root font-size like REM and EM units)
+	Properties such as margins, padding and line-height do not scale naturally when re-set in-line.
+	Apparently, Bootstrap 4 is dropping pixels for REM.
+	Pixels create the illusion of being equal to on-screen pixels which leads to misconceptions and in the long run becomes confusing to new developers.
+	Pixels are unlikely to become a viable solution for scaling fonts in the future since design is comprehensively about proportions.
+	 
+
+
+
+---ref
+https://stackoverflow.com/questions/22830473/what-does-half-a-pixel-mean-in-the-font-size-css-property
+https://cruft.io/posts/percentage-calculations-in-ie/#browser-table
+https://johnresig.com/blog/sub-pixel-problems-in-css/
+https://medium.com/@julienetienne/pixels-are-dead-faa87cd8c8b9

@@ -1,0 +1,141 @@
+hbs handlebars
+
+
+- template engine
+
+- handlebars.js
+
+//.hbs file extension
+what is an HBS file?
+	Template created by Handlerbars. a web template system; contains a template written in HTML code and embeded with handlebars expression; same as the .HANDLEBARS file.
+	A Handlebars expression is the basic unit of the template and appears like this: {{contents}}.
+	To deliver a HBS file to the browser, include it in the script tag;
+		<script id="entry-template" type="text/x-handlebars-template">
+			template content 
+		</script>
+	
+	Handlebars is a javascript library that helps developers create templates that bind data, which creates cleaner, more efficient code.
+
+
+//code
+
+<script type="text/handlebars-template">
+	{{#users}} : 주입되는 데이터와 바인딩 되는 부분, users 배열의 길이만큼 반복
+		<p>{{name}}</p>
+		<p><a href="mailto:{{email id}}"></a></p>
+	{{/users}}
+</script>
+
+<script>
+	
+//핸들바 템플릿 가져오기
+var source = $('#entry-template').html();
+
+//핸들바 템플릿 컴파일
+var template = Handlebars.compile(source);
+
+//바인딩할 데이터
+var data = {
+	user: [
+		{name: "이름1"}
+		{name: "이름2"}
+		{name: "이름3"}
+	]
+};
+
+//register custom helper (id 를 인자로 받아서 전체 이메일 주소를 반환) 
+Handlebars.registerHelper('email', function (id) {
+	return id + "@daum.net";
+});
+
+
+//핸들바 템플릿에 데이터를 바인딩해서 html생성
+var html = template(data);
+
+//생성된 html을 dom에 주입
+$('body').append(html);
+
+</script>
+
+//HELPER
+{{email id}} 
+email: 사용자 정의 헬퍼 
+헬퍼를 호출하면, 파라미터로 id값을 전달한다.
+
+
+if : true / false 판별
+
+else
+
+else if	
+
+each helper :
+	배열 등을 반복 표시 가능 
+	#배열명으로 대체도 가능 
+	@ 기호와 함께 몇 번째 요소인지 판별 가능하다.
+	@first : 첫번째 요소 여부
+	@last : 마지막 요소 여부 
+	@key : 몇번째 요소인지, object라면 현재 어떤 멤버를 탐색중인지 
+
+<table>
+    <thead> 
+        <th>이름</th> 
+        <th>아이디</th> 
+        <th>메일주소</th>
+        <th>요소정보</th>
+    </thead> 
+    <tbody> 
+        {{!-- {{#each users}} 는 {{#users}} 로도 대체 가능하다 --}}
+        {{#each users}}
+        <tr>
+            {{!-- {{name}} 은 {{this.name}} 과 같고 {{.}} 은 현재 name과 id를 포함하고 있는 오브젝트를 가리킨다 --}}
+            <td>{{name}}</td> 
+            <td>{{id}}</td> 
+            
+            {{!-- 사용자 정의 헬퍼인 email에 id를 인자로 넘긴다 --}}
+            <td><a href="mailto:{{email id}}">{{email id}}</a></td> 
+            
+            {{!-- 요소의 순번은 @index 혹은 @key로 잡을 수 있는데,
+            array와 object 모두 잡을 수 있는 key가 더 나아보인다 --}}
+            
+            {{#if @first}}
+                <td>첫 아이템 ({{@key}} 번째 요소)</td>
+            {{else if @last}}
+                <td>마지막 아이템 ({{@key}} 번째 요소)</td>
+            {{else}}
+                <td>중간 아이템 ({{@key}} 번째 요소)</td>
+            {{/if}}
+        </tr> 
+        {{/each}}
+    </tbody> 
+</table>
+
+//STEP 
+
+handlebar template 가져오기
+compile method : Handlebars.compile 
+data binding : 리턴된 함수의 파라미터에 바인딩할 데이터를 파라미터로 넣으면 바인딩된 html template이 return 된다.
+add result to DOM : 이 템플릿을 dom에 추가하면 끝
+
+
+//comment
+
+{{!-- comment --}}
+
+
+
+
+- Mustache로 부터 파생되었다.
+- 단순한 문법, 쉬운사용, template 에 로직을 배제, 컴파일을 통한 바른 렌더링, 다양하고 오랜 레퍼런스로 인한 안정성
+
+
+
+
+
+
+
+
+** ref
+http://handlebarsjs.com/
+https://programmingsummaries.tistory.com/381
+https://programmingsummaries.tistory.com/tag/Mustache 

@@ -1,0 +1,24 @@
+오픈 그래프  Open Graph 
+
+웹 사이트 url link 공유 시 미리보기를 만들 때 사용하는 태그
+페이스 북에서 정의한 meta tag
+현재는 face book, twitter, cacaotalk etc 사용
+
+오픈 그래프 태그
+
+head>meta[property="og:url"][content="https://for-choesuna.tistory.com"] : 페이지 표준 url
+head>meta[property="og:title"][content="구글 사이트 등록"] : 콘텐츠 제목
+head>meta[property="og:description"][content="내가 보려고 만든 페이지"] : 제목 아래에 표시
+head>meta[property="og:site_name"][content="for-choesuna"] : 웹 사이트의 이름 (주소 말고)
+head>meta[property="og:image"][content=""] : 콘텐츠 공유시 표시되는 이미지
+head>meta[property="og:app_id"][content=""] : 짹짹이 인사이트를 사용하기 위한 앱 아이디 
+head>meta[property="og:admins"][content=""] : 웹 사이트용 도메인 인사이트를 사용하기 위한 아이디
+head>meta[property="og:type"][content=""] : 
+
+
+facebook Domain Insight
+
+google analystics 처럼 facebook 상에서 공유되는 내 웹사이트의 통계를 내주는 서비스
+
+
+

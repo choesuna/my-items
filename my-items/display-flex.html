@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <style>
+    /* reset */
+    body *{margin:0;padding:0;}
+    ul, li{list-style:none;}
+
+    .desc{padding:10px;margin:50px 0 10px;border-top:1px solid #999;background:#f4f4f4;}
+    .tip{padding:5px 10px;font-size:12px;color:#444;background:#f4f4f4;}
+    .desc + .tip{margin:-10px 0 10px;}
+
+    .tab-list-wrap{max-width:600px;}
+    .tab-list-wrap+.tab-list-wrap{margin-top:30px;}
+
+    .tab-list{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+
+        flex-wrap: -webkit-wrap;
+        flex-wrap: -ms-wrap;
+        flex-wrap: wrap;
+
+        border:1px solid #333;margin:0 -1px 0 0;
+    }
+
+    </style>
+    
+    <div class="page-title"><h1>TAB</h1></div>
+    
+    <p class="desc">outline of items controlled by border of parents element wrapping child items and border of child elements</p>
+    <p class="tip">it is useful for single row layout.</p>
+    <div class="tab-list-wrap">
+        <ul class="tab-list">
+            <li class="item active">li.item1</li>
+            <li class="item">li.item2</li>
+            <li class="item">li.item3</li>
+            <li class="item">li.item4</li>
+            <li class="item active-color">li.item4</li>
+            <li class="item">li.item5</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+[ ALM ]
+
+# Application Lifecycle Management   어플리케이션 생명주기 관리
+
+# SOLUTION for Agile ALM       
+	- Confluence, JIRA, Bitbucket, Git, Bamboo, SonarQube, Artifactory
+	- Atlassian Confluence
+		어플리케이션 관리에 필요한 다양ㅇ한 문서를 협업하여 작성하고 코멘트를 통한 대화, 인라인 코멘트를 통한 리뷰 등을 지원한다.
+
+	- Atlassian JIRA
+		Confluence로부터 요구사항을 추출하여 이슈로 생성할 수 있으며, 디자인, 리스크 등 다양한 업무를 개발과 추적 및 관리 기능을 제공
+
+	- Atlassian Bitbucket + Git
+		Git 기반의 저장소 관리를 지원하며 코드 관리를 위한 다양한 브랜치 전략과 소스 코드의 품질을 보장하기 위한 핵심 역할을 수행한다.
+
+	- Atlassian Bamboo
+		지속적인 통합, 지속적인 배포, 지속적인 인스펙션을 위한 빌드 및 배포 관리를 수행하며 조직의 개발 생산성 향상을 도 와준다.
+
+	- SonarQube
+		코드 품질을 위한 품질 요구사항 설정과 소스 코드 품질 룰 셋을 설정하여 고객 및 조직이 요구하는 목표 코드 품질 달성을 도와준다.
+
+

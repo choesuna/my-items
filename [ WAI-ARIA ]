@@ -1,0 +1,22 @@
+[ WAI-ARIA ]
+
+# WAI
+	Web Accessibility Initiative
+
+# ARIA
+	Accessible Rich Internet Applications
+
+# WAI-ARIA
+	WAI-ARIA 는 HTML의 접근성 문제를 보완하는 W3C 명세입니다.
+	WAI-ARIA 는 HTML 요소에 role 또는 aria-* 속성을 추가하여 roles, states, properites information of contents 을 제공합니다.
+	
+
+
+	- ref 명세서
+		https://www.w3.org/TR/html52/
+
+	- ref URL
+		https://tech.lezhin.com/2018/04/20/wai-aria
+		https://github.com/lezhin/accessibility/blob/master/aria
+
+
