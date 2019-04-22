@@ -1,5 +1,16 @@
+- flip use below things:
+	display:-webkit-box; display:-ms-flexbox; display:flex;
 
+	-webkit-box-align: center; -ms-flex-align: center; align-items: center; 
 
+	-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; 
+	
+
+isplay:flex; position:relative; ms-flex-wrap:wrap; flex-wrap:wrap;
+
+display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-flex:10; -ms-flex:10; flex:10
+
+display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
 
 - 주의사항
 position:absolute or fixed 쓰면 flex item 에서 제외된다.

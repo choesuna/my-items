@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+    <style>
+    /* reset */
+    body *{margin:0;padding:0}
+    ul, li{list-style:none}
+    
+    /* common */
+    .desc-wrap{margin-top:50px;border-top:1px solid #999;background:#f4f4f4}
+    .desc{padding:10px;margin:50px 0 10px;background:#f4f4f4}
+    .desc-wrap .desc~.desc{margin-top:-10px}
+    .desc-wrap > .desc:first-child{margin-top:50px;border-top:1px solid #999}
+    .desc-wrap+div:first-child{margin-top:10px}
+    .desc-wrap [class^='heading'] + .desc{margin-top:5px}
+    .my-tip{padding:5px 10px;font-size:12px;color:#444;background:#f4f4f4}
+    .desc + .my-tip{margin:-10px 0 10px}
+    .desc + .my-tip +.my-tip{margin-top:-10px;}
+    .heading1{}
+    .heading2{padding:5px 10px}
+
+    /* flex */
+    .bd1{border:1px solid #ddd}
+    .layout-flex-wrap{max-width:800px}
+    .layout-flex-wrap+.layout-flex-wrap{margin-top:30px}
+    .layout-flex-wrap.double{display:-webkit-inline-flex;display:-ms-inline-flex;display:inline-flex;min-height:100px}
+    .layout-flex-wrap.double .layout-flex{width:50%}
+    .layout-flex.default{display:-webkit-flex;display:-ms-flex;display:flex;/* default *//*flex-direction:row;flex-basis:auto;flex-grow:0;flex-shrink:1;*/}
+    .layout-flex.default .item{flex-basis:25%;width:25%}
+    .layout-flex.default .item:nth-child(odd){flex-shrink:1}
+    .layout-flex.default .item:nth-child(even){flex-shrink:2}
+    .layout-flex.flexble{display:flex;min-height:70px;flex-wrap:wrap;padding:5px;justify-content:center;align-items:center}
+    .layout-flex.flexble .item{flex-basis:50px;padding:5px;align-items:center}
+    .layout-flex.reverse{flex-direction:row-reverse}
+    .layout-flex.flex-direction{flex-direction:column}
+    .layout-flex.flex-direction.reverse{flex-direction:column-reverse}
+    .layout-flex.flex-direction .item{flex-basis:initial}
+    .layout-flex.justify-between{justify-content:space-between}
+    .layout-flex.justify-between{justify-content:space-between}
+    .layout-flex.justify-start{justify-content:flex-start}
+    .layout-flex.justify-end{justify-content:flex-end}
+    .layout-flex .item{font-size:12px}
+    .layout-flex .item:nth-child(even){background-color:#ddd}
+    .layout-flex .item:nth-child(odd){background-color:#aaa}
+    /* flip use below things */
+    /*
+    display:-webkit-box; display:-ms-flexbox; display:flex;
+    -webkit-box-align: center; -ms-flex-align: center; align-items: center; 
+    -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+    */
+    </style>
+
+    <div class="page-title"><h1 class="heading1">FLEX</h1></div>
+
+    <div class="desc-wrap">
+    <h2 class="heading2">this is default</h2>
+    <p class="desc">flex-derection:row; flex-basis:auto; flex-wrap:nowrap; flex-grow:0; flex-shrink:1;</p>
+    <p class="desc">flex-basis : flex item 의 너비를 지정 flex item에게 지정 width 보다 값이 우선시 된다.</p> 
+    <p class="desc">column-*, float, clear  프로퍼티 사용 불가</p> 
+    </div>
+    <div class="layout-flex-wrap">
+        <ul class="layout-flex default">
+            <li class="item">flex-item1 <span class="icon-arrow"></span></li>
+            <li class="item">flex-item2 <span class="icon-arrow"></span></li>
+            <li class="item">flex-item3 <span class="icon-arrow"></span></li>
+            <li class="item">flex-item4 <span class="icon-arrow"></span></li>
+            <li class="item active-color">flex-item4 <span class="icon-arrow"></span></li>
+        </ul>
+    </div>
+
+    <p class="desc">flex:nowrap</p>
+    <div class="layout-flex-wrap double bd1">
+        <ul class="layout-flex flexble">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item4</li>
+            <li class="item">flex-item5</li>
+            <li class="item">flex-item5</li>
+            <li class="item">flex-item5</li>
+            <li class="item">flex-item5</li>
+        </ul>
+        <ul class="layout-flex flexble flex-direction">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+        </ul>
+    </div>
+    <p class="desc">flex-direction:row-reverse, flex-direction:column-reverse</p>
+    <div class="layout-flex-wrap double bd1">
+        <ul class="layout-flex flexble reverse">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item5</li>
+            <li class="item">flex-item6</li>
+            <li class="item">flex-item7</li>
+            <li class="item">flex-item8</li>
+            <li class="item">flex-item9</li>
+        </ul>
+        <ul class="layout-flex flexble flex-direction reverse">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+        </ul>
+    </div>
+
+    <p class="desc">justify-content:space-between</p>
+    <div class="layout-flex-wrap">
+        <ul class="layout-flex flexble justify-between bd1">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item4</li>
+            <li class="item">flex-item5</li>
+        </ul>
+    </div>
+
+    <p class="desc">justify-content:space-areound</p>
+    <div class="layout-flex-wrap">
+        <ul class="layout-flex flexble justify-around bd1">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item4</li>
+            <li class="item">flex-item5</li>
+        </ul>
+    </div>
+
+    <p class="desc">justify-content:space-start</p>
+    <div class="layout-flex-wrap">
+        <ul class="layout-flex flexble justify-start bd1">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item4</li>
+            <li class="item">flex-item5</li>
+        </ul>
+    </div>
+
+    <p class="desc">justify-content:space-end</p>
+    <div class="layout-flex-wrap">
+        <ul class="layout-flex flexble justify-end bd1">
+            <li class="item active">flex-item1</li>
+            <li class="item">flex-item2</li>
+            <li class="item">flex-item3</li>
+            <li class="item">flex-item4</li>
+            <li class="item active-color">flex-item4</li>
+            <li class="item">flex-item5</li>
+        </ul>
+    </div>
+
+    <p class="desc">if those attributes is not work, use below things. </p>
+    <p class="my-tip"> display:-webkit-box; display:-ms-flexbox; display:flex;</p>
+    <p class="my-tip">-webkit-box-align: center; -ms-flex-align: center; align-items: center;</p> 
+    <p class="my-tip">-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;</p>
+</body>
+</html>
