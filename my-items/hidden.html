@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+	<style>
+	/* reset */
+    body *{margin:0;padding:0}
+    ul, li{list-style:none}
+    
+    /* common */
+    .desc-wrap{margin-top:50px;border-top:1px solid #999;background:#f4f4f4}
+    .desc{padding:10px;margin:50px 0 10px;background:#f4f4f4}
+    .desc-wrap .desc~.desc{margin-top:-10px}
+    .desc-wrap > .desc:first-child{margin-top:50px;border-top:1px solid #999}
+    .desc-wrap+div:first-child{margin-top:10px}
+    .desc-wrap [class^='heading'] + .desc{margin-top:5px}
+    .my-tip{padding:5px 10px;font-size:12px;color:#444;background:#f4f4f4}
+    .desc + .my-tip{margin:-10px 0 10px}
+    .desc + .my-tip +.my-tip{margin-top:-10px;}
+    .heading1{}
+    .heading2{padding:5px 10px}
+    .bd1{border:1px solid #ddd}
+
+    /* hidden */
+    .definition-list-wrap{display:inline-block;}
+	.definition-list{position:relative;display:inline-block;min-width:100px;vertical-align:top;text-align:center;}
+    .definition-title{height:50%;padding:5px;background-color:#ddd;}
+    .definition-desc{padding:5px;}
+    .absolute{position:absolute;left:-9999px;font-size:1px;line-height:0;color:transparent;}
+    .clip{position:absolute;width:1px;height:1px;overflow:hidden;margin:-1px;clip:rect(0 0 0 0);}
+	</style>
+
+
+    <div class="page-title"><h1 class="heading1">HIDDEN</h1></div>
+    <div class="desc-wrap">
+	    <h2 class="heading2">web accessibility</h2>
+	    <p class="desc">absolute</p>
+	    <p class="my-top"></p> 
+    </div>
+    <div>
+    	<div class="definition-list-wrap">
+	    	<dl class="bd1 definition-list">
+	    		<dt class="definition-title">default</dt>
+	    		<dd class="definition-desc default">hidden-area</dd>
+	    	</dl>
+	    	<dl class="bd1 definition-list">
+	    		<dt class="definition-title">absolute</dt>
+	    		<dd class="definition-desc absolute">hidden-area</dd>
+	    	</dl>
+	    	<dl class="bd1 definition-list">
+	    		<dt class="definition-title">clip over IE 8</dt>
+	    		<dd class="definition-desc clip">hidden-area</dd>
+	    	</dl>
+
+	    </div>	
+    </div>
+
+</body>
+</html>

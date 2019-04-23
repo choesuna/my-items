@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+	<style>
+	/* reset */
+    body *{margin:0;padding:0}
+    ul, li{list-style:none}
+    
+    /* common */
+    .desc{padding:10px;margin-top:50px;background:#f4f4f4}
+    .desc+.desc{margin-top:0}
+    .my-tip{padding:5px 10px;font-size:12px;color:#444;background:#f4f4f4}
+    .desc + [class*=-wrap]{margin-top:10px;}
+    .my-tip + [class*=-wrap]{margin-top:10px;}
+    .heading1{}
+    .heading2{padding:5px 10px}
+    .bd1{border:1px solid #ddd}
+
+    /* transform */
+    .transform-wrap{}
+    .transform-area{} 
+    .item{display:inline-block;position:relative;width:100px;height:50px;border:1px solid #ddd;text-align:center;vertical-align:middle;}
+    .item:after{content:'';display:inline-block;border:10px solid transparent;border-left-color:#000;border-width:7px 0 7px 10px;vertical-align:middle;}
+    .item:before{content:'';}
+    
+    .item1:after{}
+    .item1:before{display:inline-block;height:100%;width:1px;background-color:red;/* width 생략 가능 width:1px; */vertical-align:middle;}
+
+    .item2{}
+    .item2:after{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border-width:8px 0 8px 16px}
+    .item2:before{content:'';display:inline-block;position:absolute;top:50%;left:50%;margin-left:1px;border:9px solid transparent;border-left-color:red;border-width:10px 0 10px 20px;transform:translate(-50%, -50%);vertical-align:middle;}
+    .item3:hover:after{transform:rotate(180deg);}
+    .item4:hover:after{transform:scale(2);}
+    
+    .transition-custom:hover:after{transition:transform 2s;}
+    .transition-ease-in-out:hover:after{transition:transform ease-in-out;}
+	</style>
+
+
+    <div class="page-title"><h1 class="heading1">TRANSFORM</h1></div>
+    <p class="desc">this is works well over IE 10.</p>
+    <p class="desc">transform: translate(-50%, -50%) | translateY(50%) | translateX(50%), transition:transform</p>
+    <div class="transform-wrap">
+        <div class="transform-area">
+            <div class="list">
+                <span class="item item1"></span>
+                <span class="item item2">item2</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="desc">transform:rotate, transition:transform</p>
+    <div class="transform-wrap">
+        <div class="transform-area">
+            <div class="list">
+                <span class="item item3">item3</span>
+                <span class="item item3 transition-custom">transition-custom</span>
+                <span class="item item3 transition-ease-in-out">transition-ease-in-out</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="desc">transform:scale, transition:transform</p>
+    <div class="transform-wrap">
+        <div class="transform-area">
+            <div class="list">
+                <span class="item item4">item4</span>
+                <span class="item item4 transition">item4</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
