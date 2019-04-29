@@ -1,0 +1,714 @@
+[ Tworld 퍼블리싱 가이드 ]
+SKT 마케팅 통합 POC 구축_퍼블리싱 업무 개요
+
+T world PC/MOBILE 웹퍼블리싱 작업 및 배포가이드
+
+	- GNB
+		gnbJquery.GNB.init() 함수를 호출해서 #header 안에 gnb 구조를 생성한다.
+
+	<h1></h1>
+	<div class="preset">
+		<div class="box">
+			<h2>GNB 생성</h2>
+			<p></p>
+			<h2 style="margin-top:30px;">2019-02-16일 GNB 개선 내용 (pc웹에만 해당)</h2>
+			<p>다이렉트샵 채널은 자체 개발로 변경 되었으므로 공통 실루엣 배포 대상에서 완전히 제외된다. (기존 GNB 방식을 사용하지 않음)</p>
+			<p><b>gnb_2018.html</b><span style="font-size:.9em;">(전 채널 공통 html)</span> <b>+ gnb_채널코드.html</b><span style="font-size:.9em;">(각 채널별 2depth 및 전체메뉴)</span> 로 구성.<br>gnbJquery.GNB.init() 함수의 첫번째 인수<span style="font-size:.9em;">(채널코드)</span> 를 인식해서 gnb_2018.html 에 gnb_채널코드.html 를 한번 더 호출.</p>
+
+			<table class="table">
+				<colgroup>
+					<col>
+					<col>
+					<col style="width:17%;">
+					<col style="width:6%;">
+					<col style="width:6%;">
+					<col>
+				</colgroup>
+				<tr>
+					<th rowspan="2">파일명</th>
+					<th rowspan="2">정의</th>
+					<th rowspan="2">배포방법</th>
+					<th colspan="2">담당</th>
+					<th rowspan="2">2019-2-16 변경 내용</th>
+				</tr>
+				<tr>
+					<th>수정</th>
+					<th>배포</th>
+				</tr>
+				<tr>
+					<td>- gnb_2018.html</td>
+					<td>전 채널 GNB 공통 html<br>(1depth 메뉴, myT 2depth 및 전체메뉴, 검색 버튼, 슬로건 등)</td>
+					<td rowspan="2" class="center">공통 실루엣 배포</td>
+					<td rowspan="2" class="center">티월드</td>
+					<td rowspan="2" class="center">티월드</td>
+					<td>기존 gnb.html 에서<br><b>gnb_2018.html + gnb_채널코드.html</b> 로 구성 변경</td>
+				</tr>
+				<tr>
+					<td>- gnb.css<br>
+						- gnb.js<br>
+						- 관련 이미지들<br>
+					</td>
+					<td>GNB 영역 공통 CSS, JS, 이미지</td>
+					<td>개선 GNB 이미지들은 모두 새 폴더(/img/header/renew/) 로 분리</td>
+				</tr>
+				<tr>
+					<td>- gnb_twd.html (티월드/이벤트)</td>
+					<td rowspan="2">각 채널별 2depth 및 전체메뉴<br>(파일명은 gnbJquery.GNB.init() 함수의 채널코드와 동기화)</td>
+					<td rowspan="2" class="center">각 채널 수동 배포</td>
+					<td class="center">티월드</td>
+					<td class="center">티월드</td>
+					<td rowspan="2">각 채널에서 메뉴 관리 및 배포 하기 위하여 파일 분리<br>*단, myT 전체메뉴는 전 채널에서 보여지게 되므로, gnb_2018.html 에 포함하여 공통 실루엣 배포 하는 것으로 함.</td>
+				</tr>
+				<tr>
+					<td>- gnb_mbs.html (멤버십)<br>- gnb_rmg.html (로밍)<br><del>- gnb_tds.html (다이렉트샵)</del></td>
+					<td class="center">각 채널</td>
+					<td class="center">각 채널</td>
+				</tr>
+				<tr>
+					<td>- gnb_2018_login.html<br>- gnb_2018_logout.html</td>
+					<td>myT 레이어 (jsp)</td>
+					<td class="center">각 채널 수동 배포 / jsp 개발</td>
+					<td class="center">티월드</td>
+					<td class="center">각 채널</td>
+					<td>-</td>
+				</tr>
+			</table>
+			<p><b>* 다이렉트샵 채널은 자체에서 별도 개발하므로, GNB 공통 파일 수정시 별도로 파일과 주석 내용만 전달한다.</b> (담당자: 공통파트, 정하은 수석)</p>
+			<br>
+			
+		</div>
+		<div class="box">
+			<h2>다이렉트 채널 분리로 인한 IA변경 사항 (pc웹과 mobile웹 모두 해당)</h2>
+			<p>gnb와 전체메뉴 등에서 '다이렉트샵'은 새창 링크로 변경,<br>
+			다이렉트샵의 하위 메뉴는 모두 삭제함.</p>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+
+<section class="thumb type1">
+	<h1>일반 JSP/HTML 페이지</h1>
+	<div class="preset">
+		<div class="header box">
+			<h2>Header div</h2>
+			<div class="check">
+				<p title="기획서에 표기 된 keyword와 description을 옮겨 적는다.">&lt;meta&gt; keyword, description 확인</p>
+			</div>
+			<div class="check">
+				<p>Title 확인</p>
+				<div class="cont">
+					기획서에 표기 된 title을 확인 한다.
+				</div>
+			</div>
+			<div class="check">
+				<p><del>og 태그와 og 이미지</del></p>
+			</div>
+			<p>header에 불필요한 임시 이미지가 있는 소스의 경우에 아래처럼 div 태그만 남기고 삭제 한다.</p>
+			<p>PC)</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false"><div id="header"></div></pre>
+			</div>			
+			<p>Mobile)</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false"><header></header></pre>
+			</div>
+			<p>GNB의 생성은 footer의 소스를 참조한다.</p>
+		</div>
+		<div class="body box">
+			<h2>Body div</h2>
+			<p>html 각 요소에 대한 마크업 가이드는 <a href="real_index.html">SKT 마케팅 통합 POC 구축_PC HTML</a>을 참고한다.</p>
+			<p>그 외에 아래의 항목들을 체크한다.</p>
+			<p></p>
+			<div class="check">
+				<p>A 링크</p>
+				<div class="cont">
+					<p>TG링크는 href="<strong>/tglink.jsp?urlname=wTG_2475</strong>" 형태이다.<br>
+					경로는 http:// 부터가 아닌 상대경로로 잡는다.</p>
+					<p>절대경로를 사용할 경우엔 반드시 프로토콜을 포함하도록 한다. (https적용에 대비한 방안으로 2018-08-17일 추가)<br>
+					href="http://www.tworld.co.kr" - ○<br>
+					href="https://www.tworld.co.kr" - ○<br>
+					href="www.tworld.co.kr" - X
+					</p>
+				</div>
+			</div>
+			<div class="check">
+				<p>이미지 최적화 (gif, jpg, png)</p>
+				<div class="cont">
+					2017년 이전의 이미지는 대부분 png로 제작이 되어있다.<br>
+					이미지 용량 최적화를 위해 gif와 jpg의 적극적으로 사용하도록 한다.<br>
+					- 색상이 적은 경우 gif 선택이 유리<br>
+					- 다양한 색일때는 jpg 선택이 유리<br>
+					- 투명 채널이 필요할땐 png를 사용
+				</div>
+			</div>
+			<div class="check">
+				<p>웹접근성을 준수 했는지</p>
+				<div class="cont">
+					최소한의 웹접근성을 준수하려고 노력한다.<br>
+					- alt는 어느 상황에서건 작성하고, 글자수가 많을때는 class="hidden" 을 사용한다.<br>
+					- 마크업의 선형화 구조에 주의한다.<br>
+					- 키보드 이동을 확인한다.
+				</div>
+			</div><br>
+			<div class="check">
+				<p>관리자의 경우 &lt;!-- 어드민 등록 영역 --&gt; 주석이 있는지</p>
+				<div class="cont">
+					amdin으로 입력하는 상품 상세(원장) 페이지는 반드시 소스 안에 주석으로 표시를 해 준다.<br>
+					<strong>&lt;!-- 어드민 등록 영역 --&gt;</strong><br><br>
+					상용과 코딩의 admin소스 영역이 일치하는지 비교해 본다.<br>
+					상세한 내용은 Guide 페이지의 Admin 원장(상세페이지) 내용을 확인 한다.
+				</div>
+			</div>
+		</div>
+		<div class="footer box">
+			<h2>Footer div</h2>
+			<div class="check">
+				<p>u_code값을 확인한다.</p>
+				<div class="cont">
+					푸터 소스 중 <strong>gnbJquery.GNB.init( 'TWD' ,'u0', '', 'ALL' );</strong> 부분에서<br>
+					첫번째는 'TWD' (고정)<br>
+					두번째 인자 값에 u_code를 입력한다.<br>
+					세번째 인자 값은 해당 페이지의 타이틀을 입력한다.
+				</div>
+			</div>
+			<p>푸터에 아래의 코드가 없으면 GNB가 생성이 되지 않는다.<br>기존에 GNB가 없는 html페이지도 많이 있으니, 작업 중에 발견하게 되면 gnb 생성을 위해 아래의 소스를 추가 한다.</p>
+			<p>PC)</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false"><div id="footer"></div>
+<!-- 개발팀 추가 시작 -->
+&lt;script type="text/javascript" charset="euc-kr" src="/poc/gnb/inc/cmn/gnb_cmn.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/poc/gnb/inc/cmn/common_url.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/poc/inc/js/cmn/common_twd.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="utf-8" src="/poc/gnb/inc/cmn/poc_gnb_banner.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="utf-8" src="/poc/gnb/inc/cmn/poc_main_banner.js"&gt;&lt;/script&gt;
+<!-- 개발팀 추가 종료 -->
+<!-- gnb -->
+&lt;link href="/poc/gnb/inc/css/gnb.css" rel="stylesheet" type="text/css"&gt;
+&lt;script type="text/javascript" src="/poc/gnb/inc/js/jquery.gnb.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/poc/gnb/inc/js/gnb.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;gnbJquery.GNB.init( 'TWD' ,'u0', '', 'ALL' ); //( 'siteCd' ,'ucode', 'title', 'svcChgType')&lt;/script&gt;
+&lt;script type="text/javascript" src="/poc/inc/js/common/common_tworld.js"&gt;&lt;/script&gt;<!-- 공통(new) js파일 추가 --></pre>
+			</div>
+
+			<p>Mobile)</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false"><footer></footer>
+<!-- 개발팀 추가 시작 -->
+&lt;script type="text/javascript" charset="euc-kr" src="/mpoc/gnb/inc/cmn/gnb_cmn.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/mpoc/gnb/inc/cmn/mcommon_url.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/mpoc/inc/js/cmn/common_twd.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="utf-8" src="/mpoc/gnb/inc/cmn/mpoc_gnb_banner.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="utf-8" src="/mpoc/gnb/inc/cmn/mpoc_main_banner.js"&gt;&lt;/script&gt;
+<!-- 개발팀 추가 종료 -->
+<!-- gnb -->
+&lt;link href="/mpoc/gnb/inc/css/gnb.css" rel="stylesheet" type="text/css"&gt;
+&lt;script type="text/javascript" src="/mpoc/gnb/inc/js/jquery.gnb.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" charset="euc-kr" src="/mpoc/gnb/inc/js/gnb.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript">
+    gnbJquery.GNB.init( 'TWD' ,'u5_3_2', '', 'ALL' ); //( 'siteCd' ,'ucode', 'title', 'svcChgType')
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/mpoc/inc/js/common/common_tworld.js"&gt;&lt;/script&gt;<!-- 공통(new) js파일 추가 --></pre>
+			</div>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+<section class="thumb type1" style="height:200px;">
+	<h1>팝업 레이어</h1>
+	<div class="preset">
+		<div class="box">
+			<h2>긴급 공지 레이어(admin)</h2>
+			<p>메인페이지의 팝업 레이어를 Admin에서도 등록이 가능하다.<br>갑작스런 오류와 같이 급한 때에만 사용 하도록 한다. (매니저 권고)<br>
+			필요한 이미지와 admin 안에 입력 할 내용 부분만 코딩 해서 넘겨준다.</p>
+			<p><a href="http://coding.tworld.co.kr/poc/html/layer/popup_20180213.html" target="_blank"><span class="italic">Coding list > [Admin] > 공지레이어 > 샘플 코드</span></a></p>
+		</div>
+		
+		<div class="box">
+			<h2><del>일반 공지 레이어 (단순 html 작업)</del></h2>
+			<p><strong>2019년 현재, 일반 공지 레이어는 2018년 1회 사용하고 폐기 되었음.</strong></p>
+			<p>메인페이지의 팝업 레이어는 html안에 직접 하드코딩을 하며,(MA.html, mMa.html)<br>
+				배포일에 상용 배포를 해야 한다.</p>
+			<p>예약 기능이 가능한데, 특정 기간에만 보여야 하는 팝업은 <br><span class="italic">data-el="timerpop", data-start="yyyy/mm/dd hh:mm:ss", data-end="yyyy/mm/dd hh:mm:ss"</span>과 같이 데이터 속성을 같이 적어 준다.</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false"><div id="layer20180308_1" class="layerPop1 w550" data-el="timerpop" data-start="2018/03/21 07:00:00" data-end="2018/03/24 22:00:00">
+	<button type="button" class="popClose btnBlack btnS">닫기</button>
+	<h2 class="popHead">방송통신위원회 시정명령에 따른 공표문</h2>
+	<div class="popCon" style="color:#333;letter-spacing:-1px;overflow-y:auto;max-height:100%">
+		<div class="inPop">
+			<h2 class="titDep1"><img src="/poc/img/tmp/pop_180308.gif" alt="SK텔레콤(주)는 '이동통신단말장치 유통구조 개선에 관한 법률' 위반을  이유로 시정명령을 받은 사실이 있음" /></h2>
+			<div class="hidden">hidden Text</div>
+			<div class="btnBox">
+				<button type="button" class="btnS btnBlack " style="margin-left:8px"><span>닫기</span></button>
+			</div>
+		</div>
+	</div>
+	<div class="todayClose">
+		<span class="checkbox">
+			<input type="checkbox" id="chk4"><label for="chk4">하루 동안 열지 않음</label>
+		</span>
+	</div>
+</div></pre>
+			</div>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+<section class="thumb type1" style="height:220px;">
+	<h1>Admin 원장(상세페이지)</h1>
+	<div class="preset">
+		<div class="box">
+			<h2>소스 작업</h2>
+			<p>페이지 일부를 admin에서 입력한다. 2017년까지는 include를 사용해서 별도의 html로 만들어 사용하고 있었으나,<br>
+			최근에는 js를 이용해서 소스를 팝업 레이어로 보여지게 하고 있으니 아래 소스를 참조한다.</p>
+			<p>admin 영역 앞뒤로 <strong>&lt;!-- admin 등록영역 --&gt;</strong> 주석을 꼭 달아준다.
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">body 맨 아래에 js 한줄 추가 (다른 js보다는 위에 위치하도록)
+&lt;script type="text/javascript" src="//coding.tworld.co.kr/work_src/admin_src.js"&gt;&lt;/script&gt;</pre>
+			<p><a href="http://coding.tworld.co.kr/poc/admin/product_new/ATS1.1.2.5.html" target="_blank"><span class="italic">Coding list > [Admin] > 상세페이지 샘플 코드</span></a></p>
+			<p>mobile web 샘플 코드 페이지는 별도로 없다. 적응형이란 의미로 pc와 mobile의 html소스는 동일하게 사용하기 때문임.</p>
+			<p>html구조가 일반적이지 않아서 소스보기 버튼에 문제가 있을 경우에는 <span class="italic">'div.admin-input'</span> 으로 admin영역을 한번 감싸주면 된다.</p>
+			<h2 style="margin-top:30px;">Bookmarklet을 활용해서 상용페이지의 admin 소스 추출하기</h2>
+			<p>아래의 javascript 소스를 복사해서 브라우저의 즐겨찾기 메뉴에 '새 페이지'로 등록 한다.<br>
+			Bookmarklet으로 추출한 html소스는 들여쓰기가 되어 있지 않아 보기에 불편하므로, <a href="https://bit.ly/2HAGxBi" target="_blank">online html beautifier</a> 등의 툴을 이용해서 소스를 보기좋게 재구성할 수 있다.<br>
+			추출한 소스를 보고 열기 닫기 태그가 제대로 들어가 있는지 확인한다.<br>
+			* js가 적용 된 후의 소스임을 참고한다.</p>
+			<p>다이어그램 소스 보기</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">javascript:(function(){var a=window.open('about:blank').document;a.write('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Source of 다이어그램&lt;/title&gt;&lt;meta name="viewport" content="width=device-width" /&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;');a.close();var b=a.body.appendChild(a.createElement('pre'));b.style.overflow='auto';b.style.whiteSpace='pre-wrap';b.appendChild(a.createTextNode(document.querySelector(".prTopType").outerHTML))})();</pre>
+			</div>
+			<p>탭1번 소스 보기</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">javascript:(function(get) {var a = window.open('about:blank').document;a.write('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Source of Tab 1&lt;/title&gt;&lt;meta name="viewport" content="width=device-width" /&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;'');a.close();var b = a.body.appendChild(a.createElement('pre'));b.style.overflow = 'auto';b.style.whiteSpace = 'pre-wrap';var c = document.querySelector(get).cloneNode(true);var d = c.querySelector("h2.hidden");var e = d.parentNode.removeChild(d);console.log(e);b.appendChild(a.createTextNode(  c.innerHTML  ));})("#prTabCon1");</pre>
+			</div>
+			<p>탭2번 소스 보기</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">javascript:(function(get) {var a = window.open('about:blank').document;a.write('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Source of Tab 2&lt;/title&gt;&lt;meta name="viewport" content="width=device-width" /&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;'');a.close();var b = a.body.appendChild(a.createElement('pre'));b.style.overflow = 'auto';b.style.whiteSpace = 'pre-wrap';var c = document.querySelector(get).cloneNode(true);var d = c.querySelector("h2.hidden");var e = d.parentNode.removeChild(d);console.log(e);b.appendChild(a.createTextNode(  c.innerHTML  ));})("#prTabCon2");</pre>
+			</div>
+			<p>탭3번 소스 보기</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">javascript:(function(get) {var a = window.open('about:blank').document;a.write('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Source of Tab 3&lt;/title&gt;&lt;meta name="viewport" content="width=device-width" /&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;'');a.close();var b = a.body.appendChild(a.createElement('pre'));b.style.overflow = 'auto';b.style.whiteSpace = 'pre-wrap';var c = document.querySelector(get).cloneNode(true);var d = c.querySelector("h2.hidden");var e = d.parentNode.removeChild(d);console.log(e);b.appendChild(a.createTextNode(  c.innerHTML  ));})("#prTabCon3");</pre>
+			</div>
+			<p>탭4번 소스 보기</p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">javascript:(function(get) {var a = window.open('about:blank').document;a.write('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;Source of Tab 4&lt;/title&gt;&lt;meta name="viewport" content="width=device-width" /&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;'');a.close();var b = a.body.appendChild(a.createElement('pre'));b.style.overflow = 'auto';b.style.whiteSpace = 'pre-wrap';var c = document.querySelector(get).cloneNode(true);var d = c.querySelector("h2.hidden");var e = d.parentNode.removeChild(d);console.log(e);b.appendChild(a.createTextNode(  c.innerHTML  ));})("#prTabCon4");</pre>
+			</div>
+			<p>참고로 원장 상세페이지는 <span class="italic">/admin/<strong>product</strong>/</span> 경로가 아니라 <span class="italic">/admin/<strong>product_new</strong>/</span> 이다.</p>
+			</div>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+<section class="thumb type1" style="height:120px;">
+	<h1>이용약관</h1>
+	<div class="preset">
+		<div class="box">
+			<h2>이용약관</h2>
+			<p>약관 페이지 수정은 일반적인 html 페이지 수정이고, iframe안에 있는 약관 내용에 대해 서술한다.</p>
+			<p>iframe의 약관 html 파일은 admin에서 파일 등록을 하므로 코딩서버와 개발기 등에 올릴 필요가 없다. (기획자에게 html을 전달하면 된다)<br>
+			단, 코딩서버의 <span class="italic">/poc/admin/util/</span> 폴더에서 관리 한다.</p>
+			<p>코딩리스트는 <span class="italic">[PC] > UT_기타메뉴 > 회원/정책 > T world 정책 > SK텔레콤 이용약관(ANSI 로저장/파일로전달)</span> 에서 확인 가능하다.</p>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+<section class="thumb type1" style="height:220px;">
+	<h1>이벤트 상세페이지</h1>
+	<div class="preset">
+		<div class="box">
+			<h2>이벤트 상세페이지 (iframe)</h2>
+			<p>상세페이지 안에서 iframe으로 보여지는 영역에 대해 기술한다.</p>
+			<p>CP사에서 직접 제작할 때도 있고 T월드 운영팀에서 작업 할 때도 있다.<br>
+			pc와 mobile 모두 단순한 웹컨텐츠 형태이므로 제작부터 배포까지 UI개발팀에서 담당한다.</p>
+			<h2 style="margin-top:30px;">모바일웹의 경우</h2>
+			<p>단, 모바일 웹의 경우 새창으로 연결되는 링크나 버튼에 대해서 js가 추가적으로 필요하다. (2019-03-07부터 반영 시작)<br>
+			(모바일App에서 webview로 보여질때 새창 연결이 안되는 문제를 js로 해결)</p>
+			<p>샘플 페이지: <a href="/mpoc/html/tlive/mTL1.1.39.html" target="_blank">/mpoc/html/tlive/mTL1.1.39.html</a></p>
+			<p style="margin-top:20px;"><strong>페이지 하단에 js 추가</strong></p>
+			<div class="code">
+				<pre class="guideCode" contenteditable="true" spellcheck="false">&lt;script type="text/javascript"&gt;
+	$(document).ready(function () {
+        if (!window.commonJs) {
+            window.commonJs = {};
+        }
+
+        var commonJs = window.commonJs,
+			mtwdExpYn = location.href.indexOf('mtwdExpYn=Y') !== -1,
+            MobileUA = (function () {
+                var ua = navigator.userAgent.toLowerCase(),
+                    mua = {
+                        IOS: /ipod|iphone|ipad/.test(ua),                                	//iOS
+                        IPHONE: /iphone/.test(ua),                                        	//iPhone
+                        IPAD: /ipad/.test(ua),                                            	//iPad
+                        ANDROID: /android/.test(ua),                                    	//Android Device
+                        WINDOWS: /windows/.test(ua),                                    	//Windows Device
+                        TOUCH_DEVICE: ('ontouchstart' in window) || /touch/.test(ua),    	//Touch Device
+                        MOBILE: /mobile/.test(ua),                                        	//Mobile Device (iPad )
+                        ANDROID_TABLET: false,                                            	//Android Tablet
+                        WINDOWS_TABLET: false,                                            	//Windows Tablet
+                        TABLET: false,                                                    	//Tablet (iPad, Android, Windows)
+                        SMART_PHONE: false                                                	//Smart Phone (iPhone, Android)
+                    };
+                mua.ANDROID_TABLET = mua.ANDROID && !mua.MOBILE;
+                mua.WINDOWS_TABLET = mua.WINDOWS && /tablet/.test(ua);
+                mua.TABLET = mua.IPAD || mua.ANDROID_TABLET || mua.WINDOWS_TABLET;
+                mua.SMART_PHONE = mua.MOBILE && !mua.TABLET;
+
+                return mua;
+            }());
+
+        function goOutLink(link, billyn, inout) {
+            if ("Y" === billyn) {
+                if (confirm("3G/LTE망 사용 시 데이터 요금이 발생됩니다.")) {
+                    if (MobileUA.IOS) {   // OS 체크
+                        if (inout === "OUT") {
+                            location.href = "toapp:webbrowserouter:" + link;
+                        } else {
+                            alert('로그인 후 이용 가능합니다.');
+                        }
+                    } else {
+                        if (inout === "OUT") {
+                            toapp.webbrowserouter(link);
+                        } else {
+                            alert('로그인 후 이용 가능합니다.');
+                        }
+                    }
+                }
+            } else {
+                if (MobileUA.IOS) {   // OS 체크
+                    if (inout === "OUT") {
+                        location.href = "toapp:webbrowserouter:" + link;
+                    } else {
+                        alert('로그인 후 이용 가능합니다.');
+                    }
+                } else {
+                    if (inout === "OUT") {
+                        toapp.webbrowserouter(link);
+                    } else {
+                        alert('로그인 후 이용 가능합니다.');
+                    }
+                }
+            }
+        }
+
+        function goLink(url) {
+            if (mtwdExpYn) {
+                // APP의 이벤트 페이지에서 호출한 경우 개발에서 전달한 함수를 호출
+				url = url.replace('http://', '') .replace('https://', ''); // 아웃 링크는 프로토콜 없이 호출
+                goOutLink(url, 'N', 'OUT');
+            } else {
+                // APP이 아닌 웹페이지에서 호출한 경우 일반 window.open 사용
+                window.open(url, '_blank');
+            }
+        }
+
+        commonJs.goLink = goLink;
+	});
+&lt;/script&gt;</pre>
+			</div>
+			<div class="code">
+				<p><strong>링크의 적용</strong></p>
+				<pre class="guideCode" contenteditable="true" spellcheck="false">
+<a href="javascript:commonJs.goLink('http://m.tworld.co.kr/tglink.jsp?urlname=mTG_3387');" target="_blank" title="0한동으로 이동 (새창)">링크</a></pre>
+			</code>
+		</div>
+		<div class="click"></div>
+	</div>
+</section>
+
+<section class="etc">
+	<h1>기타</h1>
+	<div class="preset">
+	<ul class="box">
+		<li class="check">
+			<p>공통파일 관리</p>
+			<div class="cont">
+				<strong>다이렉트, 멤버십, 로밍, 이벤트의 POC에서도 사용하지만 T world에서 관리하는 공통 파일들</strong><br><br>
+				공통 GBN나 common.js, common.css 등은 각POC에서 관리하지 않고 T world에서 수정/배포한다.<br>
+				각 파일의 목록과 배포방법은 <span class="italic">\\150.24.229.247\vinylc\01_공통\11_배포목록\@공통파일관리문서 內 엑셀파일을 참고한다.</span>
+			</div>
+		</li>
+		<li class="check">
+			<p>코딩진행표 동기화</p>
+			<div class="cont">
+				<strong>코딩진행표</strong><br><br>
+				<a href="http://coding.tworld.co.kr/">http://coding.tworld.co.kr/</a><br>
+				추가 페이지 혹은 삭제되는 페이지의 작업이 있다다면 반드시 코딩진행표에도 반영을 해야한다.<br>
+			</div>
+		</li>
+	</ul>
+	</div>
+</section>
+
+
+<section class="validate">
+	<h1>자가 검사</h1>
+	<div class="preset">
+	<ul class="box">
+		<li class="check">
+			<p>html 오류검사, 선형화</p>
+			<div class="cont">
+				주로 사용하는 사용하는 브라우저의 확장기능 등을 통해 html validation을 검토한다.<br><br>
+				<strong>Chrome</strong> : <a href="https://chrome.google.com/webstore/detail/html-validator/mpbelhhnfhfjnaehkcnnaknldmnocglk" target="_blank">HTML Validator</a> 확장기능을 추가하면 개발자 툴(F12)에서 'HTML validator' 탭에서 확인 할 수 있다.<br><br>
+				<strong>Firefox</strong> : 소스보기 창(Ctrl + U)에서 오류난 부분은 붉은색으로 표기가 된다. <br>혹은 Chrome처럼 개발자 툴의 'HTML validator' 탭에서 확인 할 수 있다.
+			</div>
+		</li>
+		<li class="check">
+			<p>UI테스트 (vm ie8, 크롬, ie10)</p>
+			<div class="cont">
+				<strong>브라우저 확인</strong><br>
+				IE : 8버전 이상 (단, IE7에서는 브라우저 업데이트 안내 레이어가 잘 보이는지 확인 필요)<br>
+				Chrome 최신버전<br>
+				Firefox 최신버전<br>
+				MAC 사파리 최신버전<br><br>
+				IE 버전 확인은 VMware Workstation에서 확인 한다.<br>
+				150.24.229.248 / vinyl / vinyl1234<br><br>
+				모바일기기: <br>
+				iOS: 아이폰6 (9.3.5), 아이폰X (11.3)<br>
+				Android (4.4이상, 단 갤럭시S2는 4.0.3)<br><br>
+				상세한 가이드는 아래 경로의 문서를 참조한다.<br>
+				\\150.24.229.247\vinylc\01_공통\14_운영관리\08_운영가이드\온라인Tworld_정책서_v0.8_20190111.xlsx
+			</div>
+		</li>
+	</ul>
+	</div>
+</section>
+
+<section class="doc" style="display:none;">
+	<h1>문서작업</h1>
+	<div class="preset">
+	<ul class="box">
+		<li class="check">
+			<p>변경계획서 작성</p>
+			<div class="cont">
+				<p><strong>개발쪽에 코딩작업을 안내하기 위한 문서</strong></p>
+				<p>JSP 파일이 수정 된 경우에 작성한다.<br>
+				신규파일과 수정파일을 구분해서 기입한다.<br>
+				수정파일의 경우에는 변경 부분의 주석을 붉은색으로 표시한다.<br>
+				연관된 web contents(image, css, js, 단순 html)가 있을 경우에는 파일명을 기입한다.</p>
+				<p>업무에 수정이 된 경우, 변경계획서가 개발자에게 기 전달 되었다면 새로운 버전으로 추가 작성한다.</p>
+			</div>
+		</li>
+		<li class="check">
+			<p>공통파일이 있는지 확인</p>
+			<div class="cont">
+				css파일이나 여러명이 작업하는 파일에는 버전 관리에 신경 써야 한다.<br>
+				작업한 파일은 \파일서버\51번 퍼블리싱 폴더의 배포목록.xls에 기입
+			</div>
+		</li>
+	</ul>
+	</div>
+</section>
+
+<section class="press">
+	<h1>배포 프로세스</h1>
+	<div class="preset">
+	<div class="box">
+		<h2>유형별 배포과정</h2>
+		<p>UI개발팀의 R&R은 아래의 과정과 같다.</p>
+		<table class="step">
+			<tr>
+				<td class="type check"><p><strong>Web Contents</strong> Type<br>(html, css, js, image)</p>
+					<div class="cont">
+						<strong>단순 웹컨텐츠</strong><br><br>
+						html(상용에서 jsp가 아닌 단순 html인 경우), css, js, image 를 대상으로 하며,<br>
+						UI개발파트에서 상용서버에 배포(P배포)까지 진행하고 완료 한다.<br><br>
+						<strong>변경계획서 작성 및 S배포할때 첨부</strong>
+					</div>
+				</td>
+				<td class="coding check"><p>coding서버</p>
+					<div class="cont">
+						코딩서버에는 svn을 커밋하면 <a href="http://coding.tworld.co.kr" target="_blank">통합POC 코딩 진행표</a>에서 확인 가능한다.<br>
+						코딩서버에서 기획자의 확인완료 후 개발기로 파일을 업로드 한다.<br>
+					</div>
+				</td>
+				<td class="dev check"><p>개발서버</p>
+					<div class="cont">
+						개발기 업로드는 STG클리이언트를 이용해 ftp로 파일을 업로드 한다.<br><br>
+						* 만일 /gnb/하위의 <strong>공통파일</strong>인 경우에는 <strong>이벤트 개발서버</strong>에도 동일하게 업로드 한다. (160번 서버)
+					</div>
+				</td>
+				<td class="stage check"><p>스테이징<br>(S배포)</p>
+					<div class="cont">
+						<strong>1. 이클립스를 통해 자원을 동기화 한다.</strong><br>
+						- 작업 한 파일을 실루엣의 파일로 복사<br>
+						- 네비게이터에서 변경된 자원을 '체크인' 혹은 '추가'<br><br>
+						<strong>2. 이클립스 안에서 실루엣을 이용해 S배포를 한다.</strong><br>
+						- 네비게이터에서 변경된 자원을 선택 후 'S배포요청(자원포함)'<br>
+						- 배포방법은 '즉시배포'를 체크.<br>
+						- 배포요청 시 변경계획서를 첨부하고, 알림대상자를 꼭 지정한다.<br>
+						- 배포가 완료 되면 나오는 문서번호를 기록한다.<br><br>
+						<strong>스테이징 배포 가이드 문서</strong><br>
+						<span class="italic">\\150.24.229.247\vinylc\52_퍼블리싱\01.기본 업무 가이드 문서\03.스테이징 배포 가이드<br>
+						스테이징 배포 가이드_v1.0_151201.docx</span>
+					</div>
+				</td>
+				<td class="real end check"><p>상용<br>(P배포)</p>
+					<div class="cont">
+						<strong>1. 빌더를 통해서 배포작업을 만듭니다.</strong> (그날의 배포 담당자가)<br><br>
+						<strong>2. 이클립스를 열어 P배포 요청을 만듭니다.</strong>  (각 일감 담당자 혹은 배포 요청자로 등록 된 자)<br>
+						- 배포방법은 '정기배포' 선택, 배포작업은 1에서 만들어진 항목을 선택.<br>
+						- '관련배포요청문서'탭에서 S배포 된 내역을 배포작업에 추가한다. (문서번호 등으로 검색)<br>
+						- 알림대상자 꼭 지정.<br><br>
+						<strong>3. 최종 배포자는 빌더를 실행해서 배포작업 창을 열고 배포시간에 맞춰서 배포를 진행한다.</strong><br><br>
+						<strong>상용 배포 가이드 문서</strong><br>
+						<span class="italic">\\150.24.229.247\vinylc\52_퍼블리싱\01.기본 업무 가이드 문서\06.상용배포(P배포) 가이드<br>
+						웹컨텐츠 실루엣 P배포 메뉴얼_[복호화문서].pptx</span>
+					</div>
+				<span class="fin">종<br>료</span></td>
+			</tr>
+			<tr>
+				<td class="type check"><p><strong>JSP</strong> Type</p>
+					<div class="cont">
+						UI개발파트에서는 개발서버까지만 배포한다.<br><br>
+						jsp 파일은 수정사항을 변경계획서에 작성하고 vinyl파일서버에 꼭 올린다.<br><br>
+						개발자는 변경계획서의 내용을 보고 코딩수정을 반영하고 스테이징 서버와 상용 서버에 배포를 책임진다.
+					</div>
+				</td>
+				<td class="coding">coding서버</td>
+				<td class="dev end">개발서버<span class="fin">종<br>료</span></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="type check"><p><strong>Web Contents + JSP</strong> Type<br>(html, css, js, image + jsp)</p>
+					<div class="cont">
+						jsp와 web contents가 혼합 된 경우에는 <br><br>
+						1. jsp는 개발기까지 배포하고 변경계획서를 작성한다.<br>
+						1-1. 변경계획서에는 jsp파일 외에도 단순 웹컨텐츠를 리스트로 적는다.<br>
+						2. 웹컨텐츠는 UI개발팀이 개발기와 스테이징 서버에 배포한다. 스테이징에 배포된 문서번호를 기록한다.<br><br>
+						3. 상용 서버에는 개발자가 jsp와 웹컨텐츠를 배포한다. 개발자가 웹컨텐츠를 배포하므로 문서번호를 정확히 기재 해야 한다.<br><br>
+						4. 상용배포가 확인 되는지 확인 한다.<br><br>
+						<strong>변경계획서 작성 및 S배포할때 첨부</strong>
+					</div>
+				</td>
+				<td class="coding">coding서버</td>
+				<td class="dev">개발서버</td>
+				<td class="stage end">스테이징<br>(S배포)<span class="fin">종<br>료</span></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="type check"><p><strong>Admin</strong> Type</p>
+					<div class="cont">
+						<strong>UI개발파트에서는 html파일을 코딩서버까지만 올린다.</strong><br><br>
+						상품 원장 페이지 혹은 기획자 요청에 의한 Admin 입력 화면이 대상이 된다.<br>
+						코딩서버에 업로드 후 기획자 컨펌 완료되면 종료.<br>
+						변경계획서는 작성하지 않는다.
+					</div>
+				</td>
+				<td class="coding end">coding서버<span class="fin">종<br>료</span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="type check"><p><strong>Admin + Web Contents</strong> Type<br>(Admin + css, js, image)</p>
+					<div class="cont">
+						<strong>html파일을 코딩서버까지만 올리고, image와 css, js파일은 상용 서버까지 배포한다.</strong><br><br>
+						Admin 입력을 위한 html소스 전달은 coding서버를 통해 기획자에게 전달한다.<br>
+						그 외에 image, css 등의 리소스 파일은 스테이징 서버를 거쳐 상용 배포 과정을 거친다.<br>
+						web contents만 있으므로 주로 19시에 배포 한다.<br><br>
+						<strong>변경계획서 작성 및 S배포할때 첨부</strong>
+					</div>
+				</td>
+				<td class="coding">coding서버</td>
+				<td class="dev">개발서버</td>
+				<td class="stage">스테이징<br>(S배포)</td>
+				<td class="real end">상용<br>(P배포)<span class="fin">종<br>료</span></td>
+			</tr>
+		</table>
+		<div class="">
+			<p><strong>배포파일 중에 image, css, js가 있다면 cdnw서버로 퍼지한다. (2018-09-14일 추가)</strong><br>
+				퍼지방법은 아래의 '배포 시 주의사항 > cdnw 퍼지'을 참조<br><br></p>
+		</div>
+	</div>
+
+	
+	<div class="box">
+		<h2>배포 시 주의사항</h2>
+		<div class="check">
+			<p>스테이징 배포 시간</p>
+			<div class="cont">
+				<strong>스테이징 반영/원복 시점은 화/목 배포 동일 적용한다</strong><br><br>
+				<strong>1. 금요일에 스테이징 배포.</strong><br>원복은 화요일 16시 이후 원복을 진행한다.
+			</div>
+		</div>
+		<div class="check">
+			<p>배포목록 작성</p>
+			<div class="cont">
+				<strong>공통파트에서 작성하는 배포목록.xlsx 파일에 <span class="italic">'배포파일 종류'</span>가 <span class="italic">'웹컨텐츠'</span>인 행에 대해 관련된 cell을 입력한다.</strong><br><br>
+				1. <span class="italic">'퍼블리싱 담당자 [문서번호]'</span>에 담당 UI개발팀의 담당자를 적는다.<br>
+				2. <span class="italic">'퍼블리싱 담당자 [문서번호]'</span>에 웹컨텐츠의 스테이징 배포 된 문서번호를 적는다.<br>
+				3. <span class="italic">'배포파일 or URL'</span>에 스테이징 서버에 배포 된 파일 리스트를 적는다.<br>
+				3-1. 파일리스트 옆에 리비전 번호를 적는다 (배포 될 리비전과 원복을 위한 리비전)<br><br>
+				4. 스테이징 반영/원복 시점 : 목 배포 기준<br>
+				- 반영 시점 : 금요일 ~ 수요일 12시<br>
+				- 원복 시점 : 수요일 오후 18시 ~ 목요일 16시까지 필수로 원복 진행<br><br>
+				2. 배포 리스트 작성 마감 기준<br>
+				- 목요일 배포 리스트 : 매주 목요일 16시 SKT/C&C 공유<br>
+				- 화요일 배포 리스트 : 미정<br><br>
+				3. 배포 리스트 항목 추가<br>
+				- 모든 파일에 대해 원복 리비전 명시<br>
+				- 실루엣 캡쳐 화면 삽입 : 파일명 및 리비전 보이도록 화면 캡쳐
+			</div>
+		</div>
+		<div class="check">
+			<p>공통파일, css, js 파일의 버전관리</p>
+			<div class="cont">
+				css나 js 파일의 경우 여러개의 일감에 동시에 포함 되어 있는 경우가 있다.<br>
+				소스를 열어보고 배포되어야 할 부분을 판별하도록 한다.<br>
+				퍼블리싱폴더의 (\\150.24.229.247\vinylc\52_퍼블리싱) 공통파일관리.xlsx 를 열어서 진행 중인 업무를 확인 해 본다.
+			</div>
+		</div>
+		<div class="check">
+			<p>S배포(스테이징 배포)시 알림대상자</p>
+			<div class="cont">
+				<strong>배포목록 작성 시에 알림대상자를 기입한다.</strong><br><br>
+				알림대상자는 배포문서에 접근할 권한이 생기며, 개발자의 경우에 알림대상자로 지정이 되어야만 해당 배포문서를 상용 서버에 배포할 수 있다.<br><br>
+				기본적으로 UI개발팀의 모든 인원을 알림대상자로 지정하고,<br>
+				매달 지정된 C&amp;C의 개발인력을 추가로 기입한다.<br>
+				그 외에 별도로 기획쪽의 요청에 따라 추가하도록 한다.
+			</div>
+		</div>
+		<div class="check">
+			<p>cdnw 퍼지</p>
+			<div class="cont">
+				<p><strong>상용배포 완료 후 리소스 파일들을 퍼지한다.</strong><br><br>
+				상용서버의 리소스 파일들은 6시간마다 자동으로 스케쥴링되어 cdnw서버로 전송되는데,<br>
+				상용 배포 직후에는 cdnw서버와 다를 수 있기 때문에 수정적인 조치가 필요할 수 있음. 이 경우 퍼지 기능을 이용한다.</p><br>
+				<strong>퍼지?</strong>: 상용서버에 있는 리소스 파일을 수동으로 cdnw서버로 전송하는 기능<br>
+				<strong>리소스 파일대상</strong>: 배포목록에 있는 image, css, js 파일(cdnw서버에는 리소스 파일만 존재하므로 html 파일은 대상이 아니다)<br>
+				<strong>cdnw 퍼지사이트</strong>: https://stats.myskcdn.com<br>
+				<strong>로그인계정</strong>: yh2@vinylc.com / odyseek@vinylc.com (계정은 pm통해서 생성 요청)<br><br>
+				<strong>사이트 이용법</strong><br>
+				상단메뉴에서 'SKT(Tworld) cdnw.tworld.co.kr' > '웹 캐시' > 'cdnw.tworld.co.kr' 선택<br>
+				왼쪽 메뉴에서 '퍼지' 선택<br>
+				'url' 필드에 리소스 파일의 풀 url을 적고 '등록' 버튼을 누른다. (여러 파일은 줄바꿈해서 동시에 기재)<br>
+				예) http://cdnw.tworld.co.kr/poc/inc/css/center.css<br><br>
+				<strong>업무 프로세스</strong><br>
+				<strong>19시 배포일때</strong>는 UI팀에서 P배포한 후 cdnw퍼지까지 하고 기획팀에 완료를 전달한다.<br>
+				<strong>21시 배포일때</strong>는 C&amp;C에서 P배포 후 기획팀에서 퍼지 요청이 오면, UI팀에서 퍼지 후 기획팀에 전달한다.<br><br>
+				<strong>그 외 사항</strong><br>
+				* 배포목록에 없는 파일도 퍼지가 필요할 수 있다.<br>
+				예) https://cdnw.tworld.co.kr/poc/gnb/inc/cmn/common_url.js<br>
+				u코드값이 변경 되는 common_url.js파일은 배포목록에 없더라도 요청에 따라 퍼지한다.<br><br>
+				* GNB 배너 수정 시 GNB 배너를 불러오는 JS 파일 퍼지 필요<br>
+				이벤트 담당자(이창주 책임)가 GNB 배너 수정할 경우 강태진수석 or 최유진책임에게 퍼지 요청
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+<div id="massage">
+	<div></div>
+	<a href="#" class="close" onclick="popMsgclose();">닫기</a>
+</div>
+
+
+<script type="text/javascript" src="scripts/index.js"></script>
+</body></html>
