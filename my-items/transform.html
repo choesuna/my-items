@@ -31,17 +31,61 @@
     .item1:before{display:inline-block;height:100%;width:1px;background-color:red;/* width 생략 가능 width:1px; */vertical-align:middle;}
 
     .item2{}
-    .item2:after{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border-width:8px 0 8px 16px}
-    .item2:before{content:'';display:inline-block;position:absolute;top:50%;left:50%;margin-left:1px;border:9px solid transparent;border-left-color:red;border-width:10px 0 10px 20px;transform:translate(-50%, -50%);vertical-align:middle;}
-    .item3:hover:after{transform:rotate(180deg);}
-    .item4:hover:after{transform:scale(2);}
+    .item2:after{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);border-width:8px 0 8px 16px}
+    .item2:before{content:'';display:inline-block;position:absolute;top:50%;left:50%;margin-left:1px;border:9px solid transparent;border-left-color:red;border-width:10px 0 10px 20px;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);vertical-align:middle;}
+    .item3:hover:after{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);}
+    .item4:hover:after{-webkit-transform:scale(2);-ms-transform:scale(2);transform:scale(2);}
     
-    .transition-custom:hover:after{transition:transform 2s;}
-    .transition-ease-in-out:hover:after{transition:transform ease-in-out;}
-	</style>
+    [class*=transition]{width:200px;font-size:12px;}
+    [class*=transition]:after{position:absolute;left:0;top:50%;-webkit-transform:translate(-50%, -50%);-ms-transform:translate(-50%, -50%);transform:translate(-50%, -50%);}
+    .transition-custom:hover:after{left:100%;-webkit-transition:left 2s;transition:left 2s;}
+    .transition-ease:hover:after{left:100%;-webkit-transition:left 2s ease;transition:left 2s ease;}
+    .transition-linear:hover:after{left:100%;-webkit-transition:left 2s linear;transition:left 2s linear;}
+    .transition-ease-in:hover:after{left:100%;-webkit-transition:left 2s ease-in;transition:left 2s ease-in;}
+    .transition-ease-in-out:hover:after{left:100%;-webkit-transition:left 2s ease-in-out;transition:left 2s ease-in-out;}
+    .transition-cubic-bezier:hover:after{left:100%;-webkit-transition:left 2s cubic-bezier(0.1, 1, 1, 0.1);transition:left 2s cubic-bezier(0.1, 1, 1, 0.1);}
+
+    @-webkit-keyframes mymove {
+      from {left:0%;}
+      to {left:100%;}
+    }
+    @keyframes mymove {
+      from {left:0%;}
+      to {left:100%;}
+    }
+    @-webkit-keyframes mymove1 {
+      0%{border-left-color: red;}
+      50% {border-left-color: yellow;}
+      100%{border-left-color: blue;}
+    }
+    @keyframes mymove1 {
+      0%{border-left-color: red;}
+      50% {border-left-color: yellow;}
+      100%{border-left-color: blue;} 
+    }
+
+        /*none 0 ease 0 1 normal none running*/
+    .animation.transition-default-ease:after{-webkit-animation:mymove 2s;animation:mymove 2s;}
+    .animation.transition-linear:after{-webkit-animation:mymove 2s linear;animation:mymove 2s linear;}
+    .animation.transition-ease-in:after{-webkit-animation:mymove 2s ease-in;animation:mymove 2s ease-in;}
+    .animation.transition-ease-in-out:after{-webkit-animation:mymove 2s ease-in-out;animation:mymove 2s ease-in-out;}
+    .animation.transition-cubic-bezier:after{-webkit-animation:mymove 2s cubic-bezier(0.1, 1, 1, 0.1);animation:mymove 2s cubic-bezier(0.1, 1, 1, 0.1);}
+    .animation.transition-custom:after{-webkit-animation:mymove 2s ease-in 0.5s 5 normal none running;animation:mymove 2s ease-in 0.5s 5 normal none running;}
+    
+    .animation-direction-normal.transition-custom:after{-webkit-animation:mymove 2s ease 1s 1 normal;animation:mymove 2s ease 1s 1 normal;}
+    .animation-direction-reverse.transition-custom:after{-webkit-animation:mymove 2s ease 1s;animation:mymove 2s ease 1s;-webkit-animation-direction:reverse;animation-direction:reverse;}
+    .animation-direction-alternate.transition-custom:after{-webkit-animation:mymove 2s ease 1s 2 alternate;animation:mymove 2s ease 1s 2 alternate;}
+    .animation-direction-alternate-reverse.transition-custom:after{-webkit-animation:mymove 2s ease 1s 3 alternate-reverse;animation:mymove 2s ease 1s 3 alternate-reverse;}
+
+    .animation-fill-mode-none.transition-custom:after{-webkit-animation:mymove1 2s ease 1s 1 none;animation:mymove1 2s ease 1s 1 none;}
+    .animation-fill-mode-forwards.transition-custom:after{-webkit-animation:mymove1 2s ease 1s;animation:mymove1 2s ease 1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
+    .animation-fill-mode-backwards.transition-custom:after{-webkit-animation:mymove1 2s ease ;animation:mymove1 2s ease ;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}
+    .animation-fill-mode-both.transition-custom:after{-webkit-animation:mymove1 2s ease alternate-reverse both;animation:mymove1 2s ease alternate-reverse both;}
+    .animation-fill-mode-both.animation-play-state-paused.transition-custom:hover:after{left:0;transition:none;animation-play-state:paused}
+    </style>
 
 
-    <div class="page-title"><h1 class="heading1">TRANSFORM</h1></div>
+    <div class="page-title"><h1 class="heading1">TRANSFORM</h1>👏</div>
     <p class="desc">this is works well over IE 10.</p>
     <p class="desc">transform: translate(-50%, -50%) | translateY(50%) | translateX(50%), transition:transform</p>
     <div class="transform-wrap">
@@ -53,23 +97,68 @@
         </div>
     </div>
 
-    <p class="desc">transform:rotate, transition:transform</p>
+    <p class="desc">transform:rotate, transform:scale</p>
     <div class="transform-wrap">
         <div class="transform-area">
             <div class="list">
                 <span class="item item3">item3</span>
-                <span class="item item3 transition-custom">transition-custom</span>
-                <span class="item item3 transition-ease-in-out">transition-ease-in-out</span>
+                <span class="item item4">item3</span>
             </div>
         </div>
     </div>
 
-    <p class="desc">transform:scale, transition:transform</p>
+    <p class="desc">transition : property duration timing-function delay|initial|inherit;</p>
+    <p class="desc">hover</p>
     <div class="transform-wrap">
         <div class="transform-area">
             <div class="list">
-                <span class="item item4">item4</span>
-                <span class="item item4 transition">item4</span>
+                <span class="item item4 transition-custom">transition:left 2s</span>
+                <span class="item item4 transition-ease">transition:left 2s ease;</span>
+                <span class="item item4 transition-linear">transition:left linear;</span>
+                <span class="item item4 transition-ease-in">transition:left ease-in-out;</span>
+                <span class="item item4 transition-ease-in-out">transition:left 2s ease-in-out;</span>
+                <span class="item item4 transition-cubic-bezier">transition:left 2s cubic-bezier(0.1, 1, 1, 0.1);</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="desc">@keyframes mymove{},  <br>animation : name duration timing-function delay iteration-count direction fill-mode play-state;</p>
+    <p class="my-tip">@-webkit-keyframes mymove{}   /* Code for old Chrome, Safari and Opera */</p>
+    <div class="transform-wrap">
+        <div class="transform-area">
+            <div class="list">
+                <span class="item item4 transition-default-ease animation">transition:left 2s ease(default);</span>
+                <span class="item item4 transition-linear animation">transition:left linear;</span>
+                <span class="item item4 transition-ease-in animation">transition:left ease-in;</span>
+                <span class="item item4 transition-ease-in-out animation">transition:left 2s ease-in-out;</span>
+                <span class="item item4 transition-cubic-bezier animation">transition:left 2s cubic-bezier(0.1, 1, 1, 0.1);</span>
+                <span class="item item4 transition-custom animation">transition:left 2s</span>
+            </div>
+        </div>
+        <div class="transform-area" style="margin-top:10px">
+            <div class="list">
+                <span class="item item4 transition-custom animation-direction-normal">animation-direction:normal</span>
+                <span class="item item4 transition-custom animation-direction-reverse">animation-direction:reverse</span>
+                <span class="item item4 transition-custom animation-direction-alternate">animation-direction:alternate(forward first, then backwards)</span>
+                <span class="item item4 transition-custom animation-direction-alternate-reverse">animation-direction:alternate-reverse(backwards first, then forward)</span>
+            </div>
+        </div>
+    </div>    
+    <p class="my-tip" style="margin-top:10px;"> 
+        @keyframes mymove1 {
+          0%{border-left-color: red;}
+          50% {border-left-color: yellow;}
+          100%{border-left-color: blue;} 
+        }
+    </p>
+    <div class="transform-wrap">
+        <div class="transform-area" style="margin-top:10px">
+            <div class="list">
+                <span class="item item4 transition-custom animation-fill-mode-none">animation-fill-mode:none</span>
+                <span class="item item4 transition-custom animation-fill-mode-forwards">animation-fill-mode:forwards(last keyframe reamins)</span>
+                <span class="item item4 transition-custom animation-fill-mode-backwards">animation-fill-mode:backwards(first keyframe reamins)</span>
+                <span class="item item4 transition-custom animation-fill-mode-both">animation-fill-mode:both(backwards first, then forward)</span>
+                <span class="item item4 transition-custom animation-fill-mode-both animation-play-state-paused">animation-play-state:paused | running | initial | inherit</span>
             </div>
         </div>
     </div>
