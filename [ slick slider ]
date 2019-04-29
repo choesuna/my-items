@@ -1,6 +1,0 @@
-[ slick slider ]
-
-
-
-
-$('.single-item').slick();
