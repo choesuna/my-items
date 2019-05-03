@@ -1,6 +1,6 @@
 [ slick slider ]
 
-
-
+# ref. url
+	http://kenwheeler.github.io/slick/
 
 $('.single-item').slick();
