@@ -1,0 +1,27 @@
+[dev term]
+
+
+# devops : Development and Operations
+	- software Development and  Operations  
+
+# SVC : software Version Control
+
+# PRD : Production Server
+	it means core server, live server.
+	A production server is a type of server that is used to deploy and host live websites or Web applications. It hosts websites and Web applications that have undergone extensive development and testing before they are validated as production ready.
+
+
+
+# DEV Environment configuration;
+	a. Build, test, config, deploy to development server upon checking (pending successful build)
+
+# STG Environment configuraiton;
+	a. Ability to select scv version/label to deploy to staging/QA server
+	b. Build, test, config, deploy to staging/QA environment upon manually clicking "run" build button or creating svn tag
+
+# PRD Environment configuraiton;
+	a. Ability to select scv version/label to deploy to production server
+	b. Build, test, config, deploy to production environment upon manually clicking "run" build button or creating svn tag
+
+
+
