@@ -1,0 +1,216 @@
+[HTML 5]
+
+# New Semantic Elements in HTML 5
+
+article
+
+aside
+
+audio
+
+bdi
+
+canvas
+
+commnad : removed from HTML 5.1
+
+data : WHATWG and HTML 5.1 only
+
+datalist
+
+details
+
+dialog : WHATWG and HTML 5.1 only
+
+embed
+
+figcaption
+
+figure
+
+footer
+
+header
+
+hgroup : removed from html 5.1 
+
+heygen
+
+main : WHATWG and HTML 5.1 only
+
+mark
+
+menuitem : WHATWG and HTML 5.1 only
+
+meter 
+
+nav
+
+output
+
+
+progress
+
+rp
+
+rt
+
+ruby
+
+section
+
+source
+
+time
+
+track
+
+video
+
+wbr
+
+
+# New input types
+color, data, datetime, datetime-local, email,  month, number, range, search, tel, time, url, and week
+
+
+
+# Obsolete HTML 4.01 elements
+acronym, applet, basefont, big, center, dir, frame, frameset, font, isindex, noframes, strike, and tt
+
+
+
+# HTML 5 APIs
+
+
+# HTML 5 Browser Support
+	- BROWSER : Explorer 9+
+	- HTML 5 Shiv
+	- document.createElement("sectopm");
+	- 	<!--[if lt IE9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5-els.js"></script> 
+		<![endif]-->	
+
+
+
+
+# HTML 5 Global Attributes
+	- accessjet="character"
+	- class="text string"
+	- contenteditable="true|false" : Not in HTML 4.01
+	- contextmenu="id of menu element" : Not in HTML 4.01
+	- dir="ltr|rtl|auto"
+	- draggable="true|false" : Not in HTML 4.01
+	- dropzone="copy|move|link|string:text string type|file:file type" : Not in HTML 4.01
+	- hidden (hidden="hidden" in XHTML) : Not in HTML 4.01
+	- id="text string"
+	- inert (inert="inert" in XHTML) : WHATWG and HTML 5.1 only
+	- itemid="text" : WHATWG and HTML 5.1 only
+	- itemprop="text" : WHATWG and HTML 5.1 only
+	- itemref="space-separated list of IDs" : WHATWG and HTML 5.1 only
+	- itemscope : WHATWG and HTML 5.1 only
+	- itemtype="URL or reversed DNS label" : WHATWG and HTML 5.1 only
+	- lang
+	- xml:lang : XHTML only
+	- spellcheck="true|false" : Not in HTML 4.01
+	- style="CSS styles"
+	- tabindex="number"
+		The value must  be between 0 and 32,767.
+		It is used for tabbing through the links on a page(or fields in a form)
+	- title="text string"
+	- translate="yes|no" : Not in HTML 4.01
+
+# The following attributes are not included in the list of Global Attributes but are permitted in HTML5 documents
+	- aria-*="text string or number" : Not in HTML 4.01
+	- data-*="text string or numberical data" : Not in HTML 4.01
+	- role-*="standardized WAI-ARIA role" : Not in HTML 4.01
+ 
+
+
+# HTML 5 Event Handlers
+	- onabort
+	- onblur : Event handler for Window object when used with the body element. 
+	- oncancel
+	- oncanplay
+	- oncanplaythrough
+	- onchange
+	- onclick
+	- onclose : Event handler for Window object when used with the body element. 
+	- oncontextmenu
+	- oncuechange
+	- ondblclick
+	- ondrag
+	- ondragend
+	- ondragenter
+	- ondragleave
+	- ondragover
+	- ondragstart
+	- ondrop
+	- ondurationchange
+	- onemptied
+	- onended
+	- onerror : Event handler for Window object when used with the body element. 
+	- onfocus : Event handler for Window object when used with the body element. 
+	- oninput
+	- oninbalid
+	- onkeydown
+	- onkeypress
+	- onkeyup
+	- onload : Event handler for Window object when used with the body element. 
+	- onloadeddata
+	- onloadedmetadata
+	- onloadstart
+	- onmousedown
+	- onmousemove
+	- onmouseout
+	- onmouseover
+	- onmousewheel
+	- onpause
+	- onplay
+	- onplaying
+	- onprogress
+	- onratechange
+	- onreset
+	- onscroll
+	- onseeked
+	- onseeking
+	- onselect
+	- onshow
+	- onsort : WHATWG and HTML5.1 only. Not in HTML5 Candidate Recommen-dation
+	- onstalled
+	- onsubmit
+	- onsuspend
+	- onsubmit
+	- ontimeupdate
+	- onvolumechange
+	- onwaiting
+
+
+	- ref. 
+		onblur , onerror , onfocus , and onload behave slightly dif- ferently when applied to the body element because the body element shares these event handlers with its parent window
+
+
+
+
+			
+
+
+
+
+
+
+
+<!-- ref. words -->
+# POLYFILL
+	웹 개발에서 기능을 지원하지 않는 웹 브라우저의 상의 기능을 구현하는 코드
+ 
+# ARIA
+	Accessible Rich Internet Applications
+
+# WAI-ARIA
+	Web Accessibility Initiative	
+
+
+
+
+

@@ -1,0 +1,75 @@
+[DOCTYPE]
+
+# HTML 5
+<!DOCTYPE html> : 끝내는 태그 없음
+
+
+# HTML 4.01 Strict
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+	- font 태그 지원 안 함.  frameset 지원 안 함.
+
+
+# HTML 4.01 Transitional
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	- font tag : O, frameset : X
+	- Strict DTD 에 있는 것 + 퇴화 요소와 속성(대부분 시각적 표현에 관한 것)
+
+
+# HTML 4.01 Frameset
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+	- Transitional DTD 와 같음, frameset : O
+
+
+# XHTML 1.0 Strict
+<!DOCTYPE html PUBLIC "-//W#C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-strict.dtd">
+	- font tag : X, framset : X
+	- markup 은 잘 조직된  XML로 쓰여져야 함.
+
+
+# XHTML 1.0 Transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-Transitional.dtd">
+	- font tag : O, frameset : X
+	- markup 은 잘  조직된 XML로 쓰여져야 함.
+
+
+# XHTML 1.0 Frameset
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+	- XHTML 1.0 Transitional 과 같음 +  framset : O
+
+
+# XHTML 1.1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+	- XHTML 1.0 Strick 와 같음, modules을 추가하도록 허용.
+	- 예를 들어 동아시아언어를 위한 ruby 지원 함.
+
+
+
+
+# QUIRKS MODE, STANDARDS MODE, ALMOST STANDARDS MODE, STRICT MODE
+
+# rendering mode : 웹페이지를 번역 또는 읽는 방식
+
+	- standards mode : HTML과  CSS  명세 포준에 따라 렌저링 되며 
+	- quirks mode : 오래된 브라우저의 행동을 모방하도록 만들어짐
+	- almost standards mode or strict mode : 사파리, 오페라 7.5+, Gecko 기반의 모든 브라우저(firefox 1.0.1+. IE8)
+		거의 표준 모드는 표준 모드와 한가지만 빼고 동일함. 
+		table cell에서 비표준모드로 실행하고 그 외 나머지는 표준을 따름.
+		따라서, 테이블 안에 조각난 이미지를 넣을 때, 표준 모드 보다 비표준모드, 거의 표준모드일때 이미지 간격이 떨어질 가능성이 덜함. ???
+
+	- 비표준 모드와 비표준 모드의 차이
+	 	- IE 박스 모델 버그
+		 	- 비표준 모드 : width 계산시, padding, border 를 포함 함 
+		 	- 표준 모드 : width 계산시, padding, border 를 포함하지 않음 
+
+		- 인라인 요소의 수직 정렬
+			- 비표준 모드 : 박스의 border bottom 에 맞추어 이미지를 정렬
+			- 표준 모드 : baseline에 맞추어 정렬
+
+		- table 안의 font-size 상속
+			- 비표준 모드 : table 안에서 텍스트는 기본 font-size를 상속하지 않음.
+			- 표준 모드 : table 안에서 텍스트는 기본 font-size를 상속함. 		
+
+
+
+
+

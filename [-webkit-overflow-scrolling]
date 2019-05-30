@@ -1,0 +1,7 @@
+[-webkit-overflow-scrolling]
+
+
+iOS 기기의 경우 운동량 스크롤이 작동하지 않으므로 '베타' -webkit-overflow-scrolling:touch를 사용해야 한다.
+
+
+그러나, 이것은 나를 위해 브라우저를 크래시하는 것처럼 보입니다 – 즉시는 아니지만 겉으로보기에는 무작위로. -webkit-overflow-scroll의 모든 제거 : touch; 속성은 브라우저의 충돌을 막습니다.
