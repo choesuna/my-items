@@ -1,4 +1,4 @@
-[ Web Accessibility ]
+[ WEB ACCESSIBILITY ]
 
 	- IR 기법
 		Image Replacement 
@@ -53,6 +53,30 @@
 
 				※ 설정 > 접근성 화면에서 TalkBack이 안 보일 경우 구글스토어에서 TalkBack 검색 후 설치
 
+
+# label
+- for, id 를 사용한 명시적 연결
+
+- 암묵적 연결
+	id/for 속성으로 연결되어 있다 하더라도 label 요소가 콘트롤을 감싸는 방법은 모두 암묵적인 연결 방법으로 권장하지 않는 방법입니다.
+	ref. https://www.wah.or.kr:444/Participation/consultingView.asp?seq=8552&page=4&cType=&FindTxt=label&flag=2&FindCol=1
+	
+	<label for="name"> 
+		<input type="radio" name="name" value="name01" id="name" /> 이름 
+	</label> 
+
+	<label> 
+		<input type="radio" name="name" value="name01" /> 이름 
+	</label> 
+
+- 화면에 보이는 텍스트가 없는 경우라면 title 속성으로 레이블을 대체할 수 있으므로 접근성 있는 방법으로 볼 수 있겠습니다.
+	ref. https://www.wah.or.kr:444/Participation/consultingView.asp?seq=8836&page=4&cType=&FindTxt=label&flag=2&FindCol=1
+	<input type="text" title="이름 입력" /> 
+- 
+<style> 
+.hide {display: block; font-size: 0; height: 0; line-height: 0; margin: 0; overflow: hidden; padding: 0; width: 0;} 
+/* IR 기법 사용시 display:none; visibility:hidden; 속성을 사용하지 않도록 함. */ 
+</style> 
 
 
 

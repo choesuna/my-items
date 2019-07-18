@@ -1,0 +1,32 @@
+[ IE BUGS ]
+
+
+[CSS]
+
+# Inter Explorer has a number of limits in the way it loads  CSS, which can cause some of your styles not to be applied.
+
+- IE9 and lower 
+	· A stylesheet may contain up to 4095 selectors
+	· A document may load up to 31 stylesheets
+	· A stylesheet may @import up to 31 other stylesheets
+	· @import nesting is limited to 4 levels deep
+
+- All versions of IE
+	· Font-family names may be up to 31 characters long
+	· This has been Fixed in Edge.
+
+- IE10+
+	· A stylesheet may contain up to 65,534 selectors
+	· Adocument may load up to 4095 stylesheets
+	· @import nesting is limited to 4095 levels (due to the 4095 stylesheet limit)
+
+
+
+
+
+
+
+[REF URL]
+- https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/hh920762(v=vs.85)
+- http://www.reddit.com/r/webdev/comments/1dfrsn/did_you_know_ie9_has_a_31_character_limit_for/
+	
