@@ -1,0 +1,138 @@
+[ WEB FONT ]
+
+# web font
+	## browser
+						chrome		IE 		firefox		safari		opera	
+			TTF/OTF		4.0			9.0*	3.5			3.1			10.0
+			WOFF 		5.0			9.0		3.6			5.1			11.1
+			WOFF2		36.0		X		35.0*		X			26.0
+			SVG			4.0			X		X			3.2			9.0
+			EOT 		X 			6.0		X			X			X
+
+		### IE6~8
+			- IE6~8은 EOT 파일만 지원하므로  EOT 파일을 내려받도록 해야한다.
+			- format 부분을 하나의 문자열로 인식하기 때문에  url에 긴 문자열이 들어가서 not found 가 발생하낟.
+				src: url(NanumSquareR.eot) format('embedded-opentype');
+				=> src: url(NanumSquareR.eot%format('embedded-opentype')%url(NanumSquareR.ttf)%format('truetype'));
+
+			- 파일명 뒤에 ? 를 추가한다. 물음표 이후의 구분은 쿼리문으로 인식하기 때문에 모두 무시되어 ~.eot? 파일을 다운로드 한다.	
+				src: url(NanumSquareR.eot?#iefix) format('embedded-opentype'), /* IE 6 ~ 8 */
+
+		### WOFF2 지원 브라우저
+			- WOFF1 버전에 비해 평균 30% 정도 압축  형식을 제공, 경우 따라 최대 50%
+
+		### ex)
+			src: url(NanumSquareR.eot); /* IE 호환성 보기 */
+			src: url(NanumSquareR.eot#iefix) format('embedded-opentype'), /* IE 6 ~ 8 */
+				url(NanumSquareR.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+				url(NanumSquareR.woff) format('woff'), /* 모던 브라우저 */
+				url(NanumSquareR.ttf) format('truetype');	
+					
+			- 모든 브라우저를 대응하고 IE에서 eot 파일이 아닌 woff 파일을 로드 받을 수 있게하는 코드		
+				@font-face{
+					font-family: NanumSquare;
+					src: url(NanumSquareR.eot); /* IE 6 ~ 8, IE 호환성 보기 */
+					src: local(☺),
+					   url(NanumSquareR.woff2) format('woff2'), /* IE Edge, WOFF2 지원 브라우저 */
+					   url(NanumSquareR.woff) format('woff'), /* IE 9+, 모던 브라우저 */
+					   url(NanumSquareR.ttf) format('truetype');
+				}		
+					
+
+
+# @font-face
+	
+	## attribute
+		- font-family
+		- src
+			콤마를 사용해 중첩해서 사용 가능, 마지막 속성에 세미콜론만 붙여 주면 된다.
+			불필요한 다운로드를 막기 위해서 format 속성을 사용해서 브라우저에서 지원가능한 파일만 다운로드 받을 수 있다.
+			IE8 이하 브라우저에서는 local() 속성을 인식하지 못하고, 사용자 로컬에 폰트가 잘 못 설치된 경우 원하는 화면이 노출되지 않을 수 있기 대문에 local() 속성을 대부분 사용하지 않습니다.
+
+
+
+		- font-style
+		- font-weight
+			IE8 이하 : 
+				- font-weight:100~500 은 normal로, font-weight:600~900은 bold로 렌더링 된다.
+				- font-weight:600이 적용 되지 않을 수 있다.
+				- font-weight를 사용하지 않고 웹폰트 패밀리명을 굵기마다 각각 다르게 설정하면 해결 할 수 있다.
+
+
+		- unicode-range
+			유니코드 범위를 정할 수 있다.
+			유니코드 범위 내 사용하는 문자가 없으면 웹폰트를 다운로드 하지 않는다.
+			- 콤마를 이용해 두 개 이상의 값을 넣을 수 있다.
+				unicode-range: U+AC01, U+AC08; 
+			- '-'를 이요하여 유니코드 범위를 설정
+				unicode-range: U+AC07-AC0A, U+AC00;
+			- ?를 이용해서 임의의 16진수 중 하나로 0~F 값이 들어갈 수 있다.	
+
+			- 다국어를 지원해주는 사이트에서 웹폰트 적용할 때 사용하면 좋다.
+				나눔스퀘어체가 모든 언어를 포함하고 있을 때 아래 코드처럼 폰트파일도 나눠서 사용하면 된다. 
+
+				
+				src: url(NanumSquareR-Arab.woff) format('woff'); /* 나눔스퀘어 아랍어 부분 */
+				unicode-range: U+06??; /* 아랍어 */
+
+				src: url(NanumSquareR-Cambodia.woff) format('woff'); /* 나눔스퀘어 아랍어 부분 */
+				unicode-range: U+1780-17FF; /* 캄보디아어 */
+
+
+		### ex)
+			@font-face {
+				font-family: NanumSquareWeb; 
+				src: local(NanumSquareL), /* 첫번째 */
+					local(NanumSquare), /* 두번째 */
+					url(NanumSquareR.eot) format('embedded-opentype'), /* 세번째 */
+					url(NanumSquareR.woff) format('woff'), /* 네번째 */
+					url(NanumSquareR.ttf) format('truetype'); /* 다섯번째 */
+				font-weight:300;	
+				unicode-range: U+AC01, U+AC08;
+			}
+			@font-face {
+				font-family: NanumSquareWeb; 
+				src: local(NanumSquareR), /* 첫번째 */
+					local(NanumSquare), /* 두번째 */
+					url(NanumSquareR.eot) format('embedded-opentype'), /* 세번째 */
+					url(NanumSquareR.woff) format('woff'), /* 네번째 */
+					url(NanumSquareR.ttf) format('truetype'); /* 다섯번째 */
+				font-weight:400;	
+
+			}
+
+
+# web-font 관리 
+	## 서버에 직접 업로드
+		- css에  @font-face를 직접 선언헤 주어야 한다.
+			폰트는 종류가 많을 수록 @font-face를 많이 선언해야 해서 복잡하지만 기준 브라우저에 따라 코드를 추가, 삭제 할 수 있다. 
+			CDN을 이용하는 것보다 속도가 빠르고 안전하다.
+
+	## 구글 CDN을 이용하는 경우
+		- 구글 CDN을 이용하면 별도의 @font-face를 정의하지 않아도 되기 때문에 편리하지만 서버에 직접 업로드 하는 것보다 속도가 느리고 구글 CDN 서버가 제대로 동작하지 않을 때는 웹폰트를 제공받지 못 할 수 있다.
+		- 구글 CDN의 경우 @font-face 에 WOFF와 WOFF2만 지원하므로 IE6~IE8, IE 호환성 보기 모드에서는 웹폰트를 사용할 수 없습니다.
+		결론, 서버에 직접 업로드 하는 것이 좋다.
+
+
+
+# 웹폰트를 사용하지 않는 이유	
+	## FOUT / FOIT / FOFT
+		- FOUT, Flash of Unstyled Text / Flash of Unstyled content
+			웹 폰트 파일이 로드 되기 전까지 기본 서체가 노출 되다가 웹 폰트 로드가 완료되면 웹폰트로 바뀌면서 감박이는 현상입니다.
+			FOUC, Flash of Unstyled Content라고 불리기도 함. 
+			IE에서 발생함.
+
+		- FOIT, Flash of Invisible Text
+			웹 폰트 파일이 로드되기 전까지 웹 페이지를 로드하지 않고 웹폰트 로드가 완료되면 웹 페이지를 로드하기 때문에 로드가 완료되기 전까지 텍스트가 안 보이는 현상
+			IE 브라우저를 제외한 나머지 브라우저(Chrome, Safari 등)등에서 발생합니다.
+
+		- FOFT, Flash of Faux Text	
+			웹 폰트 파일에 font-weight, font-style과 관련된 서체가 있을 시 로드 전 브라우저에서 임의로 서체의 굵기와 스타일을 생성하여 노출하고 웹폰트 로드가 완료되면 웹 폰트로 바뀌는 현상입니다. 
+			스크립트로 만들어진 현상으로 시스템글꼴 > 웹폰트 Regular > 웹 폰트 bold 순으로 바뀐다.
+			
+
+
+
+
+***************************************** ref url *****************************************
+- https://wit.nts-corp.com/2017/02/13/4258 : 진짜 괜찮은 사이트 같음.

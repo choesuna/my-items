@@ -1,0 +1,39 @@
+[ GUIDE ]
+
+# benchmarket site : http://www.cheumsketch.co.kr
+
+
+# PC/Mobile 분리
+	## PC 
+		- ie8, chrome, safari
+
+		- html4.01 Transitional
+			<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+			
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+			
+			
+		- viewport
+			HTML5 introduced a method to let web designers take control over the viewport(the user's visible area of a web page), through the <meta> tag  ???	
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+
+
+		- mark up common rule
+			- closed empty elements
+				HTML5 dose not require empty elements to be closed. But I want stricter validation, and need to make my document readable by XML parser, so I close all HTML elements properly.
+				
+			- lowercase tag 
+
+
+
+
+	## Mobile
+		- html5
+			<!DOCTYPE html>
+
+			<meta charset="UTF-8">
+
+
+
+# 반응형 
