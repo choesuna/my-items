@@ -1,9 +1,9 @@
 @charset "utf-8";
 
+/* button */
 .button{display:inline-block;box-sizing:border-box;padding:5px 10px;font-size:inherit;line-height:inherit;vertical-align:middle;}
-button.button{}
-a.button{display:inline-block;text-align:center;text-decoration:none;}
-.button span{display:inline-block;box-sizing:border-box;}
+button.button{background-color:transparent;}
+a.button{text-decoration:none;text-align:center;}
 
 .button-primary{}
 .button-small{width:80px;}
@@ -11,27 +11,19 @@ a.button{display:inline-block;text-align:center;text-decoration:none;}
 .button-large{width:120px;}
 .button-full{width:100%;}
 
-.button-round{border-radius:5px;} 
-.button-outline{border-width:1px;border-style:solid;} 
-
-.button-blue{background-color:#0b7ee0;}
-.button-orange{background-color:#ff8241;}
-.button-pink{background-color:#f74db5;}
-.button-red{background-color:#eb1b1b;}
+.button-round{border:1px solid transparent;border-radius:5px;} 
+.button-outline{border:1px solid transparent;border-radius:5px;} 
 
 .button-round.button-blue{color:#fff;background-color:#0b7ee0;}
-.button-round.button-gray{color:#fff;background-color:#ff8241;}
+.button-round.button-gray{color:#fff;background-color:#ced2d7;}
 .button-round.button-orange{color:#fff;background-color:#ff8241;}
 .button-round.button-pink{color:#fff;background-color:#f74db5;}
 .button-round.button-red{color:#fff;background-color:#eb1b1b;}
 
-.button-outline.button-gray{border-color:#ff8241;}
+.button-outline.button-blue{color:#333;border-color:#0b7ee0;}
+.button-outline.button-gray{color:#333;border-color:#ced2d7;}
+.button-outline.button-orange{color:#333;border-color:#ff8241;}
+.button-outline.button-pink{color:#333;border-color:#f74db5;}
+.button-outline.button-red{color:#333;border-color:#eb1b1b;}
 
-.button-span{font-size:14px;font-weight:normal;line-height:inherit;text-decoration:none;background:red;}
-.button-span span{display:inline-block;padding:5px 10px;font-size:14px;color:#fff;background:blue;line-height:16px;}
-input[type="button"].button-span{padding:5px 10px;font-size:14px;color:#fff;background:blue;line-height:16px;}
 
-
-
-.button-nothing{padding:5px 10px;font-size:14px;font-weight:normal;line-height:inherit;text-decoration:none;background:red;}
-input[type="button"].button-nothing{}
